@@ -1,0 +1,214 @@
+﻿<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="DNN_Feedback" type="Module" version="06.04.03.08">
+      <friendlyName>Feedback</friendlyName>
+      <description>Feedback allows visitors to send messages to the Administrator of the portal and in an associated module, display published certain feedback or comment items after they have been approved for publication.</description>
+      <iconFile>DesktopModules\Feedback\DNN_Feedback.png</iconFile>
+      <owner>
+        <name>DotNetNuke Corporation</name>
+        <organization>DotNetNuke Corporation</organization>
+        <url>http://www.dotnetnuke.com</url>
+        <email>support@dotnetnuke.com</email>
+      </owner>
+      <license src="License.txt"></license>
+      <releaseNotes src="Release.06.04.03.htm"></releaseNotes>
+      <azureCompatible>true</azureCompatible>
+      <dependencies>
+        <dependency type="CoreVersion">06.02.01</dependency>
+      </dependencies>
+      <components>
+        <component type="Script">
+          <scripts>
+            <basePath>DesktopModules\Feedback</basePath>
+            <script type="Install">
+              <path>Installation</path>
+              <name>03.02.01.SqlDataProvider</name>
+              <version>03.02.01</version>
+            </script>
+            <script type="Install">
+              <path>Installation</path>
+              <name>04.04.01.SqlDataProvider</name>
+              <version>04.04.01</version>
+            </script>
+            <script type="Install">
+              <path>Installation</path>
+              <name>04.04.02.SqlDataProvider</name>
+              <version>04.04.02</version>
+            </script>
+            <script type="Install">
+              <path>Installation</path>
+              <name>04.04.03.SqlDataProvider</name>
+              <version>04.04.03</version>
+            </script>
+            <script type="Install">
+              <path>Installation</path>
+              <name>05.00.00.SqlDataProvider</name>
+              <version>05.00.00</version>
+            </script>
+            <script type="Install">
+              <path>Installation</path>
+              <name>05.00.01.SqlDataProvider</name>
+              <version>05.00.01</version>
+            </script>
+            <script type="Install">
+              <path>Installation</path>
+              <name>05.00.02.SqlDataProvider</name>
+              <version>05.00.02</version>
+            </script>
+              <script type="Install">
+                  <path>Installation</path>
+                  <name>06.00.00.SqlDataProvider</name>
+                  <version>06.00.00</version>
+              </script>
+              <script type="Install">
+                  <path>Installation</path>
+                  <name>06.01.00.SqlDataProvider</name>
+                  <version>06.01.00</version>
+              </script>
+              <script type="Install">
+                  <path>Installation</path>
+                  <name>06.02.00.SqlDataProvider</name>
+                  <version>06.02.00</version>
+              </script>
+              <script type="Install">
+                  <path>Installation</path>
+                  <name>06.03.00.SqlDataProvider</name>
+                  <version>06.03.00</version>
+              </script>
+              <script type="Install">
+                  <path>Installation</path>
+                  <name>06.04.00.SqlDataProvider</name>
+                  <version>06.04.00</version>
+              </script>
+              <script type="Uninstall">
+              <path>Installation</path>
+              <name>Uninstall.SqlDataProvider</name>
+            </script>
+          </scripts>
+        </component>
+        <component type="Module">
+          <desktopModule>
+            <moduleName>DNN_Feedback</moduleName>
+            <foldername>Feedback</foldername>
+            <businessControllerClass>DotNetNuke.Modules.Feedback.FeedbackController, DotNetNuke.Modules.Feedback</businessControllerClass>
+            <supportedFeatures>
+              <supportedFeature type="Upgradeable" />
+            </supportedFeatures>
+            <moduleDefinitions>
+                <moduleDefinition>
+                    <friendlyName>Feedback Comments</friendlyName>
+                    <defaultCacheTime>0</defaultCacheTime>
+                    <moduleControls>
+                        <moduleControl>
+                            <controlKey></controlKey>
+                            <controlSrc>DesktopModules/Feedback/ViewComments.ascx</controlSrc>
+                            <supportsPartialRendering>False</supportsPartialRendering>
+                            <controlTitle>View Comments</controlTitle>
+                            <controlType>View</controlType>
+                            <helpUrl>http://www.dotnetnuke.com/default.aspx?tabid=787</helpUrl>
+                        </moduleControl>
+                        <moduleControl>
+                            <controlKey>Settings</controlKey>
+                            <controlSrc>DesktopModules/Feedback/CommentSettings.ascx</controlSrc>
+                            <supportsPartialRendering>False</supportsPartialRendering>
+                            <controlTitle>Comment View Settings</controlTitle>
+                            <controlType>Edit</controlType>
+                            <helpUrl>http://www.dotnetnuke.com/default.aspx?tabid=787</helpUrl>
+                        </moduleControl>
+                    </moduleControls>
+                </moduleDefinition>
+                <moduleDefinition>
+                <friendlyName>Feedback</friendlyName>
+                <defaultCacheTime>-1</defaultCacheTime>
+                <moduleControls>
+                  <moduleControl>
+                    <controlKey></controlKey>
+                    <controlSrc>DesktopModules/Feedback/Feedback.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle>Main View</controlTitle>
+                    <controlType>View</controlType>
+                    <helpUrl>http://www.dotnetnuke.com/default.aspx?tabid=787</helpUrl>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>EditLists</controlKey>
+                    <controlSrc>DesktopModules/Feedback/FeedbackLists.ascx</controlSrc>
+                    <supportsPartialRendering>True</supportsPartialRendering>
+                    <supportsPopUps>False</supportsPopUps>
+                    <controlTitle>Edit Lists</controlTitle>
+                    <controlType>Edit</controlType>
+                    <helpUrl>http://www.dotnetnuke.com/default.aspx?tabid=787</helpUrl>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>Moderation</controlKey>
+                    <controlSrc>DesktopModules/Feedback/Moderation.ascx</controlSrc>
+                    <supportsPartialRendering>True</supportsPartialRendering>
+                    <supportsPopUps>False</supportsPopUps>
+                    <controlTitle>Moderation/Management</controlTitle>
+                    <controlType>Edit</controlType>
+                    <helpUrl>http://www.dotnetnuke.com/default.aspx?tabid=787</helpUrl>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>Print</controlKey>
+                    <controlSrc>DesktopModules/Feedback/Print.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <supportsPopUps>False</supportsPopUps>
+                    <controlTitle>Feedback Printing</controlTitle>
+                    <controlType>View</controlType>
+                    <helpUrl>http://www.dotnetnuke.com/default.aspx?tabid=787</helpUrl>
+                  </moduleControl>
+                  <moduleControl>
+                    <controlKey>Settings</controlKey>
+                    <controlSrc>DesktopModules/Feedback/Settings.ascx</controlSrc>
+                    <supportsPartialRendering>False</supportsPartialRendering>
+                    <controlTitle>Feedback Settings</controlTitle>
+                    <controlType>Admin</controlType>
+                    <helpUrl>http://www.dotnetnuke.com/default.aspx?tabid=787</helpUrl>
+                  </moduleControl>
+                </moduleControls>
+                <permissions>
+                  <permission code="FEEDBACK_PERMISSION" key="MODERATEPOSTS" name="Moderate Posts" />
+                  <permission code="FEEDBACK_PERMISSION" key="MANAGELISTS" name="Manage Feedback Lists" />
+                </permissions>
+              </moduleDefinition>
+            </moduleDefinitions>
+          </desktopModule>
+          <eventMessage>
+            <processorType>DotNetNuke.Entities.Modules.EventMessageProcessor, DotNetNuke</processorType>
+            <processorCommand>UpgradeModule</processorCommand>
+            <attributes>
+              <businessControllerClass>DotNetNuke.Modules.Feedback.FeedbackController, DotNetNuke.Modules.Feedback</businessControllerClass>
+              <desktopModuleID>[DESKTOPMODULEID]</desktopModuleID>
+              <upgradeVersionsList>06.00.00</upgradeVersionsList>
+            </attributes>
+          </eventMessage>
+        </component>
+        <component type="Assembly">
+          <assemblies>
+            <assembly>
+              <path>bin</path>
+              <name>DotNetNuke.Modules.Feedback.dll</name>
+            </assembly>
+          </assemblies>
+        </component>
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>DesktopModules\Feedback</basePath>
+            <resourceFile>
+              <name>resources.zip</name>
+              <sourceFileName>resources.zip</sourceFileName>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+          <component type="Cleanup" version="05.01.00" fileName="Installation\CleanUp\Cleanup.05.01.00.txt" />
+          <component type="Cleanup" version="06.00.00" fileName="Installation\CleanUp\Cleanup.06.00.00.txt" />
+          <component type="Cleanup" version="06.00.01" fileName="Installation\CleanUp\Cleanup.06.00.01.txt" />
+          <component type="Cleanup" version="06.01.00" fileName="Installation\CleanUp\Cleanup.06.01.00.txt" />
+          <component type="Cleanup" version="06.02.00" fileName="Installation\CleanUp\Cleanup.06.02.00.txt" />
+          <component type="Cleanup" version="06.02.01" fileName="Installation\CleanUp\Cleanup.06.02.01.txt" />
+          <component type="Cleanup" version="06.04.01" fileName="Installation\CleanUp\Cleanup.06.04.01.txt" />
+          <component type="Cleanup" version="06.04.02" fileName="Installation\CleanUp\Cleanup.06.04.02.txt" />
+          <component type="Cleanup" version="06.04.03" fileName="Installation\CleanUp\Cleanup.06.04.03.txt" />
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Created Date.Header" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="From Email.Header" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="Message.Header" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Subject.Header" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="NoneSelected.Text" xml:space="preserve">
+    <value>&lt;None Selected&gt;</value>
+  </data>
+  <data name="Manage Feedback Lists.Permission" xml:space="preserve">
+    <value>Manage Feedback Lists</value>
+  </data>
+  <data name="Moderate Posts.Permission" xml:space="preserve">
+    <value>Moderate Feedback Posts</value>
+  </data>
+  <data name="PleaseSelect.Text" xml:space="preserve">
+    <value>&lt;Please Select&gt;</value>
+  </data>
+  <data name="Hidden.Text" xml:space="preserve">
+    <value>Hidden</value>
+  </data>
+  <data name="Optional.Text" xml:space="preserve">
+    <value>Optional</value>
+  </data>
+  <data name="Required.Text" xml:space="preserve">
+    <value>Required</value>
+  </data>
+  <data name="Author.Header" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="Category.Header" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="cmdReturn.Text" xml:space="preserve">
+    <value>Return to Module</value>
+  </data>
+  <data name="Anonymous.Text" xml:space="preserve">
+    <value>Anonymous</value>
+  </data>
+  <data name="SetArchive.Text" xml:space="preserve">
+    <value>Archive</value>
+  </data>
+  <data name="SetPrivate.Text" xml:space="preserve">
+    <value>Set Private</value>
+  </data>
+  <data name="SetPublic.Text" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="StatusArchive.Text" xml:space="preserve">
+    <value>Archived</value>
+  </data>
+  <data name="StatusDelete.Text" xml:space="preserve">
+    <value>Deleted</value>
+  </data>
+  <data name="StatusPending.Text" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="StatusPrivate.Text" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="StatusPublic.Text" xml:space="preserve">
+    <value>Published</value>
+  </data>
+  <data name="Print.AlternateText" xml:space="preserve">
+    <value>Print this feedback item</value>
+  </data>
+  <data name="LoadDefault.Text" xml:space="preserve">
+    <value>Load Default</value>
+  </data>
+  <data name="Category.FieldLabel" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="CategoryID.FieldLabel" xml:space="preserve">
+    <value>Category ID</value>
+  </data>
+  <data name="CategoryName.FieldLabel" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="CategoryValue.FieldLabel" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="City.FieldLabel" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="Country.FieldLabel" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="CreatedOnDate.FieldLabel" xml:space="preserve">
+    <value>Date Created</value>
+  </data>
+  <data name="DefaultPrintTemplate.Text" xml:space="preserve">
+    <value>&lt;b&gt;{FeedbackID}:&lt;/b&gt; [Feedback:FeedbackID]&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;b&gt;{CreatedOnDate}:&lt;/b&gt; [Feedback:CreatedOnDate]&amp;nbsp;&amp;nbsp;&lt;b&gt;{Status}:&lt;/b&gt; [Feedback:Status]&lt;br /&gt;&lt;b&gt;{Category}:&lt;/b&gt; [Feedback:CategoryName]&amp;nbsp;&amp;nbsp;&lt;b&gt;{Subject}:&lt;/b&gt; [Feedback:Subject]&lt;br /&gt;&lt;br /&gt;&lt;b&gt;{SubmittedBy}&lt;/b&gt;&lt;br /&gt;&amp;nbsp;&amp;nbsp;&lt;b&gt;{Name}:&lt;/b&gt; [Feedback:SenderName]&amp;nbsp;&amp;nbsp;&lt;b&gt;{RemoteAddr}&lt;/b&gt;: [Feedback:RemoteAddr]&lt;br /&gt;&amp;nbsp;&amp;nbsp;&lt;b&gt;{Street}:&lt;/b&gt; [Feedback:SenderStreet]&lt;br /&gt;&amp;nbsp;&amp;nbsp;&lt;b&gt;{City}, {Region} {PostalCode}:&lt;/b&gt; [Feedback:SenderCity], [Feedback:SenderRegion] [Feedback:SenderPostalCode]&lt;br /&gt;&amp;nbsp;&amp;nbsp;&lt;b&gt;{Country}:&lt;/b&gt; [Feedback:SenderCountry]&lt;br /&gt;&amp;nbsp;&amp;nbsp;&lt;b&gt;{Telephone}:&lt;/b&gt; [Feedback:SenderTelephone]&lt;br /&gt;&amp;nbsp;&amp;nbsp;&lt;b&gt;{Email}:&lt;/b&gt; [Feedback:SenderEmail]&lt;br /&gt;&lt;br /&gt;[Feedback:Message]</value>
+  </data>
+  <data name="Email.FieldLabel" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="FeedbackID.FieldLabel" xml:space="preserve">
+    <value>Feedback ID</value>
+  </data>
+  <data name="LastModifiedOnDate.FieldLabel" xml:space="preserve">
+    <value>Date Last Modified</value>
+  </data>
+  <data name="Message.FieldLabel" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Name.FieldLabel" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="PostalCode.FieldLabel" xml:space="preserve">
+    <value>Postal Code</value>
+  </data>
+  <data name="PublishedOnDate.FieldLabel" xml:space="preserve">
+    <value>Date Published</value>
+  </data>
+  <data name="Region.FieldLabel" xml:space="preserve">
+    <value>State or Region</value>
+  </data>
+  <data name="RemoteAddr.FieldLabel" xml:space="preserve">
+    <value>IP Address</value>
+  </data>
+  <data name="Status.FieldLabel" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Street.FieldLabel" xml:space="preserve">
+    <value>Street</value>
+  </data>
+  <data name="Subject.FieldLabel" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="SubmittedBy.FieldLabel" xml:space="preserve">
+    <value>Submitted By</value>
+  </data>
+  <data name="Telephone.FieldLabel" xml:space="preserve">
+    <value>Telephone</value>
+  </data>
+  <data name="ModuleTitle.Header" xml:space="preserve">
+    <value>Module Title</value>
+  </data>
+  <data name="Selected.Header" xml:space="preserve">
+    <value>Selected</value>
+  </data>
+  <data name="TabName.Header" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="Extreme.Text" xml:space="preserve">
+    <value>Extreme</value>
+  </data>
+  <data name="High.Text" xml:space="preserve">
+    <value>High</value>
+  </data>
+  <data name="Low.Text" xml:space="preserve">
+    <value>Low</value>
+  </data>
+  <data name="Medium.Text" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="None.Text" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="ApproveFeedback.Text" xml:space="preserve">
+    <value>Approve</value>
+  </data>
+  <data name="ApproveFeedback_Desc.Text" xml:space="preserve">
+    <value>Approve Feedback for Public visibility.</value>
+  </data>
+  <data name="ArchiveFeedback.Text" xml:space="preserve">
+    <value>Archive</value>
+  </data>
+  <data name="ArchiveFeedback_Desc.Text" xml:space="preserve">
+    <value>Archive the Feedback item.</value>
+  </data>
+  <data name="DeleteFeedback.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeleteFeedback_Desc.Text" xml:space="preserve">
+    <value>Delete the Feedback item.</value>
+  </data>
+  <data name="PrivateFeedback.Text" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="PrivateFeedback_Desc.Text" xml:space="preserve">
+    <value>Set Feedback to Private visibility.</value>
+  </data>
+  <data name="ApproveFeedback_Confirm.Text" xml:space="preserve">
+    <value>Feedback item approved for Public.</value>
+  </data>
+  <data name="ArchiveFeedback_Confirm.Text" xml:space="preserve">
+    <value>Feedback item Archived.</value>
+  </data>
+  <data name="DeleteFeedback_Confirm.Text" xml:space="preserve">
+    <value>Feedback item Deleted.</value>
+  </data>
+  <data name="NotificationRecipientError.Text" xml:space="preserve">
+    <value>Notification not found for {0}. Notification action not performed.</value>
+  </data>
+  <data name="NotificationSecurityError.Text" xml:space="preserve">
+    <value>{0} is not a moderator. Notification action not performed.</value>
+  </data>
+  <data name="PrivateFeedback_Confirm.Text" xml:space="preserve">
+    <value>Feedback item marked as Private.</value>
+  </data>
+  <data name="SetSpam.Text" xml:space="preserve">
+    <value>Mark Spam</value>
+  </data>
+  <data name="plCategory.Text" xml:space="preserve">
+    <value>Category:</value>
+  </data>
+  <data name="plCity.Text" xml:space="preserve">
+    <value>City:</value>
+  </data>
+  <data name="plCountry.Text" xml:space="preserve">
+    <value>Country:</value>
+  </data>
+  <data name="plEmail.Text" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="plName.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="plPostalCode.Text" xml:space="preserve">
+    <value>Postal Code:</value>
+  </data>
+  <data name="plRegion.Text" xml:space="preserve">
+    <value>Region or State:</value>
+  </data>
+  <data name="plStreet.Text" xml:space="preserve">
+    <value>Street:</value>
+  </data>
+  <data name="plSubmittedBy.Text" xml:space="preserve">
+    <value>Submitted By:</value>
+  </data>
+  <data name="plSubmittedFrom.Text" xml:space="preserve">
+    <value>Submitted From:</value>
+  </data>
+  <data name="plTelephone.Text" xml:space="preserve">
+    <value>Telephone:</value>
+  </data>
+</root>

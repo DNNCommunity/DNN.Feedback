@@ -1,0 +1,210 @@
+﻿/**********************************************************************/
+/*****                    06.02.00.SqlDataProvider                *****/
+/*****                                                            *****/
+/*****                                                            *****/
+/*****    Note: To manually execute this script you must          *****/
+/*****          perform a search and replace operation            *****/
+/*****          for {databaseOwner} and {objectQualifier}         *****/
+/*****                                                            *****/
+/**********************************************************************/
+
+/************************************************/
+/***     Update sprocs                        ***/
+/************************************************/
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetFeedback]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Feedback_GetFeedback
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_CreateFeedback]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_CreateFeedback]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetDuplicateSubmissionForUserEmail]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetDuplicateSubmissionForUserEmail]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_CleanupFeedback]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_CleanupFeedback]
+GO
+
+/* Feedback_GetDuplicateSubmissionForUserEmail */
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetDuplicateSubmissionForUserEmail]
+    	@PortalID int,
+	    @Email nvarchar(256),
+        @Message nvarchar(1000)
+AS
+	SELECT TOP 1
+       		CreatedOnDate
+	FROM   {databaseOwner}{objectQualifier}Feedback
+	WHERE  ((PortalID = @PortalID) AND (SenderEmail=@Email) and (Message=@Message))
+	ORDER BY CreatedOnDate DESC
+GO
+
+/* Feedback_GetFeedback */
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetFeedback]
+	@FeedbackID int
+
+AS
+	SELECT
+		FeedbackID,
+		f.ModuleID,
+		f.PortalID,
+		[Status],
+		f.CategoryID,
+		fc.Name As [CategoryName],
+		fc.ListValue As [CategoryValue],
+		CASE WHEN fs.ListID IS null THEN
+		   f.[Subject]
+		ELSE
+		   fs.ListValue
+		END As [Subject],
+		[Message],
+		SenderEmail,
+		SenderName,
+		SenderStreet,
+		SenderCity,
+		SenderRegion,
+		SenderCountry,
+		SenderPostalCode,
+		SenderTelephone,
+		SenderRemoteAddr,
+		CreatedOnDate,
+		CreatedByUserID,
+		LastModifiedOnDate,
+		LastModifiedByUserID,
+		PublishedOnDate,
+		ApprovedBy,
+		TotalRecords = 1
+	FROM {databaseOwner}[{objectQualifier}Feedback] f
+	     LEFT OUTER JOIN {databaseOwner}[{objectQualifier}FeedbackList] fs ON f.[Subject] = convert(nvarchar, fs.ListID)
+		 LEFT OUTER JOIN {databaseOwner}[{objectQualifier}FeedbackList] fc ON f.[CategoryID] = convert(nvarchar, fc.ListID)
+	WHERE  FeedbackID = @FeedbackID
+GO
+
+/***  Feedback_CreateFeedback  ***/
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_CreateFeedback]
+	@PortalID int,
+	@ModuleID int, 
+	@CategoryID nvarchar(100), 
+	@SenderEmail nvarchar(256), 
+	@Status int,
+	@Message nvarchar(1000),
+	@Subject nvarchar(200),
+	@SenderName nvarchar(200),
+	@SenderStreet nvarchar(50),
+	@SenderCity nvarchar(50),
+	@SenderRegion nvarchar(50),
+	@SenderCountry nvarchar(50),
+	@SenderPostalCode nvarchar(50),
+	@SenderTelephone nvarchar(20),
+	@SenderRemoteAddr nvarchar(50),
+	@UserId int
+AS
+
+DECLARE @PublishedOnDate datetime
+
+IF (@Status = 2) SET @PublishedOnDate = getutcdate()
+ 
+
+INSERT INTO {databaseOwner}[{objectQualifier}Feedback] (
+	PortalID,
+	ModuleID,
+	CategoryID, 
+	SenderEmail,
+	PublishedOnDate,
+	[Status],
+	[Message],
+	[Subject],
+	SenderName,
+	SenderStreet,
+	SenderCity,
+	SenderRegion,
+	SenderCountry,
+	SenderPostalCode,
+	SenderTelephone,
+	SenderRemoteAddr,
+	CreatedOnDate,
+	CreatedByUserID
+) 
+VALUES (
+	@PortalID,
+	@ModuleID,
+	@CategoryID, 
+	@SenderEmail, 
+	@PublishedOnDate,
+	@Status,
+	@Message,
+	@Subject,
+	@SenderName,
+	@SenderStreet,
+	@SenderCity,
+	@SenderRegion,
+	@SenderCountry,
+	@SenderPostalCode,
+	@SenderTelephone,
+	@SenderRemoteAddr,
+	getutcdate(),
+	@UserId
+)
+
+SELECT SCOPE_IDENTITY()	
+GO
+
+/* Feedback_CleanupFeedback */
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_CleanupFeedback]
+    	@ModuleID int,
+        @Pending bit,
+    	@Private bit,
+    	@Published bit,
+    	@Archived bit,
+    	@DaysBefore int,
+    	@MaxEntries int
+AS
+	DELETE FROM {databaseOwner}{objectQualifier}Feedback
+	WHERE CreatedOnDate < DateAdd(day, - @DaysBefore, getutcdate())
+      AND ModuleID = @ModuleID 
+	  AND ((@Pending <> 0 and Status = 0) OR
+		   (@Private <> 0 and Status = 1) OR	
+		   (@Published <> 0 and Status = 2) OR	
+		   (@Archived <> 0 and Status = 3))
+		   
+	DECLARE @DeleteCount Int
+	IF @Pending <> 0
+		BEGIN
+			SET @DeleteCount = (SELECT COUNT(FeedbackID) FROM {databaseOwner}{objectQualifier}Feedback WHERE Status = 0) - @MaxEntries
+			IF @DeleteCount > 0 
+				BEGIN
+					DELETE FROM {databaseOwner}{objectQualifier}Feedback WHERE FeedbackID in (SELECT TOP (@DeleteCount) FeedbackID FROM {databaseOwner}{objectQualifier}Feedback WHERE Status = 0 AND ModuleID = @ModuleID Order By CreatedOnDate Asc)
+				END
+		END 
+	IF @Private <> 0
+		BEGIN
+			SET @DeleteCount = (SELECT COUNT(FeedbackID) FROM {databaseOwner}{objectQualifier}Feedback WHERE Status = 1) - @MaxEntries
+			IF @DeleteCount > 0 
+				BEGIN
+					DELETE FROM {databaseOwner}{objectQualifier}Feedback WHERE FeedbackID in (SELECT TOP (@DeleteCount) FeedbackID FROM {databaseOwner}{objectQualifier}Feedback WHERE Status = 1 AND ModuleID = @ModuleID Order By CreatedOnDate Asc)
+				END
+		END 
+	IF @Published <> 0
+		BEGIN
+			SET @DeleteCount = (SELECT COUNT(FeedbackID) FROM {databaseOwner}{objectQualifier}Feedback WHERE Status = 2) - @MaxEntries
+			IF @DeleteCount > 0 
+				BEGIN
+					DELETE FROM {databaseOwner}{objectQualifier}Feedback WHERE FeedbackID in (SELECT TOP (@DeleteCount) FeedbackID FROM {databaseOwner}{objectQualifier}Feedback WHERE Status = 2 AND ModuleID = @ModuleID Order By CreatedOnDate Asc)
+				END
+		END 
+	IF @Archived <> 0
+		BEGIN
+			SET @DeleteCount = (SELECT COUNT(FeedbackID) FROM {databaseOwner}{objectQualifier}Feedback WHERE Status = 3) - @MaxEntries
+			IF @DeleteCount > 0 
+				BEGIN
+					DELETE FROM {databaseOwner}{objectQualifier}Feedback WHERE FeedbackID in (SELECT TOP (@DeleteCount) FeedbackID FROM {databaseOwner}{objectQualifier}Feedback WHERE Status = 3 AND ModuleID = @ModuleID Order By CreatedOnDate Asc)
+				END
+		END 
+GO
+

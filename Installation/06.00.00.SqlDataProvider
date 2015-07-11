@@ -1,0 +1,174 @@
+﻿/**********************************************************************/
+/*****                    06.00.00.SqlDataProvider                *****/
+/*****                                                            *****/
+/*****                                                            *****/
+/*****    Note: To manually execute this script you must          *****/
+/*****          perform a search and replace operation            *****/
+/*****          for {databaseOwner} and {objectQualifier}         *****/
+/*****                                                            *****/
+/**********************************************************************/
+
+/************************************************/
+/***     Update dates to UTC                  ***/
+/************************************************/
+
+BEGIN
+ EXEC sp_rename '{databaseOwner}[{objectQualifier}Feedback].CreatedOnDate', 'CreatedOnDateServer', 'COLUMN'
+END
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}Feedback] ADD [CreatedOnDate] [datetime] NOT NULL DEFAULT (getutcdate())
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}Feedback]
+   SET CreatedOnDate = DATEADD(n, DATEDIFF(minute, GetDate(), GetUTCDate()),CreatedOnDateServer)
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}Feedback]
+   SET LastModifiedOnDate = DATEADD(n, DATEDIFF(minute, GetDate(), GetUTCDate()),LastModifiedOnDate)
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}Feedback]
+   SET PublishedOnDate = DATEADD(n, DATEDIFF(minute, GetDate(), GetUTCDate()),PublishedOnDate)
+GO
+
+/************************************************/
+/***     Update sprocs                        ***/
+/************************************************/
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_UpdateFeedback]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_UpdateFeedback]
+GO
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_UpdateStatus]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_UpdateStatus]
+GO
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_CreateFeedback]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_CreateFeedback]
+GO
+
+/***  Feedback_UpdateFeedback  ***/
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_UpdateFeedback]
+	@ModuleID int,
+	@FeedbackID int, 
+	@Subject nvarchar(200),
+	@Message nvarchar(1000),
+	@UserId int
+AS
+
+UPDATE {databaseOwner}[{objectQualifier}Feedback]
+SET
+	[Subject] = @Subject,
+	[Message] = @Message, 
+	LastModifiedByUserID = @UserId,
+	LastModifiedOnDate = getutcdate()
+	    
+WHERE FeedbackID = @FeedbackID and ((@ModuleID = -1) or (ModuleID = @ModuleID))
+
+GO
+
+/***  Feedback_UpdateStatus  ***/
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_UpdateStatus]
+	@ModuleID int,
+	@FeedbackID int, 
+	@Status int,
+	@UserId int
+AS
+
+DECLARE @PublishedOnDate datetime
+DECLARE @ApprovedBy int
+
+IF @Status = 4 
+	DELETE {databaseOwner}[{objectQualifier}Feedback] WHERE FeedbackID = @FeedbackID and ((@ModuleID = -1) or (ModuleID = @ModuleID))
+ELSE
+	IF @Status=2
+	  BEGIN
+		SET @PublishedOnDate = getutcdate()
+		SET @ApprovedBy = @UserId
+	  END
+	ELSE
+	  BEGIN
+		SET @PublishedOnDate = (SELECT PublishedOnDate FROM {databaseOwner}[{objectQualifier}Feedback] WHERE FeedbackID=@FeedbackID)
+		SET @ApprovedBy = (SELECT ApprovedBy FROM {databaseOwner}[{objectQualifier}Feedback] WHERE FeedbackID=@FeedbackID)
+	  END
+
+	UPDATE {databaseOwner}[{objectQualifier}Feedback]
+	SET
+	   Status = @Status,
+	   PublishedOnDate = @PublishedOnDate,
+	   ApprovedBy = @ApprovedBy,
+	   LastModifiedByUserID = @UserId,
+	   LastModifiedOnDate = getutcdate()
+	   
+	WHERE FeedbackID = @FeedbackID and ((@ModuleID = -1) or (ModuleID = @ModuleID))
+GO
+
+/***  Feedback_CreateFeedback  ***/
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_CreateFeedback]
+	@PortalID int,
+	@ModuleID int, 
+	@CategoryID nvarchar(100), 
+	@SenderEmail nvarchar(256), 
+	@Status int,
+	@Message nvarchar(1000),
+	@Subject nvarchar(200),
+	@SenderName nvarchar(200),
+	@SenderStreet nvarchar(50),
+	@SenderCity nvarchar(50),
+	@SenderRegion nvarchar(50),
+	@SenderCountry nvarchar(50),
+	@SenderPostalCode nvarchar(50),
+	@SenderTelephone nvarchar(20),
+	@SenderRemoteAddr nvarchar(50),
+	@UserId int
+AS
+
+DECLARE @PublishedOnDate datetime
+
+IF (@Status = 2) SET @PublishedOnDate = getutcdate()
+ 
+
+INSERT INTO {databaseOwner}[{objectQualifier}Feedback] (
+	PortalID,
+	ModuleID,
+	CategoryID, 
+	SenderEmail,
+	PublishedOnDate,
+	[Status],
+	[Message],
+	[Subject],
+	SenderName,
+	SenderStreet,
+	SenderCity,
+	SenderRegion,
+	SenderCountry,
+	SenderPostalCode,
+	SenderTelephone,
+	SenderRemoteAddr,
+	CreatedOnDate,
+	CreatedByUserID
+) 
+VALUES (
+	@PortalID,
+	@ModuleID,
+	@CategoryID, 
+	@SenderEmail, 
+	@PublishedOnDate,
+	@Status,
+	@Message,
+	@Subject,
+	@SenderName,
+	@SenderStreet,
+	@SenderCity,
+	@SenderRegion,
+	@SenderCountry,
+	@SenderPostalCode,
+	@SenderTelephone,
+	@SenderRemoteAddr,
+	getutcdate(),
+	@UserId
+)
+GO
+

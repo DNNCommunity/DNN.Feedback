@@ -1,0 +1,286 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Create Table **/
+
+if not exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback]') and OBJECTPROPERTY(id, N'IsTable') = 1)
+	BEGIN
+		CREATE TABLE {databaseOwner}[{objectQualifier}Feedback] (
+	[ModuleID] [int] NOT NULL ,
+	[Status] [int] NOT NULL ,
+	[Subject] nvarchar (200) NULL,
+	[FeedbackGUID] [nvarchar] (50) NOT NULL ,
+	[CreatedByEmail] [nvarchar] (200) COLLATE SQL_Latin1_General_CP1_CI_AS NOT NULL ,
+	[ApprovedBy] [int] NOT NULL DEFAULT (0) ,
+	[Category] [int] NOT NULL ,
+	[Message] [nvarchar] (1000) NOT NULL ,
+	[DateCreated] [datetime] NOT NULL DEFAULT (getdate()),
+	[FeedbackID] [int] IDENTITY (1, 1) NOT NULL ,
+	CONSTRAINT [PK_{objectQualifier}Feedback] PRIMARY KEY  CLUSTERED 
+	(
+		[FeedbackID]
+	)  
+) 
+	END
+GO
+
+
+/** Drop Existing Stored Procedures **/
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}CreateFeedback]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}CreateFeedback
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}GetFeedback]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}GetFeedback
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}GetFeedbackByGUID]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}GetFeedbackByGUID
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}GetCategoryFeedback]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}GetCategoryFeedback
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}UpdateFeedbackStatus]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}UpdateFeedbackStatus
+GO
+
+
+/** Create Stored Procedures **/
+
+create procedure {databaseOwner}{objectQualifier}CreateFeedback
+
+	@Category int, 
+	@CreatedByEmail nvarchar(200), 
+	@FeedBackGUID nvarchar(50), 
+	@ModuleID int, 
+	@Status int,
+	@Message nvarchar(1000),
+	@Subject nvarchar(200)
+
+as
+
+insert into {objectQualifier}Feedback (
+	Category, 
+	CreatedByEmail, 
+	DateCreated, 
+	FeedBackGUID, 
+	ModuleID, 
+	Status,
+	Message,
+	Subject
+) 
+values (
+	@Category, 
+	@CreatedByEmail, 
+	getdate(),
+	@FeedBackGUID, 
+	@ModuleID, 
+	@Status,
+	@Message,
+	@Subject
+)
+
+GO
+
+
+create procedure {databaseOwner}{objectQualifier}GetCategoryFeedback
+
+  @Category int,
+   @Status int,
+ @CurrentPage int,
+ @PageSize int
+
+AS
+
+ --Create a temp table to hold the current page of data
+ --Add and ID column to count the records
+ CREATE TABLE #TempTable
+ (
+  ID int IDENTITY PRIMARY KEY,
+FeedbackID int,
+Category int, 
+CreatedByEmail nvarchar(200), 
+ApprovedBy int,
+DateCreated datetime,
+FeedBackGUID nvarchar(50), 
+ModuleID int, 
+Status int,
+Message nvarchar(1000),
+Subject nvarchar(200)
+ )
+ --Fill the temp table with the Customers data
+ IF @Category = 0
+ BEGIN
+ INSERT INTO #TempTable 
+ (
+FeedbackID,
+Category, 
+CreatedByEmail, 
+ApprovedBy,
+DateCreated,
+FeedBackGUID, 
+ModuleID, 
+Status,
+Message,
+Subject
+  )
+ SELECT
+FeedbackID,
+Category, 
+CreatedByEmail, 
+ApprovedBy,
+DateCreated,
+FeedBackGUID, 
+ModuleID, 
+Status,
+Message,
+Subject
+FROM {objectQualifier}Feedback
+    
+WHERE 
+Status = @Status
+ORDER BY
+DateCreated Desc
+END
+
+ IF @Category > 0
+ BEGIN
+ INSERT INTO #TempTable 
+ (
+FeedbackID,
+Category, 
+CreatedByEmail, 
+ApprovedBy,
+DateCreated,
+FeedBackGUID, 
+ModuleID, 
+Status,
+Message,
+Subject
+  )
+ SELECT
+FeedbackID,
+Category, 
+CreatedByEmail, 
+ApprovedBy,
+DateCreated,
+FeedBackGUID, 
+ModuleID, 
+Status,
+Message,
+Subject
+FROM {objectQualifier}Feedback
+    
+WHERE 
+Category = @Category
+and Status = @Status
+ORDER BY
+DateCreated Desc
+END
+
+--Return the total number of records available 
+ DECLARE @TotalRecords int
+ SELECT @TotalRecords = COUNT(FeedbackID) FROM #TempTable
+ 
+ --Create variable to identify the first and last record that should be selected
+ DECLARE @FirstRec int, @LastRec int
+ SELECT @FirstRec = (@CurrentPage - 1) * @PageSize
+ SELECT @LastRec = (@CurrentPage * @PageSize + 1)
+ --Select one page of data based on the record numbers above
+ SELECT 
+FeedbackID,
+Category, 
+CreatedByEmail, 
+ApprovedBy,
+DateCreated,
+FeedBackGUID, 
+ModuleID, 
+Status,
+Message,
+Subject,
+TotalRecords = @TotalRecords
+
+ FROM 
+    #TempTable
+ WHERE 
+    ID > @FirstRec 
+ AND 
+    ID < @LastRec
+GO
+
+
+create procedure {databaseOwner}{objectQualifier}GetFeedback
+
+	@FeedbackID int
+
+as
+
+select *
+from {objectQualifier}Feedback
+where  FeedbackID = @FeedbackID
+
+GO
+
+create procedure {databaseOwner}{objectQualifier}GetFeedbackByGUID
+
+	@FeedbackGUID nvarchar(50)
+
+as
+
+select *
+from {objectQualifier}Feedback
+where  FeedbackGUID = @FeedbackGUID
+
+GO
+
+create procedure {databaseOwner}{objectQualifier}UpdateFeedbackStatus
+
+	@FeedBackGUID nvarchar(50), 
+	@Status int
+
+as
+
+update {objectQualifier}Feedback
+set    Status = @Status
+where FeedbackGUID = @FeedbackGUID
+
+GO
+
+
+/* Create Module Control for Feedback Moderation */
+declare @countitems int
+select @countitems = count(ControlKey)
+from {objectQualifier}Modulecontrols where ControlKey = 'Feedback_Moderation' and ControlTitle = 'Feedback_Moderation' and ControlType = '-1'
+if @countitems = 0
+begin
+Insert into {objectQualifier}ModuleControls
+(
+ControlKey, 
+ControlTitle, 
+ControlSrc,
+ControlType
+)
+values
+(
+'Feedback_Moderation',
+'Feedback_Moderation',
+'DesktopModules/Feedback/Moderation.ascx',
+'-1'
+)
+end
+
+GO
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

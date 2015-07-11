@@ -1,0 +1,20 @@
+<h2>DotNetNuke&reg; Feedback Module v. 06.02.00 -- RELEASE NOTES</h2>
+<p>Requirements: DotNetNuke version 06.02.00 or later, ASP.Net 3.5 SP1 or later.</p>
+<p>Full details on the changes can be found in great detail at <a href="http://dnnfeedback.codeplex.com/workitem/list/basic">http://dnnfeedback.codeplex.com/workitem/list/basic</a>. </p>
+<p>This release brings some enhancements such as integrating to DNN Notifications service as well as fixing all known bugs.</p>
+<h3>Bug Fixes</h3>
+<ul>
+	<li>Removed error in Get_Feedback sproc which was restricting the ability to print feedback.</li>
+    <li>Removed error in Get_Feedback sproc which was causign Azure install to fail.</li>
+</ul>
+<h3>Enhancements</h3>
+<ul>
+	<li>Integrate to DNN 6.2.0 Notification service for Moderator notifications.</li>
+    <li>Added setting to enable the rejection of duplicate submissions.</li>
+    <li>Multiple email addresses may now be used in Category value as Send To addresses.</li>
+    <li>Added configureable scheduled process to delete old Feedback.</li>
+</ul>
+<h3>Changes</h3>
+<ul>
+	<li>Changed to use IconKey api for print icon which was not available in DNN 6.1.2</li>
+</ul>

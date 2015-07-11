@@ -1,0 +1,18 @@
+﻿'Remove old versions of events
+Install\Module\Feedback_04.04.03_Install.resources
+Install\Module\Feedback_05.00.02_Install.resources
+'Tidy up debug files
+Bin\DotNetNuke.Modules.Feedback.pdb
+Bin\DotNetNuke.Modules.Feedback.SqlDataProvider.dll
+'Tidy up changed module structure
+DesktopModules\Feedback\Providers\DataProviders\SqlDataProvider\03.02.01.SqlDataProvider
+DesktopModules\Feedback\Providers\DataProviders\SqlDataProvider\04.04.01.SqlDataProvider
+DesktopModules\Feedback\Providers\DataProviders\SqlDataProvider\04.04.02.SqlDataProvider
+DesktopModules\Feedback\Providers\DataProviders\SqlDataProvider\04.04.03.SqlDataProvider
+DesktopModules\Feedback\Providers\DataProviders\SqlDataProvider\05.00.00.SqlDataProvider
+DesktopModules\Feedback\Providers\DataProviders\SqlDataProvider\05.00.01.SqlDataProvider
+DesktopModules\Feedback\Providers\DataProviders\SqlDataProvider\05.00.02.SqlDataProvider
+DesktopModules\Feedback\Providers\DataProviders\SqlDataProvider\Uninstall.SqlDataProvider
+DesktopModules\Feedback\DotNetNuke.Modules.Feedback_04.04.03_ReleaseNotes.txt
+DesktopModules\Feedback\DotNetNuke.Modules.Feedback_05.00.02_ReleaseNotes.txt
+DesktopModules\Feedback\License.txt

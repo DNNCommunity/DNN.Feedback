@@ -1,0 +1,428 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+IF (SELECT COLUMNPROPERTY( OBJECT_ID(N'{databaseOwner}[{objectQualifier}Feedback]'),'PortalID','AllowsNull')) IS NULL   
+ALTER TABLE {databaseOwner}[{objectQualifier}Feedback] ADD
+	[PortalID] [int] NOT NULL DEFAULT (0)
+GO
+
+IF (SELECT COLUMNPROPERTY( OBJECT_ID(N'{databaseOwner}[{objectQualifier}Feedback]'),'CategoryID','AllowsNull')) IS NULL   
+ALTER TABLE {databaseOwner}[{objectQualifier}Feedback] ADD
+	[CategoryID] [nvarchar] (100) DEFAULT NULL
+GO
+
+IF NOT (SELECT COLUMNPROPERTY( OBJECT_ID(N'{databaseOwner}[{objectQualifier}Feedback]'),'PortalID','CategoryID')) IS NULL   
+update {databaseOwner}[{objectQualifier}Feedback]
+set    [CategoryID] = [Category]
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}Feedback]
+	DROP COLUMN [Category]
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}Feedback] set [CategoryID] = null where [CategoryID] = 0
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}Feedback]
+	DROP COLUMN FeedbackGUID
+GO
+
+/** Drop Existing Stored Procedures **/
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}CreateFeedback]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}[{objectQualifier}CreateFeedback]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}DeleteFeedback]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}[{objectQualifier}DeleteFeedback]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}UpdateFeedbackStatus]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}[{objectQualifier}UpdateFeedbackStatus]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}GetFeedbackByGUID]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}{objectQualifier}GetFeedbackByGUID
+GO
+
+/** Create Stored Procedures **/
+
+create procedure {databaseOwner}[{objectQualifier}CreateFeedback]
+
+	@PortalID	int,
+	@CategoryID nvarchar(100), 
+	@CreatedByEmail nvarchar(200), 
+	@ModuleID int, 
+	@Status int,
+	@Message nvarchar(1000),
+	@Subject nvarchar(200)
+
+as
+
+insert into {databaseOwner}[{objectQualifier}Feedback] (
+	PortalID,
+	CategoryID, 
+	CreatedByEmail, 
+	DateCreated, 
+	ModuleID, 
+	Status,
+	Message,
+	Subject
+) 
+values (
+	@PortalID,
+	@CategoryID, 
+	@CreatedByEmail, 
+	getdate(),
+	@ModuleID, 
+	@Status,
+	@Message,
+	@Subject
+)
+GO
+
+create procedure {databaseOwner}{objectQualifier}UpdateFeedbackStatus
+
+	@FeedbackID int, 
+	@Status int
+
+as
+
+update {objectQualifier}Feedback
+set    Status = @Status
+where FeedbackID = @FeedbackID
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}GetCategoryFeedback]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}[{objectQualifier}GetCategoryFeedback]
+GO
+
+create procedure {databaseOwner}[{objectQualifier}GetCategoryFeedback]
+ @PortalID int,
+ @CategoryID nvarchar(100),
+ @Status int,
+ @CurrentPage int,
+ @PageSize int
+
+AS
+
+ --Create a temp table to hold the current page of data
+ --Add and ID column to count the records
+ CREATE TABLE #TempTable
+ (
+  ID int IDENTITY PRIMARY KEY,
+  PortalID int,
+FeedbackID int,
+CategoryID nvarchar(100), 
+CreatedByEmail nvarchar(200), 
+ApprovedBy int,
+DateCreated datetime,
+ModuleID int, 
+Status int,
+Message nvarchar(1000),
+Subject nvarchar(200)
+ )
+--Fill the temp table with the Feedback data
+ IF @CategoryID = ''
+	 BEGIN
+		
+		 INSERT INTO #TempTable 
+		 (
+		PortalID,
+		FeedbackID,
+		CategoryID, 
+		CreatedByEmail, 
+		ApprovedBy,
+		DateCreated,
+		ModuleID, 
+		Status,
+		Message,
+		Subject
+		  )
+		 SELECT
+		PortalID,
+		FeedbackID,
+		CategoryID, 
+		CreatedByEmail, 
+		ApprovedBy,
+		DateCreated,
+		ModuleID, 
+		Status,
+		Message,
+		Subject
+		FROM {databaseOwner}[{objectQualifier}Feedback]
+		WHERE 
+		Status = @Status and PortalID = @PortalID
+		ORDER BY
+		DateCreated Desc
+	END
+
+ Else
+	 BEGIN
+		 INSERT INTO #TempTable 
+		 (
+		PortalID,
+		FeedbackID,
+		CategoryID, 
+		CreatedByEmail, 
+		ApprovedBy,
+		DateCreated,
+		ModuleID, 
+		Status,
+		Message,
+		Subject
+		  )
+		 SELECT
+		PortalID,
+		FeedbackID,
+		CategoryID, 
+		CreatedByEmail, 
+		ApprovedBy,
+		DateCreated,
+		ModuleID, 
+		Status,
+		Message,
+		Subject
+		FROM {databaseOwner}[{objectQualifier}Feedback]
+
+		WHERE 
+		CategoryID = @CategoryID and PortalID = @PortalID
+		and Status = @Status
+		ORDER BY
+		DateCreated Desc
+	END
+
+--Return the total number of records available 
+ DECLARE @TotalRecords int
+ SELECT @TotalRecords = COUNT(FeedbackID) FROM #TempTable
+ 
+ --Create variable to identify the first and last record that should be selected
+ DECLARE @FirstRec int, @LastRec int
+ SELECT @FirstRec = (@CurrentPage - 1) * @PageSize
+ SELECT @LastRec = (@CurrentPage * @PageSize + 1)
+ --Select one page of data based on the record numbers above
+ SELECT
+PortalID,
+FeedbackID,
+CategoryID, 
+CreatedByEmail, 
+ApprovedBy,
+DateCreated,
+ModuleID, 
+Status,
+Message,
+Subject,
+TotalRecords = @TotalRecords
+
+ FROM 
+    #TempTable
+ WHERE 
+    ID > @FirstRec 
+ AND 
+    ID < @LastRec
+GO
+
+/** Create table to store Categories or Subjects use ListType to delimit which type 1 for categories and 2 for subject **/
+
+if not exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}FeedbackList]') and OBJECTPROPERTY(id, N'IsTable') = 1)
+	BEGIN
+	CREATE TABLE {databaseOwner}[{objectQualifier}FeedbackList] (
+	[ListID] [int] IDENTITY (1, 1) NOT NULL,
+	[PortalID] [int] NOT NULL ,
+	[ListType] [int] DEFAULT (1),
+	[IsActive] [bit] DEFAULT(1),
+	[Name] nvarchar (50) NULL,
+	[ListValue] [nvarchar] (100) NULL ,
+	[SortOrder] [int] DEFAULT (0),
+	CONSTRAINT [PK_{objectQualifier}FeedbackList] PRIMARY KEY  CLUSTERED 
+	(
+		[ListID]
+	)  
+) 
+	END
+GO
+
+/** Drop Existing Stored Procedures **/
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}AddFeedbackList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}[{objectQualifier}AddFeedbackList]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}GetFeedbackList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}[{objectQualifier}GetFeedbackList]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}EditFeedbackList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}[{objectQualifier}EditFeedbackList]
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}ChangeSortOrder]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}[{objectQualifier}ChangeSortOrder]
+GO
+
+create procedure {databaseOwner}[{objectQualifier}AddFeedbackList]
+	@PortalID int, 
+	@ListType int, 
+	@Name nvarchar(50), 
+	@ListValue nvarchar(100),
+	@IsActive bit
+as
+begin
+DECLARE @SortOrder int
+DECLARE @Count int
+SET @SortOrder = IsNull((SELECT MAX ([SortOrder]) From {databaseOwner}[{objectQualifier}FeedbackList] Where [PortalID] = @PortalID and  [ListType] = @ListType), -1) + 1
+select @Count =  COUNT(*) from {databaseOwner}[{objectQualifier}FeedbackList] where [PortalID] = @PortalID and [Name] = @Name
+	If @Count = 0 
+	begin
+	insert into {databaseOwner}[{objectQualifier}FeedbackList]  (
+		PortalID,
+		ListType,
+		IsActive,
+		[Name],
+		ListValue,
+		SortOrder
+	) 
+	values (
+		@PortalID,
+		@ListType,
+		@IsActive,
+		@Name,
+		@ListValue,
+		@SortOrder
+	)
+	select SCOPE_IDENTITY()
+	end
+end
+GO
+
+create procedure {databaseOwner}[{objectQualifier}GetFeedbackList]
+	@SingleRowOperation bit,
+	@PortalID int, 
+	@ListID int,
+	@ListType int,
+	@ActiveOnly bit
+as
+	if @SingleRowOperation = 0 
+			begin
+				if @ActiveOnly = 1 
+						BEGIN
+							SELECT * from {databaseOwner}[{objectQualifier}FeedbackList] 
+							where [PortalID] = @PortalID and [ListType] = @ListType and IsActive = 1 order by SortOrder ASC
+						END
+					else
+						BEGIN
+							SELECT * from {databaseOwner}[{objectQualifier}FeedbackList] 
+							where [PortalID] = @PortalID and [ListType] = @ListType  order by SortOrder ASC
+						END
+			end
+	else
+			begin
+				SELECT * from {databaseOwner}[{objectQualifier}FeedbackList] 
+							where [PortalID] = @PortalID and ListID = @ListID
+			end
+	
+GO
+
+create procedure {databaseOwner}[{objectQualifier}EditFeedbackList]
+	@IsDeleteOperation bit,
+	@ListID int,
+	@PortalID int, 
+	@ListType int, 
+	@Name nvarchar(50), 
+	@ListValue nvarchar(100),
+	@IsActive bit
+AS
+begin
+DECLARE @SortFrom int
+DECLARE @TempListType int
+If @IsDeleteOperation = 1
+	begin
+		select @SortFrom = [SortOrder],@TempListType = [ListType] from {databaseOwner}[{objectQualifier}FeedbackList] 
+		where ListID = @ListID
+		
+		delete from {databaseOwner}[{objectQualifier}FeedbackList] 
+		where ListID = @ListID
+		--Now check whether we need to resort everything.
+		UPDATE {databaseOwner}[{objectQualifier}FeedbackList]
+		Set SortOrder = (SortOrder -1) where ListType = @TempListType and SortOrder > @SortFrom
+		
+	end
+else
+	begin
+		update {databaseOwner}[{objectQualifier}FeedbackList] 
+		set
+			PortalID = @PortalID,
+			ListType = @ListType,
+			Name = @Name,
+			ListValue = @ListValue,
+			IsActive = @IsActive
+		Where ListID = @ListID
+	end
+end
+GO
+
+create procedure {databaseOwner}[{objectQualifier}ChangeSortOrder]
+	@ListID int,
+	@ListType int,
+	@OldSortNum int,
+	@NewSortNum int
+AS
+DECLARE @TempListID int
+	Select @TempListID = ListID from {databaseOwner}[{objectQualifier}FeedbackList]
+	where ListType = @ListType and SortOrder = @NewSortNum
+
+
+	UPDATE {databaseOwner}[{objectQualifier}FeedbackList] 
+	set SortOrder = @NewSortNum where ListID = @ListID
+	
+	--now switch the other one.
+	UPDATE {databaseOwner}[{objectQualifier}FeedbackList] 
+	set SortOrder = @OldSortNum where ListID = @TempListID
+GO
+
+IF EXISTS (SELECT 1 FROM {databaseOwner}[{objectQualifier}Lists] WHERE [ListName] = 'Feedback_Categories')
+	BEGIN
+			DECLARE @Text nvarchar(50)
+			DECLARE @Value nvarchar(100)
+			DECLARE c1 cursor FORWARD_ONLY FOR
+			SELECT [Text],[Value] FROM {databaseOwner}[{objectQualifier}Lists] WHERE [ListName] = 'Feedback_Categories' order by Value ASC
+		    OPEN c1
+		    FETCH c1 INTO @Text, @Value
+		    WHILE (@@fetch_status = 0)
+				BEGIN
+					 EXEC {databaseOwner}[{objectQualifier}AddFeedbackList] 0, 1, @Text, @Value, 1
+					 FETCH NEXT FROM c1 INTO @Text, @Value
+				END
+		    CLOSE c1
+    		DEALLOCATE c1
+			DELETE from {databaseOwner}[{objectQualifier}Lists] WHERE [ListName] = 'Feedback_Categories'
+    	--Now update the category id to be the correct value of the list
+    	DECLARE @TempCategoryID NVARCHAR(100)
+    	DECLARE @ListID int
+    	DECLARE @FeedbackID int
+    	DECLARE c2 cursor FORWARD_ONLY FOR
+    	select [CategoryID],[FeedbackID] from {databaseOwner}[{objectQualifier}Feedback] where [CategoryID] IS NOT NULL
+    	open c2
+    	FETCH c2 into @TempCategoryID, @FeedbackID
+    	WHILE (@@fetch_status = 0)
+    		BEGIN
+    			select @ListID = ISNULL(ListID, null) from {databaseOwner}[{objectQualifier}FeedbackList] where
+    			ListValue = @TempCategoryID
+    			UPDATE {databaseOwner}[{objectQualifier}Feedback] set [CategoryID] = @ListID where [FeedbackID] = @FeedbackID
+    			FETCH NEXT from c2 into @TempCategoryID, @FeedbackID
+    		END
+    	CLOSE c2
+    	DEALLOCATE c2
+	END
+GO
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

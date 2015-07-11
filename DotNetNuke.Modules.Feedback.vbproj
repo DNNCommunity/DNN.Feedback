@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2991ED17-6084-4568-9EEB-6AF3A7C6AF1E}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>DotNetNuke.Modules.Feedback</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>On</OptionStrict>
+    <RootNamespace>
+    </RootNamespace>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>Windows</MyType>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\bin\</OutputPath>
+    <DocumentationFile>DotNetNuke.Modules.Feedback.xml</DocumentationFile>
+    <BaseAddress>2010841088</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DotNetNuke.Modules.Feedback.xml</DocumentationFile>
+    <BaseAddress>2010841088</BaseAddress>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>
+    </DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
+    <DebugType>None</DebugType>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DotNetNuke">
+      <HintPath>..\..\bin\DotNetNuke.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNetNuke.Web">
+      <HintPath>..\..\bin\DotNetNuke.Web.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DotNetNuke.WebUtility, Version=4.2.0.185, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\DotNetNuke.WebUtility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Web.UI, Version=2011.2.915.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\Telerik.Web.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="DotNetNuke" />
+    <Import Include="DotNetNuke.Common" />
+    <Import Include="DotNetNuke.Common.Utilities" />
+    <Import Include="DotNetNuke.Data" />
+    <Import Include="DotNetNuke.Entities.Users" />
+    <Import Include="DotNetNuke.Framework" />
+    <Import Include="DotNetNuke.Services.Exceptions" />
+    <Import Include="DotNetNuke.Services.Localization" />
+    <Import Include="DotNetNuke.UI" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommentSettings.ascx.designer.vb">
+      <DependentUpon>CommentSettings.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CommentSettings.ascx.vb">
+      <DependentUpon>CommentSettings.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\AggregatedModuleInfo.vb" />
+    <Compile Include="Components\Akismet.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\FeedbackBase.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Integration\Notifications.vb" />
+    <Compile Include="Components\ConfigurationView.vb" />
+    <Compile Include="Components\Scheduler\FeedbackSchedule.vb" />
+    <Compile Include="Components\Services\FeedbackRouteMapper.vb" />
+    <Compile Include="Components\Services\NotificationServiceController.vb" />
+    <Compile Include="Components\Utilities.vb" />
+    <Compile Include="Components\SortColumnInfo.vb" />
+    <Compile Include="Components\Template.vb" />
+    <Compile Include="Components\DataProvider.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\Configuration.vb" />
+    <Compile Include="Components\FeedbackEmail.vb" />
+    <Compile Include="Components\FeedbackList.vb" />
+    <Compile Include="Components\ModuleSecurity.vb" />
+    <Compile Include="Components\TokenReplace.vb" />
+    <Compile Include="Components\FeedbackController.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Components\FeedbackInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Feedback.ascx.designer.vb">
+      <DependentUpon>Feedback.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.ascx.vb">
+      <DependentUpon>Feedback.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FeedbackLists.ascx.designer.vb">
+      <DependentUpon>FeedbackLists.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderation.ascx.designer.vb">
+      <DependentUpon>Moderation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderation.ascx.vb">
+      <DependentUpon>Moderation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Print.ascx.designer.vb">
+      <DependentUpon>Print.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Print.ascx.vb">
+      <DependentUpon>Print.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\SqlDataProvider.vb" />
+    <Compile Include="Settings.ascx.designer.vb">
+      <DependentUpon>Settings.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.ascx.vb">
+      <DependentUpon>Settings.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewComments.ascx.designer.vb">
+      <DependentUpon>ViewComments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewComments.ascx.vb">
+      <DependentUpon>ViewComments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="App_Data\RadCaptcha\0.wav" />
+    <Content Include="App_Data\RadCaptcha\1.wav" />
+    <Content Include="App_Data\RadCaptcha\2.wav" />
+    <Content Include="App_Data\RadCaptcha\3.wav" />
+    <Content Include="App_Data\RadCaptcha\4.wav" />
+    <Content Include="App_Data\RadCaptcha\5.wav" />
+    <Content Include="App_Data\RadCaptcha\6.wav" />
+    <Content Include="App_Data\RadCaptcha\7.wav" />
+    <Content Include="App_Data\RadCaptcha\8.wav" />
+    <Content Include="App_Data\RadCaptcha\9.wav" />
+    <Content Include="App_Data\RadCaptcha\A.wav" />
+    <Content Include="App_Data\RadCaptcha\B.wav" />
+    <Content Include="App_Data\RadCaptcha\C.wav" />
+    <Content Include="App_Data\RadCaptcha\D.wav" />
+    <Content Include="App_Data\RadCaptcha\E.wav" />
+    <Content Include="App_Data\RadCaptcha\F.wav" />
+    <Content Include="App_Data\RadCaptcha\G.wav" />
+    <Content Include="App_Data\RadCaptcha\H.wav" />
+    <Content Include="App_Data\RadCaptcha\I.wav" />
+    <Content Include="App_Data\RadCaptcha\J.wav" />
+    <Content Include="App_Data\RadCaptcha\K.wav" />
+    <Content Include="App_Data\RadCaptcha\L.wav" />
+    <Content Include="App_Data\RadCaptcha\M.wav" />
+    <Content Include="App_Data\RadCaptcha\N.wav" />
+    <Content Include="App_Data\RadCaptcha\O.wav" />
+    <Content Include="App_Data\RadCaptcha\P.wav" />
+    <Content Include="App_Data\RadCaptcha\Q.wav" />
+    <Content Include="App_Data\RadCaptcha\R.wav" />
+    <Content Include="App_Data\RadCaptcha\S.wav" />
+    <Content Include="App_Data\RadCaptcha\T.wav" />
+    <Content Include="App_Data\RadCaptcha\U.wav" />
+    <Content Include="App_Data\RadCaptcha\V.wav" />
+    <Content Include="App_Data\RadCaptcha\W.wav" />
+    <Content Include="App_Data\RadCaptcha\X.wav" />
+    <Content Include="App_Data\RadCaptcha\Y.wav" />
+    <Content Include="App_Data\RadCaptcha\Z.wav" />
+    <Content Include="Feedback.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="Installation\CleanUp\Cleanup.05.01.00.txt" />
+    <Content Include="Installation\CleanUp\Cleanup.06.00.00.txt" />
+    <Content Include="Installation\CleanUp\Cleanup.06.00.01.txt" />
+    <Content Include="Installation\CleanUp\Cleanup.06.01.00.txt" />
+    <Content Include="Installation\CleanUp\Cleanup.06.02.00.txt" />
+    <Content Include="Installation\CleanUp\Cleanup.06.02.01.txt" />
+    <Content Include="Installation\CleanUp\Cleanup.06.03.00.txt" />
+    <Content Include="Installation\CleanUp\Cleanup.06.04.01.txt" />
+    <Content Include="Installation\CleanUp\Cleanup.06.04.02.txt" />
+    <Content Include="Installation\CleanUp\Cleanup.06.04.03.txt" />
+    <Content Include="Installation\DNN_Feedback.png" />
+    <Content Include="Installation\license.txt" />
+    <Content Include="Installation\ReleaseNotes\Release.06.04.03.htm" />
+    <Content Include="Installation\ReleaseNotes\Release.06.04.01.htm" />
+    <Content Include="Installation\ReleaseNotes\Release.06.04.00.htm" />
+    <Content Include="Installation\ReleaseNotes\Release.06.03.00.htm" />
+    <Content Include="Installation\ReleaseNotes\Release.06.02.01.htm" />
+    <Content Include="Installation\ReleaseNotes\Release.06.02.00.htm" />
+    <Content Include="Installation\ReleaseNotes\Release.06.01.00.htm" />
+    <Content Include="Installation\ReleaseNotes\Release.06.00.00.htm" />
+    <Content Include="Installation\ReleaseNotes\Release.05.01.00.txt" />
+    <Content Include="Installation\ReleaseNotes\DotNetNuke.Modules.Feedback_05.00.02_ReleaseNotes.txt" />
+    <Content Include="CommentSettings.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="FeedbackLists.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Compile Include="FeedbackLists.ascx.vb">
+      <DependentUpon>FeedbackLists.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="Installation\TestCases\TestCases.06.04.03.txt" />
+    <Content Include="Installation\TestCases\TestCases.06.04.01.txt" />
+    <Content Include="Installation\TestCases\TestCases.06.04.00.txt" />
+    <Content Include="Installation\TestCases\TestCases.06.03.00.txt" />
+    <Content Include="Installation\TestCases\TestCases.06.02.01.txt" />
+    <Content Include="Installation\TestCases\TestCases.06.02.00.txt" />
+    <Content Include="Installation\TestCases\TestCases.06.01.00.txt" />
+    <Content Include="Installation\TestCases\TestCases.06.00.00.txt" />
+    <Content Include="Installation\TestCases\TestCases.05.01.00.txt" />
+    <Content Include="Moderation.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="module.css" />
+    <Content Include="Settings.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="ViewComments.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="_buildfiles\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="_buildfiles\MSBuild.Community.Tasks.dll" />
+    <Content Include="_buildfiles\MSBuild.Community.Tasks.xml" />
+    <Content Include="_buildfiles\MSBuild.CommunityTasks.License.txt" />
+    <Content Include="_buildfiles\version.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_LocalResources\CommentSettings.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\Feedback.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\FeedbackLists.ascx.resx" />
+    <Content Include="App_LocalResources\Moderation.ascx.resx" />
+    <Content Include="App_LocalResources\Print.ascx.resx" />
+    <Content Include="App_LocalResources\Settings.ascx.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\SharedResources.resx">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_LocalResources\ViewComments.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Installation\TestCases\DotNetNuke.Modules.Feedback_05.00.02_TestCases.txt" />
+    <Content Include="Print.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Installation\06.00.00.SqlDataProvider" />
+    <None Include="Installation\06.01.00.SqlDataProvider" />
+    <None Include="Installation\06.02.00.SqlDataProvider" />
+    <None Include="Installation\06.03.00.SqlDataProvider" />
+    <None Include="Installation\06.04.00.SqlDataProvider" />
+    <None Include="Installation\DotNetNuke.Modules.Feedback.dnn6">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Installation\03.02.01.SqlDataProvider" />
+    <None Include="Installation\04.04.01.SqlDataProvider" />
+    <None Include="Installation\04.04.02.SqlDataProvider" />
+    <None Include="Installation\04.04.03.SqlDataProvider" />
+    <None Include="Installation\05.00.00.SqlDataProvider" />
+    <None Include="Installation\05.00.01.SqlDataProvider" />
+    <None Include="Installation\05.00.02.SqlDataProvider" />
+    <None Include="Installation\Uninstall.SqlDataProvider" />
+    <None Include="_buildfiles\MSBuild.Community.Tasks.Targets" />
+    <None Include="_buildfiles\PackageModule.targets">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(MSBuildProjectDirectory)\_buildfiles\MSBuild.Community.Tasks.targets" />
+  <Import Project="$(MSBuildProjectDirectory)\_buildfiles\PackageModule.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+</Project>

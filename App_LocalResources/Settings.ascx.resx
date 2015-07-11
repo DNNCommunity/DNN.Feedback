@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="plSendTo.Text" xml:space="preserve">
+    <value>Send To</value>
+  </data>
+  <data name="plSendTo.Help" xml:space="preserve">
+    <value>Enter the email address of the recipient of the feedback. You may enter more than one recipient by separating the email addresses with semicolons.</value>
+  </data>
+  <data name="plWidth.Text" xml:space="preserve">
+    <value>Form Width</value>
+  </data>
+  <data name="plWidth.Help" xml:space="preserve">
+    <value>Acceptable values can be in pixels or percentage. If using percentage, enter "%" at the end, while for others simply enter numeric value &lt;b&gt;without&lt;/b&gt; units such as "px"</value>
+  </data>
+  <data name="plRows.Text" xml:space="preserve">
+    <value>Message Rows</value>
+  </data>
+  <data name="plRows.Help" xml:space="preserve">
+    <value>Enter the number of rows to display for the message editor.</value>
+  </data>
+  <data name="valWidth.ErrorMessage" xml:space="preserve">
+    <value>&lt;br /&gt;Width can be defined either in percentage or pixel format. The value entered is invalid.</value>
+  </data>
+  <data name="valRows.ErrorMessage" xml:space="preserve">
+    <value>&lt;br /&gt;Message Rows must be valid integer</value>
+  </data>
+  <data name="ControlTitle_settings.Text" xml:space="preserve">
+    <value>Feedback Settings</value>
+  </data>
+  <data name="ModuleHelp.Text" xml:space="preserve">
+    <value>&lt;h1&gt;About The Feedback Settings&lt;/h1&gt;
+&lt;p&gt;The Feedback Module offers authorized site users the ability to direct a message to a defined email location.&amp;nbsp; There are&amp;nbsp;multiple Feedback Settings that control the display and action performed within the module.&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;br /&gt;
+&lt;strong&gt;&lt;br /&gt;
+Send To &lt;/strong&gt;&amp;ndash; this is the email address where the information is sent. The email must be in a valid email format.&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;Width &lt;/strong&gt;&amp;ndash; set the number of pixels across the defined module area for the body of the message text.&amp;nbsp; Note: be careful to keep this to&amp;nbsp;value within the defined width of the panel where the module is placed, otherwise there may not be enough room to actually use the desired setting.&amp;nbsp;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rows &lt;/strong&gt;&amp;ndash; set the number of rows of text available for the body of the message text. Note: Again, be careful to keep this&amp;nbsp;value within the defined height of the panel where the module is placed, otherwise there may not be enough room to actually use the desired setting.&lt;br /&gt;
+&lt;strong&gt;&lt;br /&gt;
+Send Copy &lt;/strong&gt;&amp;ndash; Enabling this option allows a copy of the feedback submitted to be sent to the sender's email address.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Optout&lt;/strong&gt; - This option allows the sender to choose whether to receive a copy of the feedback submitted. If this option is not available to the user and the Send Copy option is checked, the user will always receive a copy of the feedback submitted.&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;Category&lt;/strong&gt; - Select a category to which this feedback should be grouped within. Categories are created via the Feedback Lists&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Category List Visible&lt;/strong&gt; - Determines whether the categories to choose from are visible to the user who is filling the form.&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;Use Category Values as Send To&lt;/strong&gt; - &lt;span id="dnn_ctr370_ModuleSettings_Settings.ascx_plUseCategoryAsEmail_lblHelp"&gt;If the category value contains a valid email address, it is used as the email address of the recipient of this message,. otherwise the value of &amp;quot;Send to&amp;quot; will be used.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span id="dnn_ctr370_ModuleSettings_Settings.ascx_plUseCategoryAsEmail_lblHelp"&gt;&lt;strong&gt;Subject&lt;/strong&gt; - The subject for this feedback - this is also sent as the subject in the email that is sent out.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span id="dnn_ctr370_ModuleSettings_Settings.ascx_plUseCategoryAsEmail_lblHelp"&gt;&lt;strong&gt;Subject List Visible&lt;/strong&gt; - User is presented with a list of subjects to choose from. (Note that Subject lists can be created via the Feedback Lists page similar to Feedback Categories)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span id="dnn_ctr370_ModuleSettings_Settings.ascx_plUseCategoryAsEmail_lblHelp"&gt;&lt;strong&gt;Can Edit Subject&lt;/strong&gt; - User is presented with a text box for the subject field and can make changes to the values in this field.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span id="dnn_ctr370_ModuleSettings_Settings.ascx_plUseCategoryAsEmail_lblHelp"&gt;&lt;strong&gt;Subject Field Hidden&lt;/strong&gt; - The administrator can setup a Subject via the Subject List and select this option to disable the user from changing the values.&lt;br /&gt;
+&lt;br /&gt;
+&lt;strong&gt;Moderated&lt;/strong&gt; - Determines whether the feedback submitted needs to be approved prior to making it visible on the website.&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span id="dnn_ctr370_ModuleSettings_Settings.ascx_plUseCategoryAsEmail_lblHelp"&gt;&lt;strong&gt;Send Email Asynchronously&lt;/strong&gt;&amp;nbsp; - if this option is selected, the email that is generated is sent on a separate thread and the user gets control of the page immediately upon clicking on the submit button.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span id="dnn_ctr370_ModuleSettings_Settings.ascx_plUseCategoryAsEmail_lblHelp"&gt;&lt;strong&gt;Use Captcha&amp;nbsp; -&lt;/strong&gt; enabling this option prevents Spam BOTS from hijacking your Feedback Form.&lt;/span&gt;&lt;/p&gt;</value>
+  </data>
+  <data name="plOptout.Text" xml:space="preserve">
+    <value>Can Opt Out</value>
+  </data>
+  <data name="plOptout.Help" xml:space="preserve">
+    <value>If checked, the sender has the option of choosing whether to receive a copy of the feedback submitted. If this option is unchecked but Send Copy is checked then sender will receive a copy of the feedback submitted.</value>
+  </data>
+  <data name="plCategory.Text" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="plModerationCategory.Text" xml:space="preserve">
+    <value>Moderation Categories</value>
+  </data>
+  <data name="plModerationCategory.Help" xml:space="preserve">
+    <value>If you want to moderate only specific categories, select one or more categories here, otherwise all categories will be moderated.</value>
+  </data>
+  <data name="plCategory.Help" xml:space="preserve">
+    <value>Select the category this message belongs to&lt;br /&gt;(categories are created via the Feedback Lists)</value>
+  </data>
+  <data name="plCategorySelectable.Text" xml:space="preserve">
+    <value>Category List Visible</value>
+  </data>
+  <data name="plCategorySelectable.Help" xml:space="preserve">
+    <value>Can the sender choose a category from a drop-down list.</value>
+  </data>
+  <data name="liSubjectTextBox.Text" xml:space="preserve">
+    <value>Editable Text Box</value>
+  </data>
+  <data name="plSubject.Text" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="plSubject.Help" xml:space="preserve">
+    <value>The subject for this feedback&lt;br /&gt;(subjects are created via the Feedback Lists)</value>
+  </data>
+  <data name="plSubjectEditField.Help" xml:space="preserve">
+    <value>User may be presented with a drop-down list or editable textbox for the Subject or the Subject may be hidden from the user. If hidden from the user, a Subject must be entered or selected above.</value>
+  </data>
+  <data name="plSubjectEditField.Text" xml:space="preserve">
+    <value>Subject Field Type</value>
+  </data>
+  <data name="liSubjectHidden.Text" xml:space="preserve">
+    <value>Hidden</value>
+  </data>
+  <data name="liSubjectList.Text" xml:space="preserve">
+    <value>Drop-Down List</value>
+  </data>
+  <data name="plModerated.Text" xml:space="preserve">
+    <value>Moderated</value>
+  </data>
+  <data name="plModerated.Help" xml:space="preserve">
+    <value>If checked, lets the administrator of this module first authorize feedback for displaying in the comment viewer/guestbook</value>
+  </data>
+  <data name="plAsync.Text" xml:space="preserve">
+    <value>Send Email Asynchronously</value>
+  </data>
+  <data name="plAsync.Help" xml:space="preserve">
+    <value>If this option is selected then the site sends the email asynchronously</value>
+  </data>
+  <data name="plSendCopy.Text" xml:space="preserve">
+    <value>Send Copy</value>
+  </data>
+  <data name="plSendCopy.Help" xml:space="preserve">
+    <value>Would you like to send a copy of the feedback to the user</value>
+  </data>
+  <data name="valSendTo.ErrorMessage" xml:space="preserve">
+    <value>&lt;br /&gt;Send To mail must be valid format. Separate multiple recipient emails by semicolons.</value>
+  </data>
+  <data name="valSendFrom.ErrorMessage" xml:space="preserve">
+    <value>&lt;br /&gt;Send From email must be valid format</value>
+  </data>
+  <data name="plUseCategoryAsEmail.Help" xml:space="preserve">
+    <value>If the category value contains a valid email address (multiple email addresses may be seperated by semi-colon), it is used as the email address of the recipient of this message, otherwise the value of "Send to" will be used.</value>
+  </data>
+  <data name="plUseCategoryAsEmail.Text" xml:space="preserve">
+    <value>Use Category Value as Send To</value>
+  </data>
+  <data name="plModerationRoles.Text" xml:space="preserve">
+    <value>Moderation Roles</value>
+  </data>
+  <data name="plModerationRoles.Help" xml:space="preserve">
+    <value>Select the roles which will be allowed to moderate feedback posts</value>
+  </data>
+  <data name="plListRoles.Text" xml:space="preserve">
+    <value>List Roles</value>
+  </data>
+  <data name="plListRoles.Help" xml:space="preserve">
+    <value>Select the roles which will be allowed to add/edit Feedback Lists</value>
+  </data>
+  <data name="plSendFrom.Help" xml:space="preserve">
+    <value>If you enter a value here, this is used as the default From email address instead of whatever the user enters on the form. This is useful when Spam filters are blocking emails.</value>
+  </data>
+  <data name="plSendFrom.Text" xml:space="preserve">
+    <value>Send From</value>
+  </data>
+  <data name="plCityField.Help" xml:space="preserve">
+    <value>Indicate if City field is required, optional, or hidden</value>
+  </data>
+  <data name="plCityField.Text" xml:space="preserve">
+    <value>City Field</value>
+  </data>
+  <data name="plCountryField.Help" xml:space="preserve">
+    <value>Indicate if Country field is required, optional, or hidden</value>
+  </data>
+  <data name="plCountryField.Text" xml:space="preserve">
+    <value>Country Field</value>
+  </data>
+  <data name="plNameField.Help" xml:space="preserve">
+    <value>Indicate if Name field is required, optional, or hidden</value>
+  </data>
+  <data name="plNameField.Text" xml:space="preserve">
+    <value>Name Field</value>
+  </data>
+  <data name="plPostalCodeField.Help" xml:space="preserve">
+    <value>Indicate if Postal Code field is required, optional, or hidden</value>
+  </data>
+  <data name="plPostalCodeField.Text" xml:space="preserve">
+    <value>Postal Code Field</value>
+  </data>
+  <data name="plRegionField.Help" xml:space="preserve">
+    <value>Indicate if Region or State field is required, optional, or hidden</value>
+  </data>
+  <data name="plRegionField.Text" xml:space="preserve">
+    <value>Region or State Field</value>
+  </data>
+  <data name="plStreetField.Help" xml:space="preserve">
+    <value>Indicate if Street field is required, optional, or hidden</value>
+  </data>
+  <data name="plStreetField.Text" xml:space="preserve">
+    <value>Street Field</value>
+  </data>
+  <data name="plTelephoneField.Help" xml:space="preserve">
+    <value>Indicate if Telephone field is required, optional, or hidden</value>
+  </data>
+  <data name="plTelephoneField.Text" xml:space="preserve">
+    <value>Telephone Field</value>
+  </data>
+  <data name="plUnmoderatedStatus.Help" xml:space="preserve">
+    <value>When not all categories are moderated, you may select the status (Archived, Pending, Private, Published, or Deleted) to apply to unmoderated posts.</value>
+  </data>
+  <data name="plUnmoderatedStatus.Text" xml:space="preserve">
+    <value>Unmoderated Category Status</value>
+  </data>
+  <data name="plPostalCodeRegex.Help" xml:space="preserve">
+    <value>Enter a .NET regular expression to validate postal codes. Leave the expression blank to disable postal code validation.</value>
+  </data>
+  <data name="plPostalCodeRegex.Text" xml:space="preserve">
+    <value>Postal Code Validation</value>
+  </data>
+  <data name="plTelephoneRegex.Text" xml:space="preserve">
+    <value>Telephone Validation</value>
+  </data>
+  <data name="plTelephoneRegex.Help" xml:space="preserve">
+    <value>Enter a .NET regular expression to validate telephone numbers. Leave the expression blank to disable telephone number validation.</value>
+  </data>
+  <data name="btnResetDefault.Text" xml:space="preserve">
+    <value>Reset Default</value>
+  </data>
+  <data name="AllUsers.Text" xml:space="preserve">
+    <value>All Users</value>
+  </data>
+  <data name="AnonymousUsers.Text" xml:space="preserve">
+    <value>Anonymous Users Only</value>
+  </data>
+  <data name="Disabled.Text" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="plCaptchaVisibility.Help" xml:space="preserve">
+    <value>Determines when a captcha control (image challenge-response test) to help prevent non-human submissions will be displayed to the user.</value>
+  </data>
+  <data name="plCaptchaVisibility.Text" xml:space="preserve">
+    <value>Captcha Visibility</value>
+  </data>
+  <data name="plRedirectTabOnSubmission.Help" xml:space="preserve">
+    <value>Selects a page on the site to which the user is automatically redirected following submission of the feedback.</value>
+  </data>
+  <data name="plRedirectTabOnSubmission.Text" xml:space="preserve">
+    <value>Redirect To Page</value>
+  </data>
+  <data name="NoFiltering.Text" xml:space="preserve">
+    <value>No Filtering</value>
+  </data>
+  <data name="plRepeatSubmissionFilter.Help" xml:space="preserve">
+    <value>Sets the type of filtering used to limit repeat submissions by the same user. Note: Do not filter by DotNetNuke UserID if anonymous users will be allowed to submit feedback. Filtering by User IP Address may block legitimate uses behind proxy or firewall sharing same IP.</value>
+  </data>
+  <data name="plRepeatSubmissionFilter.Text" xml:space="preserve">
+    <value>Repeat Submission Filter</value>
+  </data>
+  <data name="plMinSubmissionInteval.Help" xml:space="preserve">
+    <value>When a Repeat Submission Filter is enabled, sets the time (in minutes) the same user must wait before submitting additional feedback.</value>
+  </data>
+  <data name="plMinSubmissionInteval.Text" xml:space="preserve">
+    <value>Minimum Submission Interval (Minutes)</value>
+  </data>
+  <data name="UserEmailFilter.Text" xml:space="preserve">
+    <value>User Email Address</value>
+  </data>
+  <data name="UserIDFilter.Text" xml:space="preserve">
+    <value>DotNetNuke User ID</value>
+  </data>
+  <data name="UserIPFilter.Text" xml:space="preserve">
+    <value>User IP Address</value>
+  </data>
+  <data name="valMinSubmissionInteval.ErrorMessage" xml:space="preserve">
+    <value>&lt;br /&gt;Minimum Submission Inteval must be valid integer 0-99999</value>
+  </data>
+  <data name="plSendToRoles.Help" xml:space="preserve">
+    <value>Select the user security roles whose users are to be recipients of the feedback.</value>
+  </data>
+  <data name="plSendToRoles.Text" xml:space="preserve">
+    <value>Send To User Roles</value>
+  </data>
+  <data name="plPrintTemplate.Help" xml:space="preserve">
+    <value>Designs an html template used from printing a single feedback item from the moderation/management control. You may use the same field value tokens as those available in the guest book settings. For example, the token [Feedback:Subject] will be replaced with the feedback Subject field value.</value>
+  </data>
+  <data name="plPrintTemplate.Text" xml:space="preserve">
+    <value>Print Template</value>
+  </data>
+  <data name="InLine.Text" xml:space="preserve">
+    <value>In-Line (Existing Page)</value>
+  </data>
+  <data name="plPrintAction.Help" xml:space="preserve">
+    <value>Selects whether the print command displays the results in-line (i.e. on the same page) or as a popup.</value>
+  </data>
+  <data name="plPrintAction.Text" xml:space="preserve">
+    <value>Print Action</value>
+  </data>
+  <data name="Popup.Text" xml:space="preserve">
+    <value>Popup (New Window)</value>
+  </data>
+  <data name="plEmailRegex.Help" xml:space="preserve">
+    <value>Enter a .NET regular expression to validate email addresses. The email validation regex defined in User Settings/Host Settings is used as the default.</value>
+  </data>
+  <data name="plEmailRegex.Text" xml:space="preserve">
+    <value>Email Validation</value>
+  </data>
+  <data name="valEmailRegex.ErrorMessage" xml:space="preserve">
+    <value>&lt;br /&gt;Email validation expression (.Net regular expression) is required.</value>
+  </data>
+  <data name="Instance.Text" xml:space="preserve">
+    <value>Instance (for this Feedback module only)</value>
+  </data>
+  <data name="plScope.Help" xml:space="preserve">
+    <value>Selects whether feedback moderators are able to view and manage feedback associated with this instance of the Feedback module only or across all instances of the Feedback module on this portal. Portal scope (which is the legacy behavior prior to this version) should be used with caution. </value>
+  </data>
+  <data name="plScope.Text" xml:space="preserve">
+    <value>Scope</value>
+  </data>
+  <data name="Portal.Text" xml:space="preserve">
+    <value>Portal (across all Feedback modules of portal)</value>
+  </data>
+  <data name="scnCategories.Text" xml:space="preserve">
+    <value>Feedback Category Settings</value>
+  </data>
+  <data name="scnEmail.Text" xml:space="preserve">
+    <value>Email Address and Options</value>
+  </data>
+  <data name="scnFields.Text" xml:space="preserve">
+    <value>Form and Fields Settings</value>
+  </data>
+  <data name="scnModeration.Text" xml:space="preserve">
+    <value>Moderation and Feedback Management Settings</value>
+  </data>
+  <data name="scnSubmission.Text" xml:space="preserve">
+    <value>Submission and Security Settings</value>
+  </data>
+  <data name="cmdDeleteOrphanedData.Text" xml:space="preserve">
+    <value>Delete Orphaned Data</value>
+  </data>
+  <data name="plOrphanedData.Help" xml:space="preserve">
+    <value>Earlier versions of the Feedback Module did not store feedback items by module instance thus aggregating all feedback items across an entire portal. When a module instance was deleted, its data remained visible on the Feedback Moderation/Management page and in the comments viewer/guestbook. It could not be deleted, leaving it "orphaned". You may delete such orphaned feedback data associated with deleted modules by clicking the button.</value>
+  </data>
+  <data name="plOrphanedData.Text" xml:space="preserve">
+    <value>Orphaned Feedback Data</value>
+  </data>
+  <data name="Items.Header" xml:space="preserve">
+    <value>Items</value>
+  </data>
+  <data name="ModuleID.Header" xml:space="preserve">
+    <value>ModuleID</value>
+  </data>
+  <data name="DeleteOrphanedDataConfirm.Text" xml:space="preserve">
+    <value>Are you sure you want to delete all orphaned feedback items associated with deleted Feedback modules?</value>
+  </data>
+  <data name="liLabelAboveField.Text" xml:space="preserve">
+    <value>Above Field</value>
+  </data>
+  <data name="liLabelSameLine.Text" xml:space="preserve">
+    <value>Same Line As Field</value>
+  </data>
+  <data name="plLabelDisplay.Help" xml:space="preserve">
+    <value>Select how the label for each form field should be displayed. "Above Field" works best when placing the Feedback form in a narrow column.</value>
+  </data>
+  <data name="plLabelDisplay.Text" xml:space="preserve">
+    <value>Field Label Position</value>
+  </data>
+  <data name="valEmptyCategoryListMsg.ErrorMessage" xml:space="preserve">
+    <value>You must setup a category list if you allow the user to select a category or use the category value as a send to address</value>
+  </data>
+  <data name="valEmptyCategoryMsg.ErrorMessage" xml:space="preserve">
+    <value>If you use the category value as a send to address you must either allow the user to select a category or you must select a category in the Feedback module settings</value>
+  </data>
+  <data name="plCaptchaAudio.Help" xml:space="preserve">
+    <value>Turns on the ability for users to request audio playback of the Captcha using the phonetic alphabet</value>
+  </data>
+  <data name="plCaptchaAudio.Text" xml:space="preserve">
+    <value>Captcha Audio</value>
+  </data>
+  <data name="plCaptchaCase.Help" xml:space="preserve">
+    <value>When enabled the captcha control will ignore the case of the displayed letters when the response is compared</value>
+  </data>
+  <data name="plCaptchaLineNoise.Help" xml:space="preserve">
+    <value>Sets the level of line noise in the captcha image</value>
+  </data>
+  <data name="plCaptchaCase.Text" xml:space="preserve">
+    <value>Captcha Case</value>
+  </data>
+  <data name="plCaptchaLineNoise.Text" xml:space="preserve">
+    <value>Captcha Line Noise</value>
+  </data>
+  <data name="plCaptchaBackgroundNoise.Help" xml:space="preserve">
+    <value>Sets the level of background noise in the captcha image</value>
+  </data>
+  <data name="plCaptchaBackgroundNoise.Text" xml:space="preserve">
+    <value>Captcha Background Noise</value>
+  </data>
+  <data name="plEmailField.Help" xml:space="preserve">
+    <value>Indicate if Email field is required, optional, or hidden</value>
+  </data>
+  <data name="plEmailField.Text" xml:space="preserve">
+    <value>Email Field</value>
+  </data>
+  <data name="plModerationAdminEmails.Help" xml:space="preserve">
+    <value>If checked, administrators will receive moderation emails as specified in the permissions grid. Unchecking this will stop admins receiving moderation emails.</value>
+  </data>
+  <data name="plModerationAdminEmails.Text" xml:space="preserve">
+    <value>Send Emails to Admins</value>
+  </data>
+  <data name="plMessageField.Text" xml:space="preserve">
+    <value>Message Field</value>
+  </data>
+  <data name="plMessageField.Help" xml:space="preserve">
+    <value>Indicate if Message field is required, optional, or hidden</value>
+  </data>
+  <data name="plCategoryReq.Text" xml:space="preserve">
+    <value>Category Required</value>
+  </data>
+  <data name="plCategoryReq.Help" xml:space="preserve">
+    <value>Indicate if Category field is required</value>
+  </data>
+  <data name="plEmailConfirmField.Help" xml:space="preserve">
+    <value>Indicate if Email confirmation field is required or hidden</value>
+  </data>
+  <data name="plEmailConfirmField.Text" xml:space="preserve">
+    <value>Confirm Email Field</value>
+  </data>
+  <data name="plDuplicateSubmission.Help" xml:space="preserve">
+    <value>When ticked, duplicate messages cannot be submitted by the same email address.</value>
+  </data>
+  <data name="plDuplicateSubmission.Text" xml:space="preserve">
+    <value>Restrict Duplicate Submission</value>
+  </data>
+  <data name="plCleanupArchived.Help" xml:space="preserve">
+    <value>Cleanup Archived Feedback</value>
+  </data>
+  <data name="plCleanupArchived.Text" xml:space="preserve">
+    <value>Archived</value>
+  </data>
+  <data name="plCleanupDaysBefore.Help" xml:space="preserve">
+    <value>Feedback entries older than current date minus Days Before will be deleted</value>
+  </data>
+  <data name="plCleanupDaysBefore.Text" xml:space="preserve">
+    <value>Days Before</value>
+  </data>
+  <data name="plCleanupMaxEntries.Help" xml:space="preserve">
+    <value>Keep upto Max Entries number of Feedback for each of Pending, Private, Published, Archived.</value>
+  </data>
+  <data name="plCleanupMaxEntries.Text" xml:space="preserve">
+    <value>Max Feedback</value>
+  </data>
+  <data name="plCleanupPending.Help" xml:space="preserve">
+    <value>Cleanup Feedback that is Pending Moderation</value>
+  </data>
+  <data name="plCleanupPending.Text" xml:space="preserve">
+    <value>Pending</value>
+  </data>
+  <data name="plCleanupPrivate.Help" xml:space="preserve">
+    <value>Cleanup Private Feedback</value>
+  </data>
+  <data name="plCleanupPrivate.Text" xml:space="preserve">
+    <value>Private</value>
+  </data>
+  <data name="plCleanupPublished.Help" xml:space="preserve">
+    <value>Cleanup Published Feedback</value>
+  </data>
+  <data name="plCleanupPublished.Text" xml:space="preserve">
+    <value>Published</value>
+  </data>
+  <data name="scnCleanup.Text" xml:space="preserve">
+    <value>Cleanup Settings</value>
+  </data>
+  <data name="valCleanupDaysBefore.ErrorMessage" xml:space="preserve">
+    <value>Days Before must be a valid integer</value>
+  </data>
+  <data name="valCleanupMaxEntries.ErrorMessage" xml:space="preserve">
+    <value>Max  Entries must be a valid integer</value>
+  </data>
+  <data name="plAkismetEnable.Help" xml:space="preserve">
+    <value>Enable Akismet spam checking - http://akismet.com. You must have an api key from Akismet.com for this to function.</value>
+  </data>
+  <data name="plAkismetEnable.Text" xml:space="preserve">
+    <value>Enable Akismet</value>
+  </data>
+  <data name="plAkismetKey.Help" xml:space="preserve">
+    <value>Enter your Akismet api key. Purchase from http://akismet.com.</value>
+  </data>
+  <data name="plAkismetKey.Text" xml:space="preserve">
+    <value>Akismet Key</value>
+  </data>
+  <data name="valInvalidAkismetKey.ErrorMessage" xml:space="preserve">
+    <value>&lt;br /&gt;Invalid Akismet key</value>
+  </data>
+  <data name="plCleanupSpam.Help" xml:space="preserve">
+    <value>Cleanup Spam Feedback</value>
+  </data>
+  <data name="plCleanupSpam.Text" xml:space="preserve">
+    <value>Spam</value>
+  </data>
+  <data name="plAkismetSendModerator.Help" xml:space="preserve">
+    <value>When checked, spam items will be sent to the users configured as moderators even if moderation is not enabled.</value>
+  </data>
+  <data name="plAkismetSendModerator.Text" xml:space="preserve">
+    <value>Send Spam to Moderator</value>
+  </data>
+  <data name="plMaxMessage.Help" xml:space="preserve">
+    <value>Sets the maximum length of the message that can be entered.</value>
+  </data>
+  <data name="plMaxMessage.Text" xml:space="preserve">
+    <value>Max Message Length</value>
+  </data>
+  <data name="varMaxMessage.ErrorMessage" xml:space="preserve">
+    <value>&lt;br /&gt;Max Message Length must be a valid integer</value>
+  </data>
+  <data name="plEmailOnly.Help" xml:space="preserve">
+    <value>When checked only an email will be sent, the feedback will not be stored in the database</value>
+  </data>
+  <data name="plEmailOnly.Text" xml:space="preserve">
+    <value>Email Only</value>
+  </data>
+  <data name="plSendWhenPublished.Help" xml:space="preserve">
+    <value>When unticked, emails are sent to the recipient as soon as the feedback is submitted. When ticked, emails are sent for Pending and Spam items when the feedback is Published.</value>
+  </data>
+  <data name="plSendWhenPublished.Text" xml:space="preserve">
+    <value>Send when Published</value>
+  </data>
+  <data name="plModerationPageSize.Help" xml:space="preserve">
+    <value>Sets the page size for the Moderation/Management view</value>
+  </data>
+  <data name="plModerationPageSize.Text" xml:space="preserve">
+    <value>Page Size</value>
+  </data>
+</root>

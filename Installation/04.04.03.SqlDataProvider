@@ -1,0 +1,27 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleSettings]
+SET     SettingName = N'Feedback_SendTo'
+FROM    {databaseOwner}[{objectQualifier}DesktopModules] dm INNER JOIN
+     {databaseOwner}[{objectQualifier}ModuleDefinitions] md ON dm.DesktopModuleID = md.DesktopModuleID INNER JOIN
+       {databaseOwner}[{objectQualifier}ModuleSettings] ms INNER JOIN
+     {databaseOwner}[{objectQualifier}Modules] m ON ms.ModuleID = m.ModuleID ON md.ModuleDefID = m.ModuleDefID
+WHERE (ms.SettingName = 'Feedback_sendto') AND (dm.ModuleName = N'DNN_Feedback')
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleSettings]
+SET     SettingName = N'Feedback_SendCopy'
+FROM    {databaseOwner}[{objectQualifier}DesktopModules] dm INNER JOIN
+     {databaseOwner}[{objectQualifier}ModuleDefinitions] md ON dm.DesktopModuleID = md.DesktopModuleID INNER JOIN
+       {databaseOwner}[{objectQualifier}ModuleSettings] ms INNER JOIN
+     {databaseOwner}[{objectQualifier}Modules] m ON ms.ModuleID = m.ModuleID ON md.ModuleDefID = m.ModuleDefID
+WHERE (ms.SettingName = 'Feedback_Sendcopy') AND (dm.ModuleName = N'DNN_Feedback')
+GO

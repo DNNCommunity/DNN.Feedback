@@ -1,0 +1,269 @@
+﻿/**********************************************************************/
+/*****                    06.01.00.SqlDataProvider                *****/
+/*****                                                            *****/
+/*****                                                            *****/
+/*****    Note: To manually execute this script you must          *****/
+/*****          perform a search and replace operation            *****/
+/*****          for {databaseOwner} and {objectQualifier}         *****/
+/*****                                                            *****/
+/**********************************************************************/
+
+/************************************************/
+/***     Add Global Indicator                 ***/
+/************************************************/
+
+if not exists (select * from information_schema.columns 
+	where table_name = '{objectQualifier}FeedbackList' and column_name = 'Portal')
+BEGIN
+ALTER TABLE {databaseOwner}{objectQualifier}FeedbackList WITH NOCHECK ADD Portal bit NULL
+END	
+GO
+
+UPDATE {databaseOwner}{objectQualifier}FeedbackList
+   SET Portal = -1
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}FeedbackList ALTER COLUMN Portal bit NOT NULL
+GO
+
+/************************************************/
+/***     Add ModuleID                         ***/
+/************************************************/
+
+if not exists (select * from information_schema.columns 
+	where table_name = '{objectQualifier}FeedbackList' and column_name = 'ModuleID')
+BEGIN
+ALTER TABLE {databaseOwner}{objectQualifier}FeedbackList WITH NOCHECK ADD ModuleID int Null
+END	
+GO
+
+UPDATE {databaseOwner}{objectQualifier}FeedbackList
+   SET ModuleID = 0
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}FeedbackList ALTER COLUMN ModuleID Int NOT NULL
+GO
+
+/************************************************/
+/***     Update sprocs                        ***/
+/************************************************/
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_AddList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_AddList]
+GO
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_EditList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_EditList]
+GO
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetList]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetFeedbackByCategory]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetFeedbackByCategory]
+GO
+
+/* Feedback_AddList */
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_AddList]
+	@PortalID int, 
+	@ListType int, 
+	@Name nvarchar(50), 
+	@ListValue nvarchar(100),
+	@IsActive bit,
+    @Portal bit,
+    @ModuleID int
+AS
+
+BEGIN
+     DECLARE @SortOrder int
+     DECLARE @Count int
+
+     SET @SortOrder = IsNull((SELECT MAX ([SortOrder]) From {databaseOwner}[{objectQualifier}FeedbackList]           
+     WHERE [PortalID] = @PortalID and  [ListType] = @ListType), -1) + 1
+
+     SELECT @Count =  COUNT(*) from {databaseOwner}[{objectQualifier}FeedbackList] where [PortalID] = @PortalID         
+        and [Name] = @Name and [ListType] = @ListType
+
+	IF @Count = 0 
+	    BEGIN
+	        INSERT INTO {databaseOwner}[{objectQualifier}FeedbackList]  (
+		        PortalID,
+		        ListType,
+		        IsActive,
+		        [Name],
+		        ListValue,
+		        SortOrder,
+                Portal,
+                ModuleID
+	        ) 
+	        VALUES (
+		        @PortalID,
+		        @ListType,
+		        @IsActive,
+		        @Name,
+		        @ListValue,
+		        @SortOrder,
+                @Portal,
+                @ModuleID
+	         )
+	       SELECT SCOPE_IDENTITY()
+	    END
+END
+GO
+
+/* Feedback_EditList */
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_EditList]
+	@IsDeleteOperation bit,
+	@ListID int,
+	@PortalID int, 
+	@ListType int, 
+	@Name nvarchar(50), 
+	@ListValue nvarchar(100),
+	@IsActive bit,
+    @Portal bit,
+    @ModuleID int
+AS
+  BEGIN
+	DECLARE @SortFrom int
+	DECLARE @TempListType int
+
+	IF @IsDeleteOperation = 1
+	    BEGIN
+	        SELECT @SortFrom = [SortOrder],@TempListType = [ListType] from {databaseOwner}[{objectQualifier}FeedbackList] 
+	        WHERE ListID = @ListID
+
+	        DELETE FROM {databaseOwner}[{objectQualifier}FeedbackList] 
+	        WHERE ListID = @ListID
+
+	        --Now check whether we need to resort everything.
+	        UPDATE {databaseOwner}[{objectQualifier}FeedbackList]
+	        SET SortOrder = (SortOrder -1) WHERE ListType = @TempListType and SortOrder > @SortFrom
+	    END
+    ELSE
+	    BEGIN
+	        UPDATE {databaseOwner}[{objectQualifier}FeedbackList] 
+	        SET
+		        PortalID = @PortalID,
+		        ListType = @ListType,
+		        Name = @Name,
+		        ListValue = @ListValue,
+		        IsActive = @IsActive,
+                Portal = @Portal,
+                ModuleID = @ModuleID
+	        WHERE ListID = @ListID
+	    END
+  END
+GO
+
+/* Feedback_GetList */
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetList]
+	@SingleRowOperation bit,
+	@PortalID int, 
+	@ListID int,
+	@ListType int,
+	@ActiveOnly bit,
+    @ModuleID int,
+    @AllList bit
+AS
+    IF @SingleRowOperation = 0 
+	    BEGIN
+	        IF @ActiveOnly = 1
+  		        BEGIN
+		            SELECT *, 0 as CategoryCount FROM {databaseOwner}[{objectQualifier}FeedbackList] 
+		             WHERE ([PortalID] = @PortalID and [ListType] = @ListType and IsActive = 1) and
+                           (Portal = 1 or (Portal = 0 and ModuleID = @ModuleID) or @AllList = 1)
+                     ORDER BY SortOrder ASC
+		        END
+	        ELSE
+		        BEGIN
+		            SELECT *, 0 as CategoryCount FROM {databaseOwner}[{objectQualifier}FeedbackList] 
+		             WHERE [PortalID] = @PortalID and [ListType] = @ListType
+                     ORDER BY SortOrder ASC
+		        END
+	    END
+	ELSE
+	    BEGIN
+		    SELECT *,
+                   (Select Count(*) FROM {databaseOwner}[{objectQualifier}Feedback] WHERE CategoryID = @ListID and ModuleID <> @ModuleID) as CategoryCount
+              FROM {databaseOwner}[{objectQualifier}FeedbackList] 
+		     WHERE [PortalID] = @PortalID and ListID = @ListID
+	    END
+GO
+
+/* Feedback_GetFeedbackByCategory */
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetFeedbackByCategory]		
+    	@PortalID int,
+    	@ModuleID int,
+	@CategoryID nvarchar(256),
+	@Status int,
+	@CurrentPage int,
+	@PageSize int,
+	@OrderBy nvarchar(25)
+ 
+AS
+
+BEGIN
+
+    DECLARE	
+	@FirstRow int,
+	@LastRow int,
+	@TotalRecords int
+
+    SELECT	
+	@FirstRow = (@CurrentPage - 1) * @PageSize + 1,
+	@LastRow = (@CurrentPage - 1) * @PageSize + @PageSize;
+	
+    WITH CategoryFeedback AS (
+
+    SELECT	
+	FeedbackID,
+	f.ModuleID,
+	f.PortalID,
+	[Status],
+	f.CategoryID,
+	fc.Name As [CategoryName],
+	fc.ListValue As [CategoryValue],
+	CASE WHEN fs.ListID IS null THEN
+	         f.[Subject]
+	ELSE
+	         fs.ListValue
+	END As [Subject],
+	[Message],
+	SenderEmail,
+	SenderName,
+	SenderStreet,
+	SenderCity,
+	SenderRegion,
+	SenderCountry,
+	SenderPostalCode,
+	SenderTelephone,
+	SenderRemoteAddr,
+	CreatedOnDate,
+	CreatedByUserID,
+	LastModifiedOnDate,
+	LastModifiedByUserID,
+	PublishedOnDate,
+	ApprovedBy,
+	ROW_NUMBER() OVER (ORDER BY
+	        CASE @OrderBy WHEN N'CreatedOnDate DESC' THEN CreatedOnDate END DESC
+	       ,CASE @OrderBy WHEN N'CreatedOnDate' THEN CreatedOnDate END) AS RowNumber
+	FROM {databaseOwner}{objectQualifier}Feedback f
+	     LEFT OUTER JOIN {databaseOwner}[{objectQualifier}FeedbackList] fs ON f.[Subject] = convert(nvarchar, fs.ListID)
+	     LEFT OUTER JOIN {databaseOwner}[{objectQualifier}FeedbackList] fc ON f.[CategoryID] = convert(nvarchar, fc.ListID)
+	WHERE (f.PortalID = @PortalID) and ((@ModuleID is null) or (f.ModuleID = @ModuleID))
+	          and ((@CategoryID='') or (charindex(rtrim(CategoryID),@CategoryID,1) > 0)) and (Status = @Status) 
+)
+
+SELECT
+   *,
+   (select count(*) from CategoryFeedback) as TotalRecords
+   FROM CategoryFeedback
+   WHERE RowNumber Between @FirstRow and @LastRow
+END
+GO
+

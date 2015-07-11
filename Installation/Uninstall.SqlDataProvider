@@ -1,0 +1,97 @@
+﻿/**********************************************************************/
+/*****                            SqlDataProvider                 *****/
+/*****                                                            *****/
+/*****                                                            *****/
+/*****  Note: To manually execute this script you must            *****/
+/*****        perform a search and replace operation              *****/
+/*****       for {databaseOwner} and {objectQualifier}            *****/
+/*****                                                            *****/
+/**********************************************************************/
+
+/** Drop Stored Procedures **/
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_CreateFeedback]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_CreateFeedback]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetFeedbackByCategory]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetFeedbackByCategory]
+GO
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetFeedback]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Feedback_GetFeedback
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_UpdateFeedback]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_UpdateFeedback]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_UpdateStatus]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_UpdateStatus]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_UpdateContextKey]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_UpdateContextKey]
+GO
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_AddList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+  DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_AddList]
+GO
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetList]
+GO
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_EditList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_EditList]
+GO
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_ChangeListSortOrder]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_ChangeListSortOrder]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetDuplicateSubmissionForUserEmail]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetDuplicateSubmissionForUserEmail]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetLastSubmissionDateForUserEmail]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetLastSubmissionDateForUserEmail]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetLastSubmissionDateForUserID]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetLastSubmissionDateForUserID]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetLastSubmissionDateForUserIP]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetLastSubmissionDateForUserIP]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetOrphanedData]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetOrphanedData]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_DeleteOrphanedData]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_DeleteOrphanedData]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_CleanupFeedback]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_CleanupFeedback]
+GO
+
+/** Drop Feedback Tables **/
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'FK_{objectQualifier}Feedback_{objectQualifier}Modules '))
+	ALTER TABLE {databaseOwner}{objectQualifier}Feedback DROP CONSTRAINT FK_{objectQualifier}Feedback_{objectQualifier}Modules
+GO
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback]') and OBJECTPROPERTY(id, N'IsTable') = 1)
+    DROP TABLE {databaseOwner}[{objectQualifier}Feedback]
+GO
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}FeedbackList]') and OBJECTPROPERTY(id, N'IsTable') = 1)
+    DROP TABLE {databaseOwner}[{objectQualifier}FeedbackList]
+GO
+
+/*************************************************************/
+/*****              SqlDataProvider                      *****/
+/*************************************************************/

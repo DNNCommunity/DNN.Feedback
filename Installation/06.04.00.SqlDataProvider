@@ -1,0 +1,261 @@
+﻿/**********************************************************************/
+/*****                    06.04.00.SqlDataProvider                *****/
+/*****                                                            *****/
+/*****                                                            *****/
+/*****    Note: To manually execute this script you must          *****/
+/*****          perform a search and replace operation            *****/
+/*****          for {databaseOwner} and {objectQualifier}         *****/
+/*****                                                            *****/
+/**********************************************************************/
+
+/************************************************/
+/***     Add ContextKey                       ***/
+/************************************************/
+
+if not exists (select * from information_schema.columns 
+	where table_name = '{objectQualifier}Feedback' and column_name = 'ContextKey')
+BEGIN
+ALTER TABLE {databaseOwner}{objectQualifier}Feedback WITH NOCHECK ADD ContextKey NVARCHAR(200)
+END	
+GO
+
+/************************************************/
+/***     Update sprocs                        ***/
+/************************************************/
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_UpdateContextKey]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_UpdateContextKey]
+GO
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetFeedback]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Feedback_GetFeedback
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_CreateFeedback]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_CreateFeedback]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetFeedbackByCategory]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetFeedbackByCategory]
+GO
+
+/***  Feedback_UpdateContextKey  ***/
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_UpdateContextKey]
+	@ModuleID int,
+	@FeedbackID int, 
+	@ContextKey nvarchar(200),
+	@UserId int
+AS
+
+UPDATE {databaseOwner}[{objectQualifier}Feedback]
+SET
+	ContextKey = @ContextKey, 
+	LastModifiedByUserID = @UserId,
+	LastModifiedOnDate = getutcdate()
+	    
+WHERE FeedbackID = @FeedbackID and ((@ModuleID = -1) or (ModuleID = @ModuleID))
+
+GO
+
+/* Feedback_GetFeedback */
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetFeedback]
+	@FeedbackID int
+
+AS
+	SELECT
+		FeedbackID,
+		f.ModuleID,
+		f.PortalID,
+		[Status],
+		f.CategoryID,
+		fc.Name As [CategoryName],
+		fc.ListValue As [CategoryValue],
+		CASE WHEN fs.ListID IS null THEN
+		   f.[Subject]
+		ELSE
+		   fs.ListValue
+		END As [Subject],
+		[Message],
+		SenderEmail,
+		SenderName,
+		SenderStreet,
+		SenderCity,
+		SenderRegion,
+		SenderCountry,
+		SenderPostalCode,
+		SenderTelephone,
+		SenderRemoteAddr,
+		CreatedOnDate,
+		CreatedByUserID,
+		LastModifiedOnDate,
+		LastModifiedByUserID,
+		PublishedOnDate,
+		ApprovedBy,
+		TotalRecords = 1,
+        Referrer,
+        UserAgent,
+        ContextKey
+	FROM {databaseOwner}[{objectQualifier}Feedback] f
+	     LEFT OUTER JOIN {databaseOwner}[{objectQualifier}FeedbackList] fs ON f.[Subject] = convert(nvarchar, fs.ListID)
+		 LEFT OUTER JOIN {databaseOwner}[{objectQualifier}FeedbackList] fc ON f.[CategoryID] = convert(nvarchar, fc.ListID)
+	WHERE  FeedbackID = @FeedbackID
+GO
+
+/***  Feedback_CreateFeedback  ***/
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_CreateFeedback]
+	@PortalID int,
+	@ModuleID int, 
+	@CategoryID nvarchar(100), 
+	@SenderEmail nvarchar(256), 
+	@Status int,
+	@Message nvarchar(MAX),
+	@Subject nvarchar(200),
+	@SenderName nvarchar(200),
+	@SenderStreet nvarchar(50),
+	@SenderCity nvarchar(50),
+	@SenderRegion nvarchar(50),
+	@SenderCountry nvarchar(50),
+	@SenderPostalCode nvarchar(50),
+	@SenderTelephone nvarchar(20),
+	@SenderRemoteAddr nvarchar(50),
+	@UserId int,
+    @Referrer nvarchar(255),
+    @UserAgent nvarchar(255),
+    @ContextKey nvarchar(200)
+AS
+
+DECLARE @PublishedOnDate datetime
+
+IF (@Status = 2) SET @PublishedOnDate = getutcdate()
+ 
+
+INSERT INTO {databaseOwner}[{objectQualifier}Feedback] (
+	PortalID,
+	ModuleID,
+	CategoryID, 
+	SenderEmail,
+	PublishedOnDate,
+	[Status],
+	[Message],
+	[Subject],
+	SenderName,
+	SenderStreet,
+	SenderCity,
+	SenderRegion,
+	SenderCountry,
+	SenderPostalCode,
+	SenderTelephone,
+	SenderRemoteAddr,
+	CreatedOnDate,
+	CreatedByUserID,
+    Referrer,
+    UserAgent,
+    ContextKey
+) 
+VALUES (
+	@PortalID,
+	@ModuleID,
+	@CategoryID, 
+	@SenderEmail, 
+	@PublishedOnDate,
+	@Status,
+	@Message,
+	@Subject,
+	@SenderName,
+	@SenderStreet,
+	@SenderCity,
+	@SenderRegion,
+	@SenderCountry,
+	@SenderPostalCode,
+	@SenderTelephone,
+	@SenderRemoteAddr,
+	getutcdate(),
+	@UserId,
+    @Referrer,
+    @UserAgent,
+    @ContextKey
+)
+
+SELECT SCOPE_IDENTITY()	
+GO
+
+/* Feedback_GetFeedbackByCategory */
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetFeedbackByCategory]		
+    	@PortalID int,
+    	@ModuleID int,
+	@CategoryID nvarchar(256),
+	@Status int,
+	@CurrentPage int,
+	@PageSize int,
+	@OrderBy nvarchar(25)
+ 
+AS
+
+BEGIN
+
+    DECLARE	
+	@FirstRow int,
+	@LastRow int,
+	@TotalRecords int
+
+    SELECT	
+	@FirstRow = (@CurrentPage - 1) * @PageSize + 1,
+	@LastRow = (@CurrentPage - 1) * @PageSize + @PageSize;
+	
+    WITH CategoryFeedback AS (
+
+    SELECT	
+	FeedbackID,
+	f.ModuleID,
+	f.PortalID,
+	[Status],
+	f.CategoryID,
+	fc.Name As [CategoryName],
+	fc.ListValue As [CategoryValue],
+	CASE WHEN fs.ListID IS null THEN
+	         f.[Subject]
+	ELSE
+	         fs.ListValue
+	END As [Subject],
+	[Message],
+	SenderEmail,
+	SenderName,
+	SenderStreet,
+	SenderCity,
+	SenderRegion,
+	SenderCountry,
+	SenderPostalCode,
+	SenderTelephone,
+	SenderRemoteAddr,
+	CreatedOnDate,
+	CreatedByUserID,
+	LastModifiedOnDate,
+	LastModifiedByUserID,
+	PublishedOnDate,
+	ApprovedBy,
+	ROW_NUMBER() OVER (ORDER BY
+	        CASE @OrderBy WHEN N'CreatedOnDate DESC' THEN CreatedOnDate END DESC
+	       ,CASE @OrderBy WHEN N'CreatedOnDate' THEN CreatedOnDate END) AS RowNumber,
+    Referrer,
+    UserAgent,
+    ContextKey
+	FROM {databaseOwner}{objectQualifier}Feedback f
+	     LEFT OUTER JOIN {databaseOwner}[{objectQualifier}FeedbackList] fs ON f.[Subject] = convert(nvarchar, fs.ListID)
+	     LEFT OUTER JOIN {databaseOwner}[{objectQualifier}FeedbackList] fc ON f.[CategoryID] = convert(nvarchar, fc.ListID)
+	WHERE (f.PortalID = @PortalID) and ((@ModuleID is null) or (f.ModuleID = @ModuleID))
+	          and ((@CategoryID='') or (charindex(rtrim(CategoryID),@CategoryID,1) > 0)) and (Status = @Status) 
+)
+
+SELECT
+   *,
+   (select count(*) from CategoryFeedback) as TotalRecords
+   FROM CategoryFeedback
+   WHERE RowNumber Between @FirstRow and @LastRow
+END
+GO
+
+

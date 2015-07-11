@@ -1,0 +1,398 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/***| Delete Feedback_Width Setting Name in the Iframe Module|***/
+
+Delete	{objectQualifier}ModuleSettings 
+WHERE	SettingName = 'Feedback_Width' 
+  AND	ModuleID IN (SELECT m.ModuleID FROM {objectQualifier}Modules AS m 
+			INNER JOIN {objectQualifier}ModuleDefinitions AS md ON m.ModuleDefID = md.ModuleDefID 
+			INNER JOIN {objectQualifier}DesktopModules AS dm ON md.DesktopModuleID = dm.DesktopModuleID AND dm.ModuleName = 'DNN_IFrame')
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleSettings]
+SET     SettingName = N'Feedback_Category'
+FROM    {databaseOwner}[{objectQualifier}DesktopModules] dm INNER JOIN
+     {databaseOwner}[{objectQualifier}ModuleDefinitions] md ON dm.DesktopModuleID = md.DesktopModuleID INNER JOIN
+       {databaseOwner}[{objectQualifier}ModuleSettings] ms INNER JOIN
+     {databaseOwner}[{objectQualifier}Modules] m ON ms.ModuleID = m.ModuleID ON md.ModuleDefID = m.ModuleDefID
+WHERE (ms.SettingName = 'category') AND (dm.ModuleName = N'DNN_Feedback')
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleSettings]
+SET     SettingName = N'Feedback_CategorySelect'
+FROM    {databaseOwner}[{objectQualifier}DesktopModules] dm INNER JOIN
+     {databaseOwner}[{objectQualifier}ModuleDefinitions] md ON dm.DesktopModuleID = md.DesktopModuleID INNER JOIN
+       {databaseOwner}[{objectQualifier}ModuleSettings] ms INNER JOIN
+     {databaseOwner}[{objectQualifier}Modules] m ON ms.ModuleID = m.ModuleID ON md.ModuleDefID = m.ModuleDefID
+WHERE (ms.SettingName = 'categoryselect') AND (dm.ModuleName = N'DNN_Feedback')
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleSettings]
+SET     SettingName = N'Feedback_Async'
+FROM    {databaseOwner}[{objectQualifier}DesktopModules] dm INNER JOIN
+     {databaseOwner}[{objectQualifier}ModuleDefinitions] md ON dm.DesktopModuleID = md.DesktopModuleID INNER JOIN
+       {databaseOwner}[{objectQualifier}ModuleSettings] ms INNER JOIN
+     {databaseOwner}[{objectQualifier}Modules] m ON ms.ModuleID = m.ModuleID ON md.ModuleDefID = m.ModuleDefID
+WHERE (ms.SettingName = 'comments') AND (dm.ModuleName = N'DNN_Feedback')
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleSettings]
+SET     SettingName = N'Feedback_Moderated'
+FROM    {databaseOwner}[{objectQualifier}DesktopModules] dm INNER JOIN
+     {databaseOwner}[{objectQualifier}ModuleDefinitions] md ON dm.DesktopModuleID = md.DesktopModuleID INNER JOIN
+       {databaseOwner}[{objectQualifier}ModuleSettings] ms INNER JOIN
+     {databaseOwner}[{objectQualifier}Modules] m ON ms.ModuleID = m.ModuleID ON md.ModuleDefID = m.ModuleDefID
+WHERE (ms.SettingName = 'moderated') AND (dm.ModuleName = N'DNN_Feedback')
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleSettings]
+SET     SettingName = N'Feedback_Notify'
+FROM    {databaseOwner}[{objectQualifier}DesktopModules] dm INNER JOIN
+     {databaseOwner}[{objectQualifier}ModuleDefinitions] md ON dm.DesktopModuleID = md.DesktopModuleID INNER JOIN
+       {databaseOwner}[{objectQualifier}ModuleSettings] ms INNER JOIN
+     {databaseOwner}[{objectQualifier}Modules] m ON ms.ModuleID = m.ModuleID ON md.ModuleDefID = m.ModuleDefID
+WHERE (ms.SettingName = 'notify') AND (dm.ModuleName = N'DNN_Feedback')
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleSettings]
+SET     SettingName = N'Feedback_Optout'
+FROM    {databaseOwner}[{objectQualifier}DesktopModules] dm INNER JOIN
+     {databaseOwner}[{objectQualifier}ModuleDefinitions] md ON dm.DesktopModuleID = md.DesktopModuleID INNER JOIN
+       {databaseOwner}[{objectQualifier}ModuleSettings] ms INNER JOIN
+     {databaseOwner}[{objectQualifier}Modules] m ON ms.ModuleID = m.ModuleID ON md.ModuleDefID = m.ModuleDefID
+WHERE (ms.SettingName = 'optout') AND (dm.ModuleName = N'DNN_Feedback')
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleSettings]
+SET     SettingName = N'Feedback_Rows'
+FROM    {databaseOwner}[{objectQualifier}DesktopModules] dm INNER JOIN
+     {databaseOwner}[{objectQualifier}ModuleDefinitions] md ON dm.DesktopModuleID = md.DesktopModuleID INNER JOIN
+       {databaseOwner}[{objectQualifier}ModuleSettings] ms INNER JOIN
+     {databaseOwner}[{objectQualifier}Modules] m ON ms.ModuleID = m.ModuleID ON md.ModuleDefID = m.ModuleDefID
+WHERE (ms.SettingName = 'rows') AND (dm.ModuleName = N'DNN_Feedback')
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleSettings]
+SET     SettingName = N'Feedback_SendCopy'
+FROM    {databaseOwner}[{objectQualifier}DesktopModules] dm INNER JOIN
+     {databaseOwner}[{objectQualifier}ModuleDefinitions] md ON dm.DesktopModuleID = md.DesktopModuleID INNER JOIN
+       {databaseOwner}[{objectQualifier}ModuleSettings] ms INNER JOIN
+     {databaseOwner}[{objectQualifier}Modules] m ON ms.ModuleID = m.ModuleID ON md.ModuleDefID = m.ModuleDefID
+WHERE (ms.SettingName = 'sendcopy') AND (dm.ModuleName = N'DNN_Feedback')
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleSettings]
+SET     SettingName = N'Feedback_SendTo'
+FROM    {databaseOwner}[{objectQualifier}DesktopModules] dm INNER JOIN
+     {databaseOwner}[{objectQualifier}ModuleDefinitions] md ON dm.DesktopModuleID = md.DesktopModuleID INNER JOIN
+       {databaseOwner}[{objectQualifier}ModuleSettings] ms INNER JOIN
+     {databaseOwner}[{objectQualifier}Modules] m ON ms.ModuleID = m.ModuleID ON md.ModuleDefID = m.ModuleDefID
+WHERE (ms.SettingName = 'sendto') AND (dm.ModuleName = N'DNN_Feedback')
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleSettings]
+SET     SettingName = N'Feedback_Subject'
+FROM    {databaseOwner}[{objectQualifier}DesktopModules] dm INNER JOIN
+     {databaseOwner}[{objectQualifier}ModuleDefinitions] md ON dm.DesktopModuleID = md.DesktopModuleID INNER JOIN
+       {databaseOwner}[{objectQualifier}ModuleSettings] ms INNER JOIN
+     {databaseOwner}[{objectQualifier}Modules] m ON ms.ModuleID = m.ModuleID ON md.ModuleDefID = m.ModuleDefID
+WHERE (ms.SettingName = 'subject') AND (dm.ModuleName = N'DNN_Feedback')
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleSettings]
+SET     SettingName = N'Feedback_SubjectEdit'
+FROM    {databaseOwner}[{objectQualifier}DesktopModules] dm INNER JOIN
+     {databaseOwner}[{objectQualifier}ModuleDefinitions] md ON dm.DesktopModuleID = md.DesktopModuleID INNER JOIN
+       {databaseOwner}[{objectQualifier}ModuleSettings] ms INNER JOIN
+     {databaseOwner}[{objectQualifier}Modules] m ON ms.ModuleID = m.ModuleID ON md.ModuleDefID = m.ModuleDefID
+WHERE (ms.SettingName = 'subjectedit') AND (dm.ModuleName = N'DNN_Feedback')
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleSettings]
+SET     SettingName = N'Feedback_Width'
+FROM    {databaseOwner}[{objectQualifier}DesktopModules] dm INNER JOIN
+     {databaseOwner}[{objectQualifier}ModuleDefinitions] md ON dm.DesktopModuleID = md.DesktopModuleID INNER JOIN
+       {databaseOwner}[{objectQualifier}ModuleSettings] ms INNER JOIN
+     {databaseOwner}[{objectQualifier}Modules] m ON ms.ModuleID = m.ModuleID ON md.ModuleDefID = m.ModuleDefID
+WHERE (ms.SettingName = 'width') AND (dm.ModuleName = N'DNN_Feedback')
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleSettings]
+SET     SettingName = N'Feedback_OptOut'
+where SettingName = N'Feedback_Optout'
+GO
+
+/* Modify the Feedback Table to include the name of the user sending the feedback */
+if col_length('{databaseOwner}[{objectQualifier}Feedback]','CreatedByName') is  NULL
+	BEGIN
+	ALTER TABLE {databaseOwner}[{objectQualifier}Feedback] ADD
+		[CreatedByName] [nvarchar] (200) DEFAULT NULL
+	END
+GO
+
+/* enlarge Email field key field */
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback]') and OBJECTPROPERTY(id, N'IsTable') = 1)
+	BEGIN
+	ALTER TABLE {databaseOwner}{objectQualifier}Feedback
+		ALTER COLUMN CreatedByEmail nvarchar(256) not null
+	END
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}CreateFeedback]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}CreateFeedback]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}CreateFeedback]
+	@PortalID int,
+	@CategoryID nvarchar(100), 
+	@CreatedByEmail nvarchar(256), 
+	@ModuleID int, 
+	@Status int,
+	@Message nvarchar(1000),
+	@Subject nvarchar(200),
+	@CreatedByName nvarchar(200)
+AS
+INSERT INTO {databaseOwner}[{objectQualifier}Feedback] (
+	PortalID,
+	CategoryID, 
+	CreatedByEmail, 
+	DateCreated, 
+	ModuleID, 
+	Status,
+	Message,
+	Subject,
+	CreatedByName
+) 
+VALUES (
+	@PortalID,
+	@CategoryID, 
+	@CreatedByEmail, 
+	getdate(),
+	@ModuleID, 
+	@Status,
+	@Message,
+	@Subject,
+	@CreatedByName
+)
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}GetCategoryFeedback]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}GetCategoryFeedback]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}GetCategoryFeedback]
+ @PortalID int,
+ @CategoryID nvarchar(100),
+ @Status int,
+ @CurrentPage int,
+ @PageSize int
+AS
+ --Create a temp table to hold the current page of data
+ --Add and ID column to count the records
+ CREATE TABLE #TempTable
+ (
+  ID int IDENTITY PRIMARY KEY,
+  PortalID int,
+  FeedbackID int,
+  CategoryID nvarchar(100) COLLATE database_default, 
+  CategoryValue nvarchar(100) COLLATE database_default,
+  CreatedByEmail nvarchar(256) COLLATE database_default, 
+  ApprovedBy int,
+  DateCreated datetime,
+  ModuleID int, 
+  Status int,
+  Message nvarchar(1000) COLLATE database_default,
+  Subject nvarchar(200) COLLATE database_default,
+  CreatedByName nvarchar(200) COLLATE database_default
+ )
+--Fill the temp table with the Feedback data
+ IF @CategoryID = ''
+	 BEGIN
+		
+		 INSERT INTO #TempTable 
+		 (
+		PortalID,
+		FeedbackID,
+		CategoryID, 
+		CategoryValue,
+		CreatedByEmail, 
+		ApprovedBy,
+		DateCreated,
+		ModuleID, 
+		Status,
+		Message,
+		Subject,
+		CreatedByName
+		  )
+		 SELECT
+		F.PortalID,
+		FeedbackID,
+		CategoryID, 
+		(SELECT ListValue FROM {databaseOwner}[{objectQualifier}FeedbackList] WHERE f.CategoryID = {databaseOwner}[{objectQualifier}FeedbackList].ListID),
+		CreatedByEmail, 
+		ApprovedBy,
+		DateCreated,
+		ModuleID, 
+		Status,
+		Message,
+		Subject = CASE WHEN fs.[ListID] IS null THEN [Subject] ELSE fs.[ListValue] END,
+		CreatedByName
+		FROM {databaseOwner}[{objectQualifier}Feedback] f
+		LEFT OUTER JOIN {databaseOwner}[{objectQualifier}FeedbackList] fs ON f.[Subject] = convert(varchar,fs.ListID)
+		LEFT OUTER JOIN {databaseOwner}[{objectQualifier}FeedbackList] fc ON f.[CategoryID] = convert(varchar,fc.ListID)
+		WHERE 
+		Status = @Status and F.PortalID = @PortalID
+		ORDER BY
+		DateCreated Desc
+	END
+
+ Else
+	 BEGIN
+		 INSERT INTO #TempTable 
+		 (
+		PortalID,
+		FeedbackID,
+		CategoryID, 
+		CategoryValue,
+		CreatedByEmail, 
+		ApprovedBy,
+		DateCreated,
+		ModuleID, 
+		Status,
+		Message,
+		Subject,
+		CreatedByName
+		  )
+		 SELECT
+		F.PortalID,
+		FeedbackID,
+		CategoryID, 
+		(SELECT ListValue FROM {databaseOwner}[{objectQualifier}FeedbackList] WHERE f.CategoryID = {databaseOwner}[{objectQualifier}FeedbackList].ListID),
+		CreatedByEmail, 
+		ApprovedBy,
+		DateCreated,
+		ModuleID, 
+		Status,
+		Message,
+		Subject = CASE WHEN fs.[ListID] IS null THEN [Subject] ELSE fs.[ListValue] END,
+		CreatedByName
+		FROM {databaseOwner}[{objectQualifier}Feedback] f
+		LEFT OUTER JOIN {databaseOwner}[{objectQualifier}FeedbackList] fs ON f.[Subject] = convert(varchar,fs.ListID)
+		LEFT OUTER JOIN {databaseOwner}[{objectQualifier}FeedbackList] fc on f.[CategoryID] = convert(varchar,fc.ListID)
+		WHERE 
+		CategoryID = @CategoryID and F.PortalID = @PortalID
+		and Status = @Status
+		ORDER BY
+		DateCreated Desc
+	END
+
+--Return the total number of records available 
+ DECLARE @TotalRecords int
+ SELECT @TotalRecords = COUNT(FeedbackID) FROM #TempTable
+ 
+ --Create variable to identify the first and last record that should be selected
+ DECLARE @FirstRec int, @LastRec int
+ SELECT @FirstRec = (@CurrentPage - 1) * @PageSize
+ SELECT @LastRec = (@CurrentPage * @PageSize + 1)
+ --Select one page of data based on the record numbers above
+ SELECT
+	PortalID,
+	FeedbackID,
+	CategoryID, 
+	CategoryValue,
+	CreatedByEmail, 
+	ApprovedBy,
+	DateCreated,
+	ModuleID, 
+	Status,
+	Message,
+	Subject,
+	CreatedByName,
+	TotalRecords = @TotalRecords
+ FROM  #TempTable
+ WHERE ID > @FirstRec 
+ AND   ID < @LastRec
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleControls] SET ControlType = 0 WHERE ControlKey = 'Feedback Moderation'
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleControls] SET ControlType = 0 WHERE ControlKey = 'Feedback Lists'
+GO
+
+DELETE FROM {databaseOwner}[{objectQualifier}ModuleControls] WHERE ControlKey = 'Feedback_Moderation'
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[PK_{objectQualifier}Feedback]') and OBJECTPROPERTY(id, N'IsPrimaryKey') = 1)
+ALTER TABLE {databaseOwner}[{objectQualifier}Feedback] DROP CONSTRAINT [PK_{objectQualifier}Feedback]
+GO
+
+ALTER TABLE {databaseOwner}[{objectQualifier}Feedback] ADD CONSTRAINT [PK_{objectQualifier}Feedback] PRIMARY KEY CLUSTERED  ([ModuleID], [FeedbackID])
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}UpdateFeedbackStatus]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}UpdateFeedbackStatus]
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}UpdateFeedbackStatus
+	@ModuleID int,
+	@FeedbackID int, 
+	@Status int
+AS
+IF @Status = 4 
+	DELETE {databaseOwner}[{objectQualifier}Feedback] WHERE FeedbackID = @FeedbackID and ModuleID = @ModuleID
+ELSE
+	UPDATE {databaseOwner}[{objectQualifier}Feedback]
+	SET    Status = @Status
+	WHERE FeedbackID = @FeedbackID and ModuleID = @ModuleID
+GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}AddFeedbackList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure {databaseOwner}[{objectQualifier}AddFeedbackList]
+GO
+
+create procedure {databaseOwner}[{objectQualifier}AddFeedbackList]
+	@PortalID int, 
+	@ListType int, 
+	@Name nvarchar(50), 
+	@ListValue nvarchar(100),
+	@IsActive bit
+as
+begin
+DECLARE @SortOrder int
+DECLARE @Count int
+SET @SortOrder = IsNull((SELECT MAX ([SortOrder]) From {databaseOwner}[{objectQualifier}FeedbackList] Where [PortalID] = @PortalID and  [ListType] = @ListType), -1) + 1
+select @Count =  COUNT(*) from {databaseOwner}[{objectQualifier}FeedbackList] where [PortalID] = @PortalID and [Name] = @Name and [ListType] = @ListType
+	If @Count = 0 
+	begin
+	insert into {databaseOwner}[{objectQualifier}FeedbackList]  (
+		PortalID,
+		ListType,
+		IsActive,
+		[Name],
+		ListValue,
+		SortOrder
+	) 
+	values (
+		@PortalID,
+		@ListType,
+		@IsActive,
+		@Name,
+		@ListValue,
+		@SortOrder
+	)
+	select SCOPE_IDENTITY()
+	end
+end
+GO
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

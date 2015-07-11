@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="valEmail1.Error" xml:space="preserve">
+    <value>Email is required.</value>
+  </data>
+  <data name="valEmail2.Error" xml:space="preserve">
+    <value>Email must be valid.</value>
+  </data>
+  <data name="plSubject.Text" xml:space="preserve">
+    <value>Subject:</value>
+  </data>
+  <data name="plSubject2.Text" xml:space="preserve">
+    <value>Subject:</value>
+  </data>
+  <data name="plCopy.Text" xml:space="preserve">
+    <value>Send copy to yourself:</value>
+  </data>
+  <data name="cmdSend.Text" xml:space="preserve">
+    <value>Send Feedback</value>
+  </data>
+  <data name="MessageSent.Text" xml:space="preserve">
+    <value>Your feedback has been sent to the site owner. Thank you!</value>
+  </data>
+  <data name="Moderate.Text" xml:space="preserve">
+    <value>Moderate Posts</value>
+  </data>
+  <data name="MessagePending.Text" xml:space="preserve">
+    <value>A newly submitted Feedback post is pending moderation for possible publication, Please log into the {0} website and change the status of the post: &lt;br /&gt;&lt;br /&gt;{1}</value>
+  </data>
+  <data name="ModuleHelp.Text" xml:space="preserve">
+    <value>&lt;h1&gt;About The Feedback Module&lt;/h1&gt;
+
+&lt;p&gt;The Feedback Module allows visitors to send messages to the portal Administrator.&lt;/p&gt;
+
+&lt;h1&gt;Send Feedback&lt;/h1&gt;
+
+&lt;ol&gt;&lt;li&gt;Add a &lt;b&gt;Feedback&lt;/b&gt; module, or go to an existing &lt;b&gt;Feedback&lt;/b&gt; module. &lt;/li&gt;
+&lt;li&gt;At &lt;b&gt;Email&lt;/b&gt;, enter your email address. 
+&lt;li&gt;At &lt;b&gt;Name&lt;/b&gt;, enter your name. 
+&lt;li&gt;At &lt;b&gt;Subject&lt;/b&gt;, enter the subject of the email. 
+&lt;li&gt;At &lt;b&gt;Body&lt;/b&gt;, enter your message. 
+&lt;li&gt;Click &lt;b&gt;Send&lt;/b&gt;.&lt;/ol&gt;</value>
+  </data>
+  <data name="cmdCancel.Text" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="MenuEditLists.Text" xml:space="preserve">
+    <value>Edit Category/Subject Lists</value>
+  </data>
+  <data name="MenuModeration.Text" xml:space="preserve">
+    <value>Moderation/Management</value>
+  </data>
+  <data name="plCaptcha.Text" xml:space="preserve">
+    <value>Security Code:</value>
+  </data>
+  <data name="InvalidCaptcha.Text" xml:space="preserve">
+    <value>Incorrect Security Code</value>
+  </data>
+  <data name="valBody.Error" xml:space="preserve">
+    <value>You must enter a message.</value>
+  </data>
+  <data name="valName.Error" xml:space="preserve">
+    <value>Name is required.</value>
+  </data>
+  <data name="valTelephone.Error" xml:space="preserve">
+    <value>Telephone is required.</value>
+  </data>
+  <data name="valCity.Error" xml:space="preserve">
+    <value>City is required.</value>
+  </data>
+  <data name="valCountry.Error" xml:space="preserve">
+    <value>Country is required.</value>
+  </data>
+  <data name="valPostalCode.Error" xml:space="preserve">
+    <value>Postal Code is required.</value>
+  </data>
+  <data name="valRegion.Error" xml:space="preserve">
+    <value>Region or State is required.</value>
+  </data>
+  <data name="valStreet.Error" xml:space="preserve">
+    <value>Street is required.</value>
+  </data>
+  <data name="valTelephone2.Error" xml:space="preserve">
+    <value>Telephone must be valid format.</value>
+  </data>
+  <data name="valSubject2.Error" xml:space="preserve">
+    <value>Subject is required.</value>
+  </data>
+  <data name="plContactInfo.Text" xml:space="preserve">
+    <value>Your Contact Information</value>
+  </data>
+  <data name="plMessage.Text" xml:space="preserve">
+    <value>Message Body:</value>
+  </data>
+  <data name="CaptchaText.Text" xml:space="preserve">
+    <value>Enter the code shown above into the box.</value>
+  </data>
+  <data name="valPostalCode2.Error" xml:space="preserve">
+    <value>Postal Code must be valid format.</value>
+  </data>
+  <data name="SubmissionTooSoon.Text" xml:space="preserve">
+    <value>The site owner has set a limit on how frequently the same user may submit feedback. Please try again later.</value>
+  </data>
+  <data name="plCreatedOnDate.Text" xml:space="preserve">
+    <value>Created On</value>
+  </data>
+  <data name="plLastModifiedOnDate.Text" xml:space="preserve">
+    <value>Last Modified On</value>
+  </data>
+  <data name="plRemoteAddr.Text" xml:space="preserve">
+    <value>IP Address</value>
+  </data>
+  <data name="plStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="plFeedback.Text" xml:space="preserve">
+    <value>Your Feedback</value>
+  </data>
+  <data name="plFeedbackID.Text" xml:space="preserve">
+    <value>Feedback ID</value>
+  </data>
+  <data name="RefreshCaptcha.Text" xml:space="preserve">
+    <value>Refresh Captcha</value>
+  </data>
+  <data name="SendMessageError.Text" xml:space="preserve">
+    <value>Your feedback could not be sent to some or all of the intended recipients, please try again later:&lt;br /&gt;</value>
+  </data>
+  <data name="plCategoryID.Text" xml:space="preserve">
+    <value>Category ID</value>
+  </data>
+  <data name="plCategoryValue.Text" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="plPublishedOnDate.Text" xml:space="preserve">
+    <value>Published On</value>
+  </data>
+  <data name="plCategoryName.Text" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="CaptchaAudioText.Text" xml:space="preserve">
+    <value>Get Audio Code</value>
+  </data>
+  <data name="valCopy.Error" xml:space="preserve">
+    <value>Email is required when 'Send copy to yourself' is ticked.</value>
+  </data>
+  <data name="valCategory.Error" xml:space="preserve">
+    <value>Please select a category from the list</value>
+  </data>
+  <data name="valSubject.Error" xml:space="preserve">
+    <value>Please select a subject from the list</value>
+  </data>
+  <data name="plEmailConfirm.Text" xml:space="preserve">
+    <value>Confirm Email:</value>
+  </data>
+  <data name="valEmailConfirm.Error" xml:space="preserve">
+    <value>Emails are different.</value>
+  </data>
+  <data name="DuplicateSubmission.Text" xml:space="preserve">
+    <value>You have previously submitted this message.The site owner has denied the ability to submit duplicate messages.</value>
+  </data>
+  <data name="MessageSpam.Text" xml:space="preserve">
+    <value>A newly submitted Feedback has been identified as being spam, Please log into the {0} website and review the post for publication: &lt;br /&gt;&lt;br /&gt;{1}</value>
+  </data>
+  <data name="SendMessageSpam.Text" xml:space="preserve">
+    <value>Your feedback has been sent to the site owner, but has been identified as spam. The site owner will review it before it is published.</value>
+  </data>
+  <data name="valMessageLength.Error" xml:space="preserve">
+    <value>Message must be no more than {0} characters</value>
+  </data>
+  <data name="plCaptcha" xml:space="preserve">
+    <value />
+  </data>
+  <data name="plCharCount.Text" xml:space="preserve">
+    <value>Characters Remaining:</value>
+  </data>
+</root>

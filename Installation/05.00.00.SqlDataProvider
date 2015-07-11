@@ -1,0 +1,763 @@
+﻿/**********************************************************************/
+/*****                       SqlDataProvider                      *****/
+/*****                                                            *****/
+/*****                                                            *****/
+/***** Note: To manually execute this script you must             *****/
+/*****       perform a search and replace operation               *****/
+/*****       for {databaseOwner} and {objectQualifier}            *****/
+/*****                                                            *****/
+/**********************************************************************/
+
+/* Remove primary key on combined FeedbackID and ModuleID columns, recreate primary key on */
+/* FeedbackID column only since FeedbackID is identity column it is guaranteed to be unique */
+/* Add foreign key relationship to Modules table to enable cascade delete of Feedback items on delete of */
+/* associated module. Note that there may be orphaned data in the Feedback table that is no-longer */
+/* related to a module by ModuleID. Admin will be given option from settings control to delete orphaned data */
+
+
+ALTER TABLE {databaseOwner}{objectQualifier}Feedback
+       DROP CONSTRAINT PK_{objectQualifier}Feedback
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}Feedback
+       ADD CONSTRAINT
+	PK_{objectQualifier}Feedback PRIMARY KEY CLUSTERED 
+	(
+	FeedbackID
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) 
+
+GO
+
+/* Added the following to ensure that we can re-create the FK ...if it already exists--HWZ 6/18/2010 ---- */
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'FK_{objectQualifier}Feedback_{objectQualifier}Modules '))
+	ALTER TABLE {databaseOwner}{objectQualifier}Feedback DROP CONSTRAINT FK_{objectQualifier}Feedback_{objectQualifier}Modules
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}Feedback WITH NOCHECK ADD CONSTRAINT
+	FK_{objectQualifier}Feedback_{objectQualifier}Modules FOREIGN KEY
+	(
+	  ModuleID
+	) REFERENCES {databaseOwner}{objectQualifier}Modules
+	(
+	ModuleID
+	) ON UPDATE  NO ACTION 
+	 ON DELETE  CASCADE 
+GO
+
+/* Modify the Feedback Table to rename the field CreatedByName and CreatedByEmail to SenderName and SenderEmail */
+
+if col_length('{databaseOwner}[{objectQualifier}Feedback]','CreatedByName') is not NULL
+   BEGIN
+     EXEC sp_rename '{databaseOwner}[{objectQualifier}Feedback].CreatedByName', 'SenderName', 'COLUMN'
+   END
+GO
+
+if col_length('{databaseOwner}[{objectQualifier}Feedback]','CreatedByEmail') is not NULL
+   BEGIN
+     EXEC sp_rename '{databaseOwner}[{objectQualifier}Feedback].CreatedByEmail', 'SenderEmail', 'COLUMN'
+   END
+GO
+
+/* Modify the Feedback Table to rename the field DateCreated to CreatedOnDate */
+
+if col_length('{databaseOwner}[{objectQualifier}Feedback]','DateCreated') is not NULL
+   BEGIN
+     EXEC sp_rename '{databaseOwner}[{objectQualifier}Feedback].DateCreated', 'CreatedOnDate', 'COLUMN'
+   END
+GO
+
+/* Modify the Feedback Table to allow nulls in the ApprovedBy column */
+if col_length('{databaseOwner}[{objectQualifier}Feedback]','ApprovedBy') is  not NULL
+  BEGIN
+      ALTER TABLE {databaseOwner}{objectQualifier}Feedback
+      ALTER COLUMN ApprovedBy int null
+  END
+GO
+
+/* Modify the Feedback Table to include the date the feedback was published */
+if col_length('{databaseOwner}[{objectQualifier}Feedback]','PublishedOnDate') is  NULL
+  BEGIN
+     ALTER TABLE {databaseOwner}[{objectQualifier}Feedback] ADD
+		[PublishedOnDate] [datetime] DEFAULT NULL
+  END
+GO
+
+/* Set PublishedOnDate = CreatedOnDate for feedback already published (status = 2) */
+
+UPDATE {databaseOwner}[{objectQualifier}Feedback]
+SET
+    PublishedOnDate = CreatedOnDate
+WHERE
+    PublishedOnDate is null And [Status]=2
+GO
+
+/* Modify the Feedback Table to include other audit fields */
+
+if col_length('{databaseOwner}[{objectQualifier}Feedback]','CreatedByUserID') is  NULL
+  BEGIN
+     ALTER TABLE {databaseOwner}[{objectQualifier}Feedback] ADD
+		[CreatedByUserID] [int] DEFAULT NULL
+  END
+GO
+
+if col_length('{databaseOwner}[{objectQualifier}Feedback]','LastModifiedOnDate') is  NULL
+  BEGIN
+     ALTER TABLE {databaseOwner}[{objectQualifier}Feedback] ADD
+		[LastModifiedOnDate] [datetime] DEFAULT NULL
+  END
+GO
+
+if col_length('{databaseOwner}[{objectQualifier}Feedback]','LastModifiedByUserID') is  NULL
+   BEGIN
+     ALTER TABLE {databaseOwner}[{objectQualifier}Feedback] ADD
+		[LastModifiedByUserID] [int] DEFAULT NULL
+   END
+GO
+
+/* Modify the Feedback Table to include the street of the user sending the feedback */
+if col_length('{databaseOwner}[{objectQualifier}Feedback]','SenderStreet') is  NULL
+   BEGIN
+     ALTER TABLE {databaseOwner}[{objectQualifier}Feedback] ADD
+		[SenderStreet] [nvarchar] (50) DEFAULT NULL
+   END
+GO
+
+/* Modify the Feedback Table to include the city of the user sending the feedback */
+if col_length('{databaseOwner}[{objectQualifier}Feedback]','SenderCity') is  NULL
+   BEGIN
+      ALTER TABLE {databaseOwner}[{objectQualifier}Feedback] ADD
+		[SenderCity] [nvarchar] (50) DEFAULT NULL
+   END
+GO
+
+/* Modify the Feedback Table to include the region of the user sending the feedback */
+if col_length('{databaseOwner}[{objectQualifier}Feedback]','SenderRegion') is  NULL
+   BEGIN
+      ALTER TABLE {databaseOwner}[{objectQualifier}Feedback] ADD
+		[SenderRegion] [nvarchar] (50) DEFAULT NULL
+   END
+GO
+
+/* Modify the Feedback Table to include the country of the user sending the feedback */
+if col_length('{databaseOwner}[{objectQualifier}Feedback]','SenderCountry') is  NULL
+   BEGIN
+     ALTER TABLE {databaseOwner}[{objectQualifier}Feedback] ADD
+		[SenderCountry] [nvarchar] (50) DEFAULT NULL
+  END
+GO
+
+/* Modify the Feedback Table to include the postal code of the user sending the feedback */
+if col_length('{databaseOwner}[{objectQualifier}Feedback]','SenderPostalCode') is  NULL
+  BEGIN
+     ALTER TABLE {databaseOwner}[{objectQualifier}Feedback] ADD
+		[SenderPostalCode] [nvarchar] (50) DEFAULT NULL
+  END
+GO
+
+/* Modify the Feedback Table to include the telephone of the user sending the feedback */
+if col_length('{databaseOwner}[{objectQualifier}Feedback]','SenderTelephone') is  NULL
+  BEGIN
+    ALTER TABLE {databaseOwner}[{objectQualifier}Feedback] ADD
+		[SenderTelephone] [nvarchar] (20) DEFAULT NULL
+  END
+GO
+
+/* Modify the Feedback Table to include the remote address (IP) of the user sending the feedback */
+if col_length('{databaseOwner}[{objectQualifier}Feedback]','SenderRemoteAddr') is  NULL
+  BEGIN
+    ALTER TABLE {databaseOwner}[{objectQualifier}Feedback] ADD
+		[SenderRemoteAddr] [nvarchar] (50) DEFAULT NULL
+  END
+GO
+
+/* Drop AddFeedbackList and recreate as Feedback_AddList */
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}AddFeedbackList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}AddFeedbackList]
+GO
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_AddList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_AddList]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_AddList]
+	@PortalID int, 
+	@ListType int, 
+	@Name nvarchar(50), 
+	@ListValue nvarchar(100),
+	@IsActive bit
+AS
+
+BEGIN
+     DECLARE @SortOrder int
+     DECLARE @Count int
+
+     SET @SortOrder = IsNull((SELECT MAX ([SortOrder]) From {databaseOwner}[{objectQualifier}FeedbackList]           WHERE [PortalID] = @PortalID and  [ListType] = @ListType), -1) + 1
+
+     SELECT @Count =  COUNT(*) from {databaseOwner}[{objectQualifier}FeedbackList] where [PortalID] = @PortalID         and [Name] = @Name and [ListType] = @ListType
+	IF @Count = 0 
+	    BEGIN
+	        INSERT INTO {databaseOwner}[{objectQualifier}FeedbackList]  (
+		PortalID,
+		ListType,
+		IsActive,
+		[Name],
+		ListValue,
+		SortOrder
+	                 ) 
+	        VALUES (
+		@PortalID,
+		@ListType,
+		@IsActive,
+		@Name,
+		@ListValue,
+		@SortOrder
+	         )
+	       SELECT SCOPE_IDENTITY()
+	END
+END
+GO
+
+/* Drop ChangeSortOrder and recreate unchanged as Feedback_ChangeListSortOrder */
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}ChangeSortOrder]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}ChangeSortOrder]
+GO
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_ChangeListSortOrder]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_ChangeListSortOrder]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_ChangeListSortOrder]
+	@ListID int,
+	@ListType int,
+	@OldSortNum int,
+	@NewSortNum int
+AS
+
+	DECLARE @TempListID int
+	SELECT @TempListID = ListID FROM {databaseOwner}[{objectQualifier}FeedbackList]
+	WHERE ListType = @ListType and SortOrder = @NewSortNum
+
+
+	UPDATE {databaseOwner}[{objectQualifier}FeedbackList] 
+	SET SortOrder = @NewSortNum WHERE ListID = @ListID
+	
+	--now switch the other one.
+	UPDATE {databaseOwner}[{objectQualifier}FeedbackList] 
+	SET SortOrder = @OldSortNum WHERE ListID = @TempListID
+GO
+
+/* Drop CreateFeedback and modify with new name of Feedback_CreateFeedback */
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}CreateFeedback]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}CreateFeedback]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_CreateFeedback]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_CreateFeedback]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_CreateFeedback]
+	@PortalID int,
+	@ModuleID int, 
+	@CategoryID nvarchar(100), 
+	@SenderEmail nvarchar(256), 
+	@Status int,
+	@Message nvarchar(1000),
+	@Subject nvarchar(200),
+	@SenderName nvarchar(200),
+	@SenderStreet nvarchar(50),
+	@SenderCity nvarchar(50),
+	@SenderRegion nvarchar(50),
+	@SenderCountry nvarchar(50),
+	@SenderPostalCode nvarchar(50),
+	@SenderTelephone nvarchar(20),
+	@SenderRemoteAddr nvarchar(50),
+	@UserId int
+AS
+
+DECLARE @PublishedOnDate datetime
+
+IF (@Status = 2) SET @PublishedOnDate = getdate()
+ 
+
+INSERT INTO {databaseOwner}[{objectQualifier}Feedback] (
+	PortalID,
+	ModuleID,
+	CategoryID, 
+	SenderEmail,
+	PublishedOnDate,
+	[Status],
+	[Message],
+	[Subject],
+	SenderName,
+	SenderStreet,
+	SenderCity,
+	SenderRegion,
+	SenderCountry,
+	SenderPostalCode,
+	SenderTelephone,
+	SenderRemoteAddr,
+	CreatedOnDate,
+	CreatedByUserID
+) 
+VALUES (
+	@PortalID,
+	@ModuleID,
+	@CategoryID, 
+	@SenderEmail, 
+	@PublishedOnDate,
+	@Status,
+	@Message,
+	@Subject,
+	@SenderName,
+	@SenderStreet,
+	@SenderCity,
+	@SenderRegion,
+	@SenderCountry,
+	@SenderPostalCode,
+	@SenderTelephone,
+	@SenderRemoteAddr,
+	getdate(),
+	@UserId
+)
+GO
+
+/* Drop EditFeedbackList and recreate unchanged as Feedback_EditList */
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}EditFeedbackList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}EditFeedbackList]
+GO
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_EditList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_EditList]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_EditList]
+	@IsDeleteOperation bit,
+	@ListID int,
+	@PortalID int, 
+	@ListType int, 
+	@Name nvarchar(50), 
+	@ListValue nvarchar(100),
+	@IsActive bit
+AS
+  BEGIN
+	DECLARE @SortFrom int
+	DECLARE @TempListType int
+
+	IF @IsDeleteOperation = 1
+	       BEGIN
+	            SELECT @SortFrom = [SortOrder],@TempListType = [ListType] from {databaseOwner}[{objectQualifier}FeedbackList] 
+	            WHERE ListID = @ListID
+
+	            DELETE FROM {databaseOwner}[{objectQualifier}FeedbackList] 
+	            WHERE ListID = @ListID
+
+	           --Now check whether we need to resort everything.
+	           UPDATE {databaseOwner}[{objectQualifier}FeedbackList]
+	          SET SortOrder = (SortOrder -1) WHERE ListType = @TempListType and SortOrder > @SortFrom
+		
+	   END
+         ELSE
+	   BEGIN
+	         UPDATE {databaseOwner}[{objectQualifier}FeedbackList] 
+	         SET
+		PortalID = @PortalID,
+		ListType = @ListType,
+		Name = @Name,
+		ListValue = @ListValue,
+		IsActive = @IsActive
+	          WHERE ListID = @ListID
+	 END
+  END
+GO
+
+/* Drop GetFeedback and recreate modified as Feedback_GetFeedback */
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}GetFeedback]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}GetFeedback
+GO
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetFeedback]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}{objectQualifier}Feedback_GetFeedback
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetFeedback]
+	@FeedbackID int
+
+AS
+	SELECT
+		FeedbackID,
+		ModuleID,
+		f.PortalID,
+		[Status],
+		f.CategoryID,
+		fc.Name As [CategoryName],
+		fc.ListValue As [CategoryValue],
+		CASE WHEN fs.ListID IS null THEN
+		   f.[Subject]
+		ELSE
+		   fs.ListValue
+		END As [Subject],
+		[Message],
+		SenderEmail,
+		SenderName,
+		SenderStreet,
+		SenderCity,
+		SenderRegion,
+		SenderCountry,
+		SenderPostalCode,
+		SenderTelephone,
+		SenderRemoteAddr,
+		CreatedOnDate,
+		CreatedByUserID,
+		LastModifiedOnDate,
+		LastModifiedByUserID,
+		PublishedOnDate,
+		ApprovedBy,
+		TotalRecords = 1
+	FROM {databaseOwner}[{objectQualifier}Feedback] f
+	     LEFT OUTER JOIN {databaseOwner}[{objectQualifier}FeedbackList] fs ON f.[Subject] = convert(nvarchar, fs.ListID)
+		 LEFT OUTER JOIN {databaseOwner}[{objectQualifier}FeedbackList] fc ON f.[CategoryID] = convert(nvarchar, fc.ListID)
+	WHERE  FeedbackID = @FeedbackID
+GO
+
+/* Drop GetCategoryFeedback and recreate modified as Feedback_GetFeedbackByCategory */
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}GetCategoryFeedback]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}GetCategoryFeedback]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetFeedbackByCategory]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetFeedbackByCategory]
+GO
+
+/* NOTE: This revised GetFeedbackByCategory procedure uses ROW_NUMBER and CTEs and thus REQUIRES SQL Server 2005 or later!! */
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetFeedbackByCategory]		
+    	@PortalID int,
+    	@ModuleID int,
+	@CategoryID nvarchar(256),
+	@Status int,
+	@CurrentPage int,
+	@PageSize int,
+	@OrderBy nvarchar(25)
+ 
+AS
+
+BEGIN
+
+    DECLARE	
+	@FirstRow int,
+	@LastRow int,
+	@TotalRecords int
+
+    SELECT	
+	@FirstRow = (@CurrentPage - 1) * @PageSize + 1,
+	@LastRow = (@CurrentPage - 1) * @PageSize + @PageSize;
+	
+    WITH CategoryFeedback AS (
+
+    SELECT	
+	FeedbackID,
+	ModuleID,
+	f.PortalID,
+	[Status],
+	f.CategoryID,
+	fc.Name As [CategoryName],
+	fc.ListValue As [CategoryValue],
+	CASE WHEN fs.ListID IS null THEN
+	         f.[Subject]
+	ELSE
+	         fs.ListValue
+	END As [Subject],
+	[Message],
+	SenderEmail,
+	SenderName,
+	SenderStreet,
+	SenderCity,
+	SenderRegion,
+	SenderCountry,
+	SenderPostalCode,
+	SenderTelephone,
+	SenderRemoteAddr,
+	CreatedOnDate,
+	CreatedByUserID,
+	LastModifiedOnDate,
+	LastModifiedByUserID,
+	PublishedOnDate,
+	ApprovedBy,
+	ROW_NUMBER() OVER (ORDER BY
+	        CASE @OrderBy WHEN N'CreatedOnDate DESC' THEN CreatedOnDate END DESC
+	       ,CASE @OrderBy WHEN N'CreatedOnDate' THEN CreatedOnDate END) AS RowNumber
+	FROM {databaseOwner}{objectQualifier}Feedback f
+	     LEFT OUTER JOIN {databaseOwner}[{objectQualifier}FeedbackList] fs ON f.[Subject] = convert(nvarchar, fs.ListID)
+	     LEFT OUTER JOIN {databaseOwner}[{objectQualifier}FeedbackList] fc ON f.[CategoryID] = convert(nvarchar, fc.ListID)
+	WHERE (f.PortalID = @PortalID) and ((@ModuleID is null) or (f.ModuleID = @ModuleID))
+	          and ((@CategoryID='') or (charindex(rtrim(CategoryID),@CategoryID,1) > 0)) and (Status = @Status) 
+)
+
+SELECT
+   *,
+   (select count(*) from CategoryFeedback) as TotalRecords
+   FROM CategoryFeedback
+   WHERE RowNumber Between @FirstRow and @LastRow
+END
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetLastSubmissionDateForUserEmail]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetLastSubmissionDateForUserEmail]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetLastSubmissionDateForUserEmail]
+    	@PortalID int,
+	@Email nvarchar(256)
+AS
+	SELECT TOP 1
+       		CreatedOnDate
+	FROM   {databaseOwner}{objectQualifier}Feedback
+	WHERE  ((PortalID = @PortalID) AND (SenderEmail=@Email))
+	ORDER BY CreatedOnDate DESC
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetLastSubmissionDateForUserID]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetLastSubmissionDateForUserID]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetLastSubmissionDateForUserID]
+    	@PortalID int,
+	@UserId int
+AS
+	SELECT TOP 1
+       		CreatedOnDate
+	FROM   {databaseOwner}{objectQualifier}Feedback
+	WHERE  ((PortalID = @PortalID) AND (CreatedByUserID = @UserId))
+	ORDER BY CreatedOnDate DESC
+GO
+
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetLastSubmissionDateForUserIP]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetLastSubmissionDateForUserIP]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetLastSubmissionDateForUserIP]
+    	@PortalID int,
+	@RemoteAddr nvarchar(50)
+AS
+	SELECT TOP 1
+       		CreatedOnDate
+	FROM   {databaseOwner}{objectQualifier}Feedback
+	WHERE  ((PortalID = @PortalID) AND (SenderRemoteAddr = @RemoteAddr))
+	ORDER BY CreatedOnDate DESC
+GO
+
+/* Drop GetFeedbackList and recreate as Feedback_GetList */
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}GetFeedbackList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}GetFeedbackList]
+GO
+
+IF EXISTS (select * from dbo.sysobjects where id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetList]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetList]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetList]
+	@SingleRowOperation bit,
+	@PortalID int, 
+	@ListID int,
+	@ListType int,
+	@ActiveOnly bit
+AS
+	IF @SingleRowOperation = 0 
+	         BEGIN
+	             IF @ActiveOnly = 1
+  		  BEGIN
+		      SELECT * FROM {databaseOwner}[{objectQualifier}FeedbackList] 
+		      WHERE [PortalID] = @PortalID and [ListType] = @ListType and IsActive = 1
+                                         ORDER BY SortOrder ASC
+		  END
+	             ELSE
+		  BEGIN
+		      SELECT * FROM {databaseOwner}[{objectQualifier}FeedbackList] 
+		      WHERE [PortalID] = @PortalID and [ListType] = @ListType
+                                         ORDER BY SortOrder ASC
+		  END
+	         END
+	ELSE
+	         BEGIN
+		SELECT * FROM {databaseOwner}[{objectQualifier}FeedbackList] 
+		WHERE [PortalID] = @PortalID and ListID = @ListID
+	         END
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_UpdateFeedback]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_UpdateFeedback]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_UpdateFeedback]
+	@ModuleID int,
+	@FeedbackID int, 
+	@Subject nvarchar(200),
+	@Message nvarchar(1000),
+	@UserId int
+AS
+	UPDATE {databaseOwner}[{objectQualifier}Feedback]
+	SET
+	    Subject = @Subject,
+	    Message = @Message,
+	    LastModifiedByUserID = @UserId,
+	    LastModifiedOnDate = getdate()
+	WHERE FeedbackID = @FeedbackID and ((@ModuleID is null) or (ModuleID = @ModuleID))
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}UpdateFeedbackStatus]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}UpdateFeedbackStatus]
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_UpdateStatus]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_UpdateStatus]
+GO
+
+CREATE PROCEDURE {databaseOwner}{objectQualifier}Feedback_UpdateStatus
+	@ModuleID int,
+	@FeedbackID int, 
+	@Status int,
+	@UserId int
+AS
+
+DECLARE @PublishedOnDate datetime
+DECLARE @ApprovedBy int
+
+IF @Status = 4 
+	DELETE {databaseOwner}[{objectQualifier}Feedback] WHERE FeedbackID = @FeedbackID and ModuleID = @ModuleID
+ELSE
+	IF @Status=2
+	      BEGIN
+		SET @PublishedOnDate = getdate()
+		SET @ApprovedBy = @UserId
+	      END
+	ELSE
+	     BEGIN
+		SET @PublishedOnDate = (SELECT PublishedOnDate FROM {databaseOwner}[{objectQualifier}Feedback] WHERE FeedbackID=@FeedbackID)
+		SET @ApprovedBy = (SELECT ApprovedBy FROM {databaseOwner}[{objectQualifier}Feedback] WHERE FeedbackID=@FeedbackID)
+	     END
+
+	UPDATE {databaseOwner}[{objectQualifier}Feedback]
+	SET
+	     Status = @Status,
+	     PublishedOnDate = @PublishedOnDate,
+	     ApprovedBy = @ApprovedBy,
+	     LastModifiedByUserID = @UserId,
+	     LastModifiedOnDate = getdate() 
+	WHERE FeedbackID = @FeedbackID and ((@ModuleID is null) or (ModuleID = @ModuleID))
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_GetOrphanedData]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetOrphanedData]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_GetOrphanedData]
+
+AS
+
+       SELECT COUNT(*) As [ItemCount], f.ModuleID As [ModuleID] FROM  {databaseOwner}{objectQualifier}Feedback f
+       LEFT OUTER JOIN  {databaseOwner}{objectQualifier}Modules m ON f.ModuleID = m.ModuleID
+       WHERE m.ModuleID is null
+       GROUP BY f.ModuleID
+
+GO
+
+IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_DeleteOrphanedData]') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	DROP PROCEDURE {databaseOwner}[{objectQualifier}Feedback_DeleteOrphanedData]
+GO
+
+CREATE PROCEDURE {databaseOwner}[{objectQualifier}Feedback_DeleteOrphanedData]
+
+AS
+
+BEGIN
+ WITH OrphanedData
+   AS (SELECT f.ModuleID FROM  {databaseOwner}{objectQualifier}Feedback f
+       LEFT OUTER JOIN  {databaseOwner}{objectQualifier}Modules m ON f.ModuleID = m.ModuleID
+       WHERE m.ModuleID is null)
+   
+   DELETE FROM  {databaseOwner}{objectQualifier}Feedback
+   FROM  {databaseOwner}{objectQualifier}Feedback f
+   JOIN OrphanedData o ON f.ModuleId = o.ModuleID
+END 
+
+GO
+
+/* Rename, Remove, Move ModuleSettings and TabModuleSettings */
+
+INSERT INTO {databaseOwner}[{objectQualifier}TabModuleSettings] (
+   
+   TabModuleId,
+   SettingName,
+   SettingValue,
+   CreatedByUserID,
+   CreatedOnDate,
+   LastModifiedByUserID,
+   LastModifiedOnDate)
+   
+SELECT
+   TabModuleId,
+   'Feedback_ViewCategory',
+   SettingValue,
+   ms.CreatedByUserID,
+   ms.CreatedOnDate,
+   ms.LastModifiedByUserID,
+   ms.LastModifiedOnDate
+FROM {databaseOwner}[{objectQualifier}ModuleSettings] ms
+Left outer join {databaseOwner}[{objectQualifier}TabModules] tm on ms.ModuleId = tm.ModuleId
+WHERE SettingName = 'Feedback_ViewCategory' 
+/* Added to ensure that we are not attempting to add a NULL  value for ModuleID */
+    AND  tm.ModuleId IS NOT NULL
+GO
+
+DELETE FROM {databaseOwner}[{objectQualifier}ModuleSettings]
+WHERE SettingName='Feedback_ViewCategory' or SettingName='Feedback_HideEmail' or
+                  SettingName='Feedback_HideName' or SettingName='Feedback_HideSubject'
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleSettings]
+SET
+     SettingName='Feedback_ModeratedCategories'
+WHERE SettingName='Feedback_ModCategory'
+GO
+
+UPDATE {databaseOwner}[{objectQualifier}ModuleSettings]
+SET
+     SettingName='Feedback_SubjectFieldType',
+     SettingValue=CASE SettingValue
+                  WHEN '1' THEN 'List'
+                  WHEN '2' THEN 'Textbox'
+                  WHEN '3' THEN 'Hidden'
+                  WHEN 'True' THEN 'Textbox'
+                  WHEN 'False' THEN 'Hidden'
+                  ELSE 'Textbox' END                           
+ WHERE SettingName='Feedback_SubjectEdit'
+GO
+
+UPDATE  {databaseOwner}[{objectQualifier}ModuleSettings]
+SET
+     SettingName='Feedback_NameFieldVisibility',
+     SettingValue= CASE SettingValue WHEN 'True' THEN 'Required'
+                              ELSE 'Optional' END
+WHERE SettingName='Feedback_RequireName'
+GO
+
+UPDATE  {databaseOwner}[{objectQualifier}ModuleSettings]
+SET
+     SettingName='Feedback_CaptchaVisibility',
+     SettingValue= CASE SettingValue WHEN 'True' THEN 'AllUsers' 
+                              ELSE 'Disabled' END
+WHERE SettingName='Feedback_UseCaptcha'
+GO
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

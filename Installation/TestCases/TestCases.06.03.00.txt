@@ -1,0 +1,32 @@
+﻿Test Cases for DotNetNuke Feedback 06.03.00
+
+1. New Install (Install Package)
+   a. Install as any module - no errors should be shown in installer during or the Event Viewer after install.
+   b. Add a Feedback module to a test page. There are two module definitions:
+      The top module is the feedback viewer or comments/guest book module. Initially, it should display only its title and the text "There are no feedback items to be displayed at this time".
+      The bottom module is the feedback entry form. It should display only the fields required by default: Sender's email, Subject, and Message.
+   c. Open the Settings page of the Feedback module and configure the following minimum setting:
+        1. Send To - your email address
+   d. Enter a test feedback submission. After clicking on Send Feedback then Continue, the newly submitted feedback should appear in the Feedback Viewer module. An e-mail containing the feedback should be received by the SendTo recipient.
+   e. Open the Feedback Moderation/Management control. The newly entered feedback item should be showin in the "Published" grid.
+   f. Test the capabilities for editing the subject and message fields, printing the feedback item, and changing the item's status from "Published" to "Private" to "Archived" then back to "Published".
+   g. Open the Feedback Category/Subject Lists editor and add a few category and subject items.
+   h. Open the Settings page of the Feedback module and test various options, submit one or more additional feedback items and notice how the various options affect feedback entry, submission security, and moderation/management.
+   i. Open the Settings page for the Feedback viewer module and test various options. Notice how display of feedback items in the viewer are affected by each option.
+   j. As time permits, test each of the configuration options including sending feedback to multiple recipients (either by adding additional email addresses to the Send To field or by selecting one or more Send To Roles. You will find a listing of the new configuration options in the release notes.
+
+2. Delete the Feedback module using the Host-->Extensions screen. The module installation should delete cleanly with no artifacts remaining in the DesktopModules folder nor in the database.
+
+3. Upgrade from Feedback Version 6.02.01.
+    a. Install Feedback 6.02.01 using the Install package.
+    b. Configure settings as desired and add several feedback items.
+    c. Upgrade to Feedback Version 6.03.00 using the Install package. No errors should be shown in the installer.
+    d. Other than some changes in visual rendering, all existing content should be still visible in the Feedback Viewer and on the Feedback Moderation/Management screen.
+    e. Verify that no errors are logged in the Event Viewer.
+
+4. Delete the upgraded Feedback module as in #2 above.
+
+5. New Install (Source Package)
+    a. Install the source package as any module - no errors should be shown in installer during or the Event Viewer after install. Confirm that all source files have been placed in the appropriate folders of DesktopModules\Feedback.
+    b. If you have time to open the source project and build in Visual Studio 2010, please note that it will be necessary to modify the VS solution file in Notepad or other text editor prior to opening it in Visual Studio to reflect the url of your test DotNetNuke website installation. The build process employs a custom PackageModule.targets file to build the install, source, and combined packages when in release mode. When opening the Visual Studio solution the first time, you may receive a security warning regarding use of a custom build file. If so, please indicate that you want to disregard the warning and continue to open the project.
+   

@@ -1,0 +1,5 @@
+﻿'Remove old versions of Feedback
+Install\Module\Feedback_06.03.00_Install.resources
+Install\Module\Feedback_06.04.00_Install.resources
+'Tidy up debug files
+Bin\DotNetNuke.Modules.Feedback.pdb

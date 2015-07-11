@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+     <PropertyGroup>
+        <CreateCombinedPackage>True</CreateCombinedPackage>
+        <ProductName>$(AssemblyName)</ProductName>
+        <PackageExtension>zip</PackageExtension>
+        <PackageDirectory>$(MSBuildProjectDirectory)\_packages</PackageDirectory>
+        <BuildFilesDirectory>$(MSBuildProjectDirectory)\_buildfiles</BuildFilesDirectory>
+        <TempDirectory>$(PackageDirectory)\_temp</TempDirectory>
+     </PropertyGroup>
+     <ItemGroup>
+        <AssemblyInfoFiles Include="$(MSBuildProjectDirectory)\AssemblyInfo.vb" />
+        <ManifestFiles Include="$(MSBuildProjectDirectory)\Installation\$(ProductName).dnn6" />
+     </ItemGroup>
+     <Target Name="BeforeBuild">
+        <CallTarget Targets="SetAssemblyVersion" />
+    </Target>
+    <Target Name="AfterBuild" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <CallTarget Targets="DeployWebsiteAssemblies" />
+        <CallTarget Targets="SetManifestVersion" />
+        <CallTarget Targets="SetReleaseHTMVersion" />
+        <CallTarget Targets="CreateInstallResourcesPackage" />
+        <CallTarget Targets="CreateInstallPackage" />
+        <CallTarget Targets="CreateSourceSourcesPackage" />
+        <CallTarget Targets="CreateSourcePackage" />
+        <CallTarget Targets="CreateCombinedPackage" Condition="'$(CreateCombinedPackage)'=='True'" />
+    </Target>
+    <Target Name="DeployWebsiteAssemblies">
+        <CreateItem Include="bin\*.*">
+            <Output TaskParameter="Include" ItemName="WebsiteAssemblies"/>
+        </CreateItem>
+        <Copy SourceFiles="@(WebsiteAssemblies)" DestinationFolder="$(MSBuildProjectDirectory)\..\..\bin\" />
+    </Target>
+    <Target Name="SetAssemblyVersion">
+        <!-- Obtain Version information from version.txt -->
+        <Version BuildType="None" RevisionType="BuildIncrement" VersionFile="$(BuildFilesDirectory)\version.txt" StartDate="04/06/2010">
+            <Output TaskParameter="Major" PropertyName="Major" />
+            <Output TaskParameter="Minor" PropertyName="Minor" />
+            <Output TaskParameter="Build" PropertyName="Build" />
+            <Output TaskParameter="Revision" PropertyName="Revision" />
+        </Version>
+        <!-- DNN requires single digits to be prefixed with a zero. See Jon Henning blog entry -->
+        <CreateProperty Value="0$(Major)" Condition="$(Major) &lt;= 9" >
+            <Output TaskParameter="Value" PropertyName="Major" />
+        </CreateProperty>
+        <CreateProperty Value="0$(Minor)" Condition="$(Minor) &lt;= 9" >
+            <Output TaskParameter="Value" PropertyName="Minor" />
+        </CreateProperty>
+        <CreateProperty Value="0$(Build)" Condition="$(Build) &lt;= 9" >
+            <Output TaskParameter="Value" PropertyName="Build" />
+        </CreateProperty>
+        <CreateProperty Value="0$(Revision)" Condition="$(Revision) &lt;= 9" >
+            <Output TaskParameter="Value" PropertyName="Revision" />
+        </CreateProperty>
+        <PropertyGroup>
+            <ModuleVersion>$(Major).$(Minor).$(Build).$(Revision)</ModuleVersion>
+            <ModuleVersionNoRevision>$(Major).$(Minor).$(Build)</ModuleVersionNoRevision>
+        </PropertyGroup>
+        <FileUpdate Files="@(AssemblyInfoFiles)" Encoding="ASCII" Regex="AssemblyVersion\(&quot;.*&quot;\)\&gt;" ReplacementText="AssemblyVersion(&quot;$(ModuleVersion)&quot;)&gt;" />
+    </Target>
+
+    <Target Name="SetManifestVersion">
+        <!-- Write new version to manifest -->
+        <FileUpdate Files="@(ManifestFiles)" Regex="type=&quot;Module&quot; version=&quot;.*&quot;&gt;" ReplacementText="type=&quot;Module&quot; version=&quot;$(ModuleVersion)&quot;&gt;" />
+    </Target>
+
+    <Target Name="SetReleaseHTMVersion" DependsOnTargets="SetManifestVersion">
+        <!-- Write new version to manifest -->
+        <FileUpdate Files="@(ManifestFiles)" Regex="&lt;releaseNotes src=&quot;.*&quot;&gt;" ReplacementText="&lt;releaseNotes src=&quot;Release.$(ModuleVersionNoRevision).htm&quot;&gt;" />
+    </Target>
+
+    <Target Name="CreateInstallResourcesPackage" DependsOnTargets="SetReleaseHTMVersion">
+        <RemoveDir Directories="$(TempDirectory)" ></RemoveDir>
+        <PropertyGroup>
+            <PackageName>$(TempDirectory)\Resources</PackageName>
+        </PropertyGroup>
+        <CreateItem Include="*.ascx;*.css;*.xsl">
+            <Output TaskParameter="Include" ItemName="InstallFiles" />
+        </CreateItem>
+        <CreateItem Include="App_LocalResources\*.resx">
+            <Output TaskParameter="Include" ItemName="LocalResourceFiles" />
+        </CreateItem>
+        <CreateItem Include="Installation\*.png">
+            <Output TaskParameter="Include" ItemName="IconFiles" />
+        </CreateItem>
+        <CreateItem Include="App_Data\RadCaptcha\*.wav">
+            <Output TaskParameter="Include" ItemName="WavFiles" />
+        </CreateItem>
+
+        <Copy SourceFiles="@(InstallFiles)" DestinationFolder="$(TempDirectory)\Resources" />
+        <Copy SourceFiles="@(LocalResourceFiles)" DestinationFolder="$(TempDirectory)\Resources\App_LocalResources" />
+        <Copy SourceFiles="@(IconFiles)" DestinationFolder="$(TempDirectory)\Resources" />
+        <Copy SourceFiles="@(WavFiles)" DestinationFolder="$(TempDirectory)\Resources\App_Data\RadCaptcha" />
+        <CreateItem Include="$(TempDirectory)\Resources\**\*.*">
+            <Output TaskParameter="Include" ItemName="InstallResourcesZipContent" />
+        </CreateItem>
+        <Zip Files="@(InstallResourcesZipContent)" WorkingDirectory="$(TempDirectory)\Resources" ZipFileName="$(PackageName).$(PackageExtension)" />
+    </Target>
+
+    <Target Name="CreateInstallPackage" DependsOnTargets="CreateInstallResourcesPackage">
+        <RemoveDir Directories="$(TempDirectory)\Resources" ></RemoveDir>
+        <PropertyGroup>
+            <PackageName>$(PackageDirectory)\$(ProductName)_$(ModuleVersionNoRevision)_Install</PackageName>
+        </PropertyGroup>
+        <CreateItem Include="bin\*.dll">
+            <Output TaskParameter="Include" ItemName="PackageAssemblies"/>
+        </CreateItem>
+        <CreateItem Include="Installation\*.txt">
+            <Output TaskParameter="Include" ItemName="TextFiles" />
+        </CreateItem>
+        <CreateItem Include="Installation\*.SqlDataProvider">
+            <Output TaskParameter="Include" ItemName="SqlDataProviderFiles" />
+        </CreateItem>
+        <CreateItem Include="images\*.*">
+            <Output TaskParameter="Include" ItemName="ImageFiles" />
+        </CreateItem>
+        <CreateItem Include="js\*.js">
+            <Output TaskParameter="Include" ItemName="JSFiles" />
+        </CreateItem>
+        <CreateItem Include="Installation\CleanUp\*.txt">
+            <Output TaskParameter="Include" ItemName="CleanUpFiles" />
+        </CreateItem>
+        <CreateItem Include="Installation\ReleaseNotes\Release.$(ModuleVersionNoRevision).htm">
+            <Output TaskParameter="Include" ItemName="ReleaseNotesFiles" />
+        </CreateItem>
+
+        <Copy SourceFiles="@(PackageAssemblies)" DestinationFolder="$(TempDirectory)\bin" />
+        <Copy SourceFiles="@(SqlDataProviderFiles)" DestinationFolder="$(TempDirectory)\Installation" />
+        <Copy SourceFiles="@(TextFiles)" DestinationFolder="$(TempDirectory)" />
+        <Copy SourceFiles="@(ImageFiles)" DestinationFolder="$(TempDirectory)\images" />
+        <Copy SourceFiles="@(JSFiles)" DestinationFolder="$(TempDirectory)\js" />
+        <Copy SourceFiles="@(CleanUpFiles)" DestinationFolder="$(TempDirectory)\Installation\CleanUp" />
+        <Copy SourceFiles="@(ReleaseNotesFiles)" DestinationFolder="$(TempDirectory)" />
+        <Copy SourceFiles="Installation\$(ProductName).dnn6" DestinationFiles="$(TempDirectory)\$(ProductName).dnn6"></Copy>
+        <CreateItem Include="$(TempDirectory)\**\*.*" >
+            <Output TaskParameter="Include" ItemName="InstallZipContent" />
+        </CreateItem>
+        <Zip Files="@(InstallZipContent)" WorkingDirectory="$(TempDirectory)" ZipFileName="$(PackageName).$(PackageExtension)" /> 
+    </Target>
+
+    <Target Name="CreateSourceSourcesPackage" DependsOnTargets="CreateInstallPackage">
+        <RemoveDir Directories="$(TempDirectory)" ></RemoveDir>
+        <PropertyGroup>
+            <PackageName>$(TempDirectory)\Sources</PackageName>
+        </PropertyGroup>
+        <CreateItem Include="*.ascx;*.css;*.xsl;*.vb;*.sln;*.vbproj">
+            <Output TaskParameter="Include" ItemName="SourceFiles" />
+        </CreateItem>
+        <CreateItem Include="_buildfiles\*.*">
+            <Output TaskParameter="Include" ItemName="BuildFiles" />
+        </CreateItem>
+        <CreateItem Include="App_LocalResources\*.resx">
+            <Output TaskParameter="Include" ItemName="LocalResourceFiles" />
+        </CreateItem>
+        <CreateItem Include="Components\**\*.*">
+            <Output TaskParameter="Include" ItemName="ComponentFiles" />
+        </CreateItem>
+        <CreateItem Include="Installation\*.*">
+            <Output TaskParameter="Include" ItemName="InstallationFiles" />
+        </CreateItem>
+        <CreateItem Include="Installation\CleanUp\*.*">
+            <Output TaskParameter="Include" ItemName="InstallationCleanUpFiles" />
+        </CreateItem>
+        <CreateItem Include="Installation\ReleaseNotes\*.*">
+            <Output TaskParameter="Include" ItemName="InstallationReleaseNotesFiles" />
+        </CreateItem>
+        <CreateItem Include="Installation\TestCases\*.*">
+            <Output TaskParameter="Include" ItemName="InstallationTestCasesFiles" />
+        </CreateItem>
+        <CreateItem Include="Installation\*.png">
+            <Output TaskParameter="Include" ItemName="IconFiles" />
+        </CreateItem>
+        <CreateItem Include="App_Data\RadCaptcha\*.wav">
+            <Output TaskParameter="Include" ItemName="WavFiles" />
+        </CreateItem>
+
+        <Copy SourceFiles="@(SourceFiles)" DestinationFolder="$(TempDirectory)\Sources" />
+        <Copy SourceFiles="@(BuildFiles)" DestinationFolder="$(TempDirectory)\Sources\_buildfiles" />
+        <Copy SourceFiles="@(LocalResourceFiles)" DestinationFolder="$(TempDirectory)\Sources\App_LocalResources" />
+        <Copy SourceFiles="@(ComponentFiles)" DestinationFiles="@(ComponentFiles->'$(TempDirectory)\Sources\Components\%(RecursiveDir)%(Filename)%(Extension)')" />
+        <Copy SourceFiles="@(InstallationFiles)" DestinationFolder="$(TempDirectory)\Sources\Installation" />
+        <Copy SourceFiles="@(InstallationCleanUpFiles)" DestinationFolder="$(TempDirectory)\Sources\Installation\CleanUp" />
+        <Copy SourceFiles="@(InstallationReleaseNotesFiles)" DestinationFolder="$(TempDirectory)\Sources\Installation\ReleaseNotes" />
+        <Copy SourceFiles="@(InstallationTestCasesFiles)" DestinationFolder="$(TempDirectory)\Sources\Installation\TestCases" />
+        <Copy SourceFiles="@(IconFiles)" DestinationFolder="$(TempDirectory)\Sources" />
+        <Copy SourceFiles="@(WavFiles)" DestinationFolder="$(TempDirectory)\Sources\App_Data\RadCaptcha" />
+        <CreateItem Include="$(TempDirectory)\Sources\**\*.*">
+            <Output TaskParameter="Include" ItemName="SourceSourcesZipContent" />
+        </CreateItem>
+        <Zip Files="@(SourceSourcesZipContent)" WorkingDirectory="$(TempDirectory)\Sources" ZipFileName="$(PackageName).$(PackageExtension)" />
+    </Target>
+
+    <Target Name="CreateSourcePackage" DependsOnTargets="CreateSourceSourcesPackage">
+        <RemoveDir Directories="$(TempDirectory)\Sources" ></RemoveDir>
+        <PropertyGroup>
+            <PackageName>$(PackageDirectory)\$(ProductName)_$(ModuleVersionNoRevision)_Source</PackageName>
+        </PropertyGroup>
+        <CreateItem Include="bin\*.dll">
+            <Output TaskParameter="Include" ItemName="PackageAssemblies"/>
+        </CreateItem>
+        <CreateItem Include="Installation\*.txt">
+            <Output TaskParameter="Include" ItemName="TextFiles" />
+        </CreateItem>
+        <CreateItem Include="Installation\*.SqlDataProvider">
+            <Output TaskParameter="Include" ItemName="SqlDataProviderFiles" />
+        </CreateItem>
+        <CreateItem Include="images\*.*">
+            <Output TaskParameter="Include" ItemName="ImageFiles" />
+        </CreateItem>
+        <CreateItem Include="js\*.js">
+            <Output TaskParameter="Include" ItemName="JSFiles" />
+        </CreateItem>
+        <CreateItem Include="Installation\CleanUp\*.txt">
+            <Output TaskParameter="Include" ItemName="CleanUpFiles" />
+        </CreateItem>
+        <CreateItem Include="Installation\ReleaseNotes\Release.$(ModuleVersionNoRevision).htm">
+            <Output TaskParameter="Include" ItemName="ReleaseNotesFiles" />
+        </CreateItem>
+
+        <Copy SourceFiles="@(PackageAssemblies)" DestinationFolder="$(TempDirectory)\bin" />
+        <Copy SourceFiles="@(SqlDataProviderFiles)" DestinationFolder="$(TempDirectory)\Installation" />
+        <Copy SourceFiles="@(TextFiles)" DestinationFolder="$(TempDirectory)" />
+        <Copy SourceFiles="@(ImageFiles)" DestinationFolder="$(TempDirectory)\images" />
+        <Copy SourceFiles="@(JSFiles)" DestinationFolder="$(TempDirectory)\js" />
+        <Copy SourceFiles="@(CleanUpFiles)" DestinationFolder="$(TempDirectory)\Installation\CleanUp" />
+        <Copy SourceFiles="@(ReleaseNotesFiles)" DestinationFolder="$(TempDirectory)" />
+        <Copy SourceFiles="Installation\$(ProductName).dnn6" DestinationFiles="$(TempDirectory)\$(ProductName).dnn6"></Copy>
+
+        <FileUpdate Files="$(TempDirectory)\$(ProductName).dnn6" Regex="resources.zip" ReplacementText="sources.zip" />
+
+        <CreateItem Include="$(TempDirectory)\**\*.*">
+            <Output TaskParameter="Include" ItemName="SourceZipContent" />
+        </CreateItem>
+        <Zip Files="@(SourceZipContent)" WorkingDirectory="$(TempDirectory)" ZipFileName="$(PackageName).$(PackageExtension)" />
+        <RemoveDir Directories="$(TempDirectory)" ></RemoveDir>
+    </Target>
+
+    <Target Name="CreateCombinedPackage" DependsOnTargets="CreateInstallPackage; CreateSourcePackage">
+        <RemoveDir Directories="$(TempDirectory)" ></RemoveDir>
+        <PropertyGroup>
+            <PackageName>$(PackageDirectory)\$(ProductName)_$(ModuleVersionNoRevision)_Package</PackageName>
+        </PropertyGroup>
+        <CreateItem Include="$(PackageDirectory)\$(ProductName)_$(ModuleVersionNoRevision)_Install.zip; 
+                             $(PackageDirectory)\$(ProductName)_$(ModuleVersionNoRevision)_Source.zip">
+            <Output TaskParameter="Include" ItemName="ZipFiles"/>
+        </CreateItem>
+        <CreateItem Include="Installation\ReleaseNotes\Release.$(ModuleVersionNoRevision).htm">
+            <Output TaskParameter="Include" ItemName="ReleaseNotes" />
+        </CreateItem>
+        <CreateItem Include="Installation\TestCases\TestCases.$(ModuleVersionNoRevision).txt">
+            <Output TaskParameter="Include" ItemName="TestCases" />
+        </CreateItem>
+
+        <Copy SourceFiles="@(ZipFiles)" DestinationFolder="$(TempDirectory)" />
+        <Copy SourceFiles="@(ReleaseNotes)" DestinationFiles="$(TempDirectory)\$(ProductName)_$(ModuleVersionNoRevision)_ReleaseNotes.htm"></Copy>
+        <Copy SourceFiles="@(TestCases)" DestinationFiles="$(TempDirectory)\$(ProductName)_$(ModuleVersionNoRevision)_TestCases.txt"></Copy>
+
+        <CreateItem Include="$(TempDirectory)\**\*.*">
+            <Output TaskParameter="Include" ItemName="PackageZipFiles" />
+        </CreateItem>
+        <Zip Files="@(PackageZipFiles)" WorkingDirectory="$(TempDirectory)" ZipFileName="$(PackageName).$(PackageExtension)" />
+        <RemoveDir Directories="$(TempDirectory)" ></RemoveDir>
+    </Target> 
+</Project>
