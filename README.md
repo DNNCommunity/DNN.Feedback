@@ -2,17 +2,19 @@
 DNN Feedback is a basic module used for accepting user inquiries on your DNN site.
 ## Feedback Submission, Lists, Moderation and Display
 
-Feedback Submission ||  List Edit |
-| [image:MainScreen.png] | [image:EditLists.png] | 
-|| Moderation || View Comments |
-|[image:Moderation.png] | [image:ViewComments.png] |
+|Feedback Submission|List Edit|
+|-------------------|---|
+|[Feedback submission](https://cloud.githubusercontent.com/assets/5859855/8637519/cf450060-2894-11e5-8c56-ea7355bfc8d9.png "List edit")|[Feedback submission](https://cloud.githubusercontent.com/assets/5859855/8637519/cf450060-2894-11e5-8c56-ea7355bfc8d9.png "List edit")|
+|Moderation|View comments|
+|[Moderation](https://cloud.githubusercontent.com/assets/5859855/8637519/cf450060-2894-11e5-8c56-ea7355bfc8d9.png "Moderations")|[Feedback submission](https://cloud.githubusercontent.com/assets/5859855/8637518/cf442410-2894-11e5-823a-edf334b92935.png "Comment view")|
+
 
 ## Extensive Configurability
 The module enables extensive consiguration in five main areas
 
 ### Email Address
 * Configuration including who emails are sent to, and sent 'from' (to support sites where the send from email address must be in the same domain as the website).
-* Whether copies should be sent to the user and whether they can aopt-out or not.
+* Whether copies should be sent to the user and whether they can opt-out or not.
 
 ### Categories
 * Categories to enable routing
