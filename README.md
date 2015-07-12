@@ -1,13 +1,16 @@
 # DNN.Feedback
 DNN Feedback is a basic module used for accepting user inquiries on your DNN site.
-## Feedback Submission, Lists, Moderation and Display
+## Feedback Submission
+![mainscreen](https://cloud.githubusercontent.com/assets/5859855/8637517/cf43ea22-2894-11e5-94e3-de7e976076ae.png)
 
-|Feedback Submission|List Edit|
-|-------------------|---|
-|[Feedback submission](https://cloud.githubusercontent.com/assets/5859855/8637519/cf450060-2894-11e5-8c56-ea7355bfc8d9.png "List edit")|[Feedback submission](https://cloud.githubusercontent.com/assets/5859855/8637519/cf450060-2894-11e5-8c56-ea7355bfc8d9.png "List edit")|
-|Moderation|View comments|
-|[Moderation](https://cloud.githubusercontent.com/assets/5859855/8637519/cf450060-2894-11e5-8c56-ea7355bfc8d9.png "Moderations")|[Feedback submission](https://cloud.githubusercontent.com/assets/5859855/8637518/cf442410-2894-11e5-823a-edf334b92935.png "Comment view")|
+## Lists
+![editlists](https://cloud.githubusercontent.com/assets/5859855/8637519/cf450060-2894-11e5-8c56-ea7355bfc8d9.png)
 
+## Moderation
+![moderation](https://cloud.githubusercontent.com/assets/5859855/8637516/cf438d34-2894-11e5-8e1e-0d89b5b07e46.png)
+
+## Display
+![viewcomments](https://cloud.githubusercontent.com/assets/5859855/8637518/cf442410-2894-11e5-823a-edf334b92935.png)
 
 ## Extensive Configurability
 The module enables extensive consiguration in five main areas
