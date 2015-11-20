@@ -2,17 +2,17 @@
 <%@ Register TagPrefix="dnn" Assembly="DotNetNuke.Web" Namespace="DotNetNuke.Web.UI.WebControls" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 
-<div id="divFeedbackForm" runat="server"> 
+<div id="divFeedbackForm" runat="server">
     <div id="divFeedbackFormContent" runat="server">
         <asp:ValidationSummary ID="valSummary" runat="server" CssClass="dnnFormMessage dnnFormValidationSummary"
         EnableClientScript="true" DisplayMode="List" />
-        <h2 id="h2ContactInfo" runat="server" class="dnnFormSectionHead"><%=LocalizeString("plContactInfo")%></h2>
+        <h3 id="hContactInfo" runat="server" class="dnnFormSectionHead"><%=LocalizeString("plContactInfo")%></h3>
         <fieldset>
             <div id="divEmail" runat="server" class="Feedback_Field">
 		          <div class="dnnFormItem">
         		    <dnn:label id="plEmail" runat="server" associatedcontrolid="txtEmail"  resourcekey="plEmail"></dnn:label>
 	                <asp:TextBox id="txtEmail" runat="server"  maxlength="256"/>
-    	            <asp:requiredfieldvalidator id="valEmail1" runat="server" cssclass="dnnFormMessage dnnFormError" Display="Dynamic" errormessage="Email is required." 
+    	            <asp:requiredfieldvalidator id="valEmail1" runat="server" cssclass="dnnFormMessage dnnFormError" Display="Dynamic" errormessage="Email is required."
    				        controltovalidate="txtEmail" InitialValue="" Enabled="false" resourcekey="valEmail1.Error"></asp:requiredfieldvalidator>
 			        <asp:regularexpressionvalidator id="valEmail2" runat="server" cssclass="dnnFormMessage dnnFormError" display="Dynamic" errormessage="Email must be valid."
 				        controltovalidate="txtEmail" resourcekey="valEmail2.Error" validationexpression="\b[a-zA-Z0-9._%\-+']+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,4}\b"></asp:regularexpressionvalidator>
@@ -22,9 +22,9 @@
 		          <div class="dnnFormItem">
 		            <dnn:label id="plEmailConfirm" runat="server" associatedcontrolid="txtEmailConfirm"  resourcekey="plEmailConfirm"></dnn:label>
 	                <asp:TextBox id="txtEmailConfirm" runat="server"  maxlength="256"/>
-    	            <asp:requiredfieldvalidator id="valEmailConfirm" runat="server" cssclass="dnnFormMessage dnnFormError" Display="Dynamic" errormessage="Emails are different." 
+    	            <asp:requiredfieldvalidator id="valEmailConfirm" runat="server" cssclass="dnnFormMessage dnnFormError" Display="Dynamic" errormessage="Emails are different."
    				        controltovalidate="txtEmailConfirm" InitialValue="" Enabled="false" resourcekey="valEmailConfirm.Error"></asp:requiredfieldvalidator>
-    	            <asp:comparevalidator id="valEmailConfirm2" runat="server" cssclass="dnnFormMessage dnnFormError" Display="Dynamic" errormessage="Emails are different." 
+    	            <asp:comparevalidator id="valEmailConfirm2" runat="server" cssclass="dnnFormMessage dnnFormError" Display="Dynamic" errormessage="Emails are different."
    				        controltovalidate="txtEmailConfirm" controltocompare="txtEmail" resourcekey="valEmailConfirm.Error"></asp:comparevalidator>
 	              </div>
 	        </div>
@@ -75,7 +75,7 @@
 			        <asp:requiredfieldvalidator id="valPostalCode" runat="server" cssclass="dnnFormMessage dnnFormError" display="Dynamic" errormessage="Postal Code is required."
 				        controltovalidate="txtPostalCode" InitialValue="" Enabled="false" resourcekey="valPostalCode.Error"></asp:requiredfieldvalidator>
 				    <asp:regularexpressionvalidator id="valPostalCode2" runat="server" cssclass="dnnFormMessage dnnFormError" display="Dynamic" errormessage="Postal Code must be valid."
-				        controltovalidate="txtPostalCode" resourcekey="valPostalCode2.Error"></asp:regularexpressionvalidator>    	
+				        controltovalidate="txtPostalCode" resourcekey="valPostalCode2.Error"></asp:regularexpressionvalidator>
 		        </div>
 	        </div>
 	        <div id="divTelephone" runat="server" visible="false" class="Feedback_Field">
@@ -89,7 +89,7 @@
 		        </div>
 	        </div>
         </fieldset>
-        <h2 id="h2Feedback" runat="server" class="dnnFormSectionHead"><%=LocalizeString("plFeedback")%></h2>
+        <h3 id="hFeedback" runat="server" class="dnnFormSectionHead"><%=LocalizeString("plFeedback")%></h3>
         <fieldset>
             <div id="divCategory" runat="Server" class="Feedback_Field">
 		          <div class="dnnFormItem">
@@ -151,16 +151,16 @@
         <div class="dnnClear">
             <ul class="dnnActions dnnClear">
                 <li><asp:linkbutton id="cmdSend" resourcekey="cmdSend" runat="server" cssclass="dnnPrimaryAction">Send Feedback</asp:linkbutton></li>
-            </ul> 
-        </div>  
-    </div>   
+            </ul>
+        </div>
+    </div>
     <div id="divConfirmation" runat="server" class="Feedback_Confirmation" Visible="False">
         <div id="divResponseMessage" runat="server">
             <asp:label id="lblMessage" runat="server"></asp:label>
-        </div> 
+        </div>
         <ul class="dnnActions dnnClear">
             <li><asp:linkbutton id="cmdCancel" resourcekey="cmdCancel" runat="server" cssclass="dnnPrimaryAction" CausesValidation="False">Cancel</asp:linkbutton></li>
-        </ul> 
+        </ul>
     </div>
 </div>
 
