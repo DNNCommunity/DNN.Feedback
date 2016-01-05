@@ -1,12 +1,13 @@
 <%@ Control Language="vb" AutoEventWireup="false" Explicit="True" Codebehind="Feedback.ascx.vb" Inherits="DotNetNuke.Modules.Feedback.Feedback" %>
 <%@ Register TagPrefix="dnn" Assembly="DotNetNuke.Web" Namespace="DotNetNuke.Web.UI.WebControls" %>
+<%@ Register TagPrefix="dnn" Assembly="DotNetNuke.Web.Deprecated" Namespace="DotNetNuke.Web.UI.WebControls" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 
 <div id="divFeedbackForm" runat="server"> 
     <div id="divFeedbackFormContent" runat="server">
         <asp:ValidationSummary ID="valSummary" runat="server" CssClass="dnnFormMessage dnnFormValidationSummary"
         EnableClientScript="true" DisplayMode="List" />
-        <h2 id="h2ContactInfo" runat="server" class="dnnFormSectionHead"><%=LocalizeString("plContactInfo")%></h2>
+        <h2 id="h2ContactInfo" runat="server" class="dnnFormSectionHead"><%: LocalizeString("plContactInfo")%></h2>
         <fieldset>
             <div id="divEmail" runat="server" class="Feedback_Field">
 		          <div class="dnnFormItem">
@@ -89,7 +90,7 @@
 		        </div>
 	        </div>
         </fieldset>
-        <h2 id="h2Feedback" runat="server" class="dnnFormSectionHead"><%=LocalizeString("plFeedback")%></h2>
+        <h2 id="h2Feedback" runat="server" class="dnnFormSectionHead"><%: LocalizeString("plFeedback")%></h2>
         <fieldset>
             <div id="divCategory" runat="Server" class="Feedback_Field">
 		          <div class="dnnFormItem">
