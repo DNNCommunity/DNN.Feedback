@@ -310,9 +310,11 @@
     <Content Include="Installation\CleanUp\Cleanup.06.03.00.txt" />
     <Content Include="Installation\CleanUp\Cleanup.06.04.01.txt" />
     <Content Include="Installation\CleanUp\Cleanup.06.04.02.txt" />
+    <Content Include="Installation\CleanUp\Cleanup.06.05.00.txt" />
     <Content Include="Installation\CleanUp\Cleanup.06.04.03.txt" />
     <Content Include="Installation\DNN_Feedback.png" />
     <Content Include="Installation\license.txt" />
+    <Content Include="Installation\ReleaseNotes\Release.06.05.00.htm" />
     <Content Include="Installation\ReleaseNotes\Release.06.04.03.htm" />
     <Content Include="Installation\ReleaseNotes\Release.06.04.01.htm" />
     <Content Include="Installation\ReleaseNotes\Release.06.04.00.htm" />
@@ -333,6 +335,7 @@
       <DependentUpon>FeedbackLists.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Content Include="Installation\TestCases\TestCases.06.05.00.txt" />
     <Content Include="Installation\TestCases\TestCases.06.04.03.txt" />
     <Content Include="Installation\TestCases\TestCases.06.04.01.txt" />
     <Content Include="Installation\TestCases\TestCases.06.04.00.txt" />
