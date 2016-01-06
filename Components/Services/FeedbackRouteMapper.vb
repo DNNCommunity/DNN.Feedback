@@ -20,6 +20,7 @@
 Option Strict On
 Option Explicit On
 
+Imports DotNetNuke.Web.Api
 Imports DotNetNuke.Web.Services
 
 Namespace Components.Services
@@ -27,7 +28,7 @@ Namespace Components.Services
     Public Class FeedbackRouteMapper
         Implements IServiceRouteMapper
         Public Sub RegisterRoutes(mapRouteManager As IMapRoute) Implements IServiceRouteMapper.RegisterRoutes
-            mapRouteManager.MapRoute("Feedback", "{controller}.ashx/{action}", New String() {"DotNetNuke.Modules.Feedback"})
+            mapRouteManager.MapHttpRoute("Feedback", "default", "{controller}.ashx/{action}", New String() {"DotNetNuke.Modules.Feedback"})
         End Sub
     End Class
 
