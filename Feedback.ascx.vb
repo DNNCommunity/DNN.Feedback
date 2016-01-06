@@ -61,6 +61,15 @@ Namespace DotNetNuke.Modules.Feedback
                 Return CType(_isAdministrator, Boolean)
             End Get
         End Property
+
+#End Region
+
+#Region "Public Methods"
+
+        Public Shadows Function LocalizeString(keyName As String) As String
+            Return MyBase.LocalizeString(keyName)
+        End Function
+
 #End Region
 
 #Region "Private Methods"

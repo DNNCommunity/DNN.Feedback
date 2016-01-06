@@ -1,6 +1,6 @@
 ﻿<dotnetnuke type="Package" version="5.0">
   <packages>
-    <package name="DNN_Feedback" type="Module" version="06.04.03.08">
+    <package name="DNN_Feedback" type="Module" version="06.05.00.00">
       <friendlyName>Feedback</friendlyName>
       <description>Feedback allows visitors to send messages to the Administrator of the portal and in an associated module, display published certain feedback or comment items after they have been approved for publication.</description>
       <iconFile>DesktopModules\Feedback\DNN_Feedback.png</iconFile>
@@ -11,10 +11,10 @@
         <email>support@dotnetnuke.com</email>
       </owner>
       <license src="License.txt"></license>
-      <releaseNotes src="Release.06.04.03.htm"></releaseNotes>
+      <releaseNotes src="Release.06.05.00.htm"></releaseNotes>
       <azureCompatible>true</azureCompatible>
       <dependencies>
-        <dependency type="CoreVersion">06.02.01</dependency>
+        <dependency type="CoreVersion">08.00.00</dependency>
       </dependencies>
       <components>
         <component type="Script">
