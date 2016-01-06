@@ -7,15 +7,7 @@
     <div id="divFeedbackFormContent" runat="server">
         <asp:ValidationSummary ID="valSummary" runat="server" CssClass="dnnFormMessage dnnFormValidationSummary"
         EnableClientScript="true" DisplayMode="List" />
-<<<<<<< HEAD
         <h2 id="h2ContactInfo" runat="server" class="dnnFormSectionHead"><%: LocalizeString("plContactInfo")%></h2>
-=======
-<<<<<<< .merge_file_a07564
-        <h3 id="hContactInfo" runat="server" class="dnnFormSectionHead"><%=LocalizeString("plContactInfo")%></h3>
-=======
-        <h2 id="h2ContactInfo" runat="server" class="dnnFormSectionHead"><%: LocalizeString("plContactInfo")%></h2>
->>>>>>> .merge_file_a07788
->>>>>>> 53dcd18c0dce40c491ec9264f5323ff690ecd7a8
         <fieldset>
             <div id="divEmail" runat="server" class="Feedback_Field">
 		          <div class="dnnFormItem">
@@ -98,15 +90,7 @@
 		        </div>
 	        </div>
         </fieldset>
-<<<<<<< HEAD
         <h2 id="h2Feedback" runat="server" class="dnnFormSectionHead"><%: LocalizeString("plFeedback")%></h2>
-=======
-<<<<<<< .merge_file_a07564
-        <h3 id="hFeedback" runat="server" class="dnnFormSectionHead"><%=LocalizeString("plFeedback")%></h3>
-=======
-        <h2 id="h2Feedback" runat="server" class="dnnFormSectionHead"><%: LocalizeString("plFeedback")%></h2>
->>>>>>> .merge_file_a07788
->>>>>>> 53dcd18c0dce40c491ec9264f5323ff690ecd7a8
         <fieldset>
             <div id="divCategory" runat="Server" class="Feedback_Field">
 		          <div class="dnnFormItem">
