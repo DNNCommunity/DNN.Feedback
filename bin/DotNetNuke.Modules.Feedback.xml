@@ -1,0 +1,2842 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DotNetNuke.Modules.Feedback
+</name>
+</assembly>
+<members>
+<member name="T:DotNetNuke.Modules.Feedback.CommentSettings">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Settings ModuleSettingsBase is used to manage the settings for the Feedback Module
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[cnurse]	11/11/2004  created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._valSummary">
+<summary>
+valSummary control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._plScope">
+<summary>
+plScope control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._rblScope">
+<summary>
+rblScope control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._divFeedbackModules">
+<summary>
+divFeedbackModules control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._plFeedbackModules">
+<summary>
+plFeedbackModules control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._gvFeedbackModules">
+<summary>
+gvFeedbackModules control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._divCategories">
+<summary>
+divCategories control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._plCategories">
+<summary>
+plCategories control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._cblCategories">
+<summary>
+cblCategories control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._plHeaderTemplate">
+<summary>
+plHeaderTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._txtHeaderTemplate">
+<summary>
+txtHeaderTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._cmdLoadDefaultHeaderTemplate">
+<summary>
+cmdLoadDefaultHeaderTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._plItemTemplate">
+<summary>
+plItemTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._txtItemTemplate">
+<summary>
+txtItemTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._cmdLoadDefaultItemTemplate">
+<summary>
+cmdLoadDefaultItemTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._plAltItemTemplate">
+<summary>
+plAltItemTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._txtAltItemTemplate">
+<summary>
+txtAltItemTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._cmdLoadDefAltItemTemplate">
+<summary>
+cmdLoadDefAltItemTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._plSeparatorTemplate">
+<summary>
+plSeparatorTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._txtSeparatorTemplate">
+<summary>
+txtSeparatorTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._cmdLoadDefaultSeparatorTemplate">
+<summary>
+cmdLoadDefaultSeparatorTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._plFooterTemplate">
+<summary>
+plFooterTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._txtFooterTemplate">
+<summary>
+txtFooterTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._cmdLoadDefaultFooterTemplate">
+<summary>
+cmdLoadDefaultFooterTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._plAvailableTokens">
+<summary>
+plAvailableTokens control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._lblAvailableTokens">
+<summary>
+lblAvailableTokens control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._plEnablePager">
+<summary>
+plEnablePager control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._chkEnablePager">
+<summary>
+chkEnablePager control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._plDefaultPageSize">
+<summary>
+plDefaultPageSize control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._txtDefaultPageSize">
+<summary>
+txtDefaultPageSize control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.CommentSettings._valDefaultPageSize">
+<summary>
+valDefaultPageSize control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="M:DotNetNuke.Modules.Feedback.CommentSettings.LoadSettings">
+ -----------------------------------------------------------------------------
+ <summary>
+ LoadSettings loads the settings from the Database and displays them
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[cnurse]	11/11/2004  created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:DotNetNuke.Modules.Feedback.CommentSettings.UpdateSettings">
+ -----------------------------------------------------------------------------
+ <summary>
+ UpdateSettings saves the modified settings to the Database
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[cnurse]	11/11/2004  created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:DotNetNuke.Modules.Feedback.Akismet.#ctor(System.String,System.String)">
+ <summary>Creates an Akismet API object.</summary>
+ <param name="apiKey">Your API key.</param>
+ <param name="blog">URL to your blog</param>
+ <remarks>Accepts required fields 'apiKey', 'blog', 'userAgent'.</remarks>
+</member>
+<member name="M:DotNetNuke.Modules.Feedback.Akismet.VerifyKey">
+ <summary>Verifies your key.</summary>
+ <returns>'True' if key is valid.</returns>
+</member>
+<member name="M:DotNetNuke.Modules.Feedback.Akismet.CommentCheck(DotNetNuke.Modules.Feedback.AkismetComment)">
+ <summary>Checks AkismetComment object against Akismet database.</summary>
+ <param name="comment">AkismetComment object to check.</param>
+ <returns>'True' if spam, 'False' if not spam.</returns>
+</member>
+<member name="M:DotNetNuke.Modules.Feedback.Akismet.SubmitSpam(DotNetNuke.Modules.Feedback.AkismetComment)">
+ <summary>Submits AkismetComment object into Akismet database.</summary>
+ <param name="comment">AkismetComment object to submit.</param>
+</member>
+<member name="M:DotNetNuke.Modules.Feedback.Akismet.SubmitHam(DotNetNuke.Modules.Feedback.AkismetComment)">
+ <summary>Retracts false positive from Akismet database.</summary>
+ <param name="comment">AkismetComment object to retract.</param>
+</member>
+<member name="M:DotNetNuke.Modules.Feedback.Akismet.HttpPost(System.String,System.String,System.String)">
+ <summary>Sends HttpPost</summary>
+ <param name="url">URL to Post data to.</param>
+ <param name="data">Data to post</param>
+ <param name="inCharSet">Character set of your blog. example: UTF-8</param>
+ <returns>A System.String containing the Http Response.</returns>
+</member>
+<member name="M:DotNetNuke.Modules.Feedback.Akismet.CreateData(DotNetNuke.Modules.Feedback.AkismetComment)">
+ <summary>Takes an AkismetComment object and returns an (escaped) string of data to POST.</summary>
+ <param name="comment">AkismetComment object to translate.</param>
+ <returns>A System.String containing the data to POST to Akismet API.</returns>
+</member>
+<member name="T:DotNetNuke.Modules.Feedback.DataProvider">
+ -----------------------------------------------------------------------------
+ <summary>
+ The DataProvider Class Is an abstract class that provides the DataLayer
+ for the Html Module.
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[cnurse]	9/23/2004	Moved Html to a separate Project
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:DotNetNuke.Modules.Feedback.FeedbackController.UpgradeModule(System.String)">
+ -----------------------------------------------------------------------------
+ <summary>
+     Implements the upgrade interface for DotNetNuke
+ </summary>
+ <history>
+ 	[scullmann]     12/30/2005	First Implementation
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="T:DotNetNuke.Modules.Feedback.Feedback">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Feedback Class provides the UI for displaying the Feedback
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[cnurse]	9/22/2004	Moved Feedback to a separate Project
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divFeedbackForm">
+<summary>
+divFeedbackForm control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divFeedbackFormContent">
+<summary>
+divFeedbackFormContent control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valSummary">
+<summary>
+valSummary control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._hContactInfo">
+<summary>
+hContactInfo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divEmail">
+<summary>
+divEmail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._plEmail">
+<summary>
+plEmail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._txtEmail">
+<summary>
+txtEmail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valEmail1">
+<summary>
+valEmail1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valEmail2">
+<summary>
+valEmail2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divEmailConfirm">
+<summary>
+divEmailConfirm control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._plEmailConfirm">
+<summary>
+plEmailConfirm control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._txtEmailConfirm">
+<summary>
+txtEmailConfirm control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valEmailConfirm">
+<summary>
+valEmailConfirm control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valEmailConfirm2">
+<summary>
+valEmailConfirm2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divName">
+<summary>
+divName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._plName">
+<summary>
+plName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._txtName">
+<summary>
+txtName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valName">
+<summary>
+valName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divStreet">
+<summary>
+divStreet control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._plStreet">
+<summary>
+plStreet control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._txtStreet">
+<summary>
+txtStreet control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valStreet">
+<summary>
+valStreet control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divCity">
+<summary>
+divCity control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._plCity">
+<summary>
+plCity control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._txtCity">
+<summary>
+txtCity control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valCity">
+<summary>
+valCity control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divRegion">
+<summary>
+divRegion control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._plRegion">
+<summary>
+plRegion control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._txtRegion">
+<summary>
+txtRegion control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valRegion">
+<summary>
+valRegion control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divCountry">
+<summary>
+divCountry control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._plCountry">
+<summary>
+plCountry control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._txtCountry">
+<summary>
+txtCountry control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valCountry">
+<summary>
+valCountry control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divPostalCode">
+<summary>
+divPostalCode control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._plPostalCode">
+<summary>
+plPostalCode control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._txtPostalCode">
+<summary>
+txtPostalCode control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valPostalCode">
+<summary>
+valPostalCode control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valPostalCode2">
+<summary>
+valPostalCode2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divTelephone">
+<summary>
+divTelephone control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._plTelephone">
+<summary>
+plTelephone control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._txtTelephone">
+<summary>
+txtTelephone control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valTelephone">
+<summary>
+valTelephone control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valTelephone2">
+<summary>
+valTelephone2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._hFeedback">
+<summary>
+hFeedback control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divCategory">
+<summary>
+divCategory control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._plCategory">
+<summary>
+plCategory control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._cboCategory">
+<summary>
+cboCategory control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valCategory">
+<summary>
+valCategory control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divSubject">
+<summary>
+divSubject control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._plSubject">
+<summary>
+plSubject control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._cboSubject">
+<summary>
+cboSubject control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valSubject">
+<summary>
+valSubject control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divSubject2">
+<summary>
+divSubject2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._plSubject2">
+<summary>
+plSubject2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._txtSubject2">
+<summary>
+txtSubject2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valSubject2">
+<summary>
+valSubject2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divMessage">
+<summary>
+divMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._plMessage">
+<summary>
+plMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._txtBody">
+<summary>
+txtBody control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valMessage">
+<summary>
+valMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valMessageLength">
+<summary>
+valMessageLength control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._plCharCount">
+<summary>
+plCharCount control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._CharCount">
+<summary>
+CharCount control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divFooter">
+<summary>
+divFooter control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divCopy">
+<summary>
+divCopy control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._plCopy">
+<summary>
+plCopy control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._chkCopy">
+<summary>
+chkCopy control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._valCopy">
+<summary>
+valCopy control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divCaptcha">
+<summary>
+divCaptcha control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._plCaptcha">
+<summary>
+plCaptcha control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._ctlCaptcha">
+<summary>
+ctlCaptcha control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._cmdSend">
+<summary>
+cmdSend control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divConfirmation">
+<summary>
+divConfirmation control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._divResponseMessage">
+<summary>
+divResponseMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._lblMessage">
+<summary>
+lblMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._cmdCancel">
+<summary>
+cmdCancel control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="M:DotNetNuke.Modules.Feedback.Feedback.GetUser">
+ -----------------------------------------------------------------------------
+ <summary>
+ GetUser fills the Email/Name fields if a user is logged in
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[cnurse]	9/22/2004	Moved Feedback to a separate Project
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:DotNetNuke.Modules.Feedback.Feedback.InitializeForm">
+ -----------------------------------------------------------------------------
+ <summary>
+ InitializeForm sets the form up
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[cnurse]	9/22/2004	Moved Feedback to a separate Project
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:DotNetNuke.Modules.Feedback.Feedback.Page_Load(System.Object,System.EventArgs)">
+ -----------------------------------------------------------------------------
+ <summary>
+ Page_Load runs when the control is loaded
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[cnurse]	9/22/2004	Moved Feedback to a separate Project
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:DotNetNuke.Modules.Feedback.Feedback.cmdCancel_Click(System.Object,System.EventArgs)">
+ -----------------------------------------------------------------------------
+ <summary>
+ cmdCancel_Click runs when the cancel button is clicked
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[cnurse]	9/22/2004	Updated to reflect design changes for Help, 508 support
+                       and localisation
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:DotNetNuke.Modules.Feedback.Feedback.cmdSend_Click(System.Object,System.EventArgs)">
+ -----------------------------------------------------------------------------
+ <summary>
+ cmdSend_Click runs when the send button is clicked
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[cnurse]	9/22/2004	Updated to reflect design changes for Help, 508 support
+                       and localisation
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="T:DotNetNuke.Modules.Feedback.FeedbackLists">
+ -----------------------------------------------------------------------------
+ <summary>
+ The FeedbackLists Class provides the UI for adding/edit Feedback Lists
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[smehrotra]	01/22/2007	Moved Feedback Lists from Lists table to its own table.
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._plListType">
+<summary>
+plListType control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._rbListType">
+<summary>
+rbListType control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._dgItems">
+<summary>
+dgItems control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._plListName">
+<summary>
+plListName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._txtListID">
+<summary>
+txtListID control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._txtBoxListName">
+<summary>
+txtBoxListName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._valtxtBoxListName">
+<summary>
+valtxtBoxListName control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._plListValue">
+<summary>
+plListValue control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._txtBoxListValue">
+<summary>
+txtBoxListValue control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._valtxtBoxListValue">
+<summary>
+valtxtBoxListValue control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._plIsActive">
+<summary>
+plIsActive control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._checkBoxIsActive">
+<summary>
+checkBoxIsActive control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._plPortal">
+<summary>
+plPortal control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._txtModuleID">
+<summary>
+txtModuleID control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._checkBoxPortal">
+<summary>
+checkBoxPortal control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._divErrorRow">
+<summary>
+divErrorRow control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._plErrorMsg">
+<summary>
+plErrorMsg control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._cmdSaveEntry">
+<summary>
+cmdSaveEntry control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.FeedbackLists._cmdReturn">
+<summary>
+cmdReturn control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Moderation._cbShowOnlyModeratedCategories">
+<summary>
+cbShowOnlyModeratedCategories control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Moderation._dgPendingFeedback">
+<summary>
+dgPendingFeedback control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Moderation._pgPendingFeedback">
+<summary>
+pgPendingFeedback control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Moderation._dgPrivateFeedback">
+<summary>
+dgPrivateFeedback control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Moderation._pgPrivateFeedback">
+<summary>
+pgPrivateFeedback control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Moderation._dgPublicFeedback">
+<summary>
+dgPublicFeedback control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Moderation._pgPublicFeedback">
+<summary>
+pgPublicFeedback control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Moderation._dgArchiveFeedback">
+<summary>
+dgArchiveFeedback control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Moderation._pgArchiveFeedback">
+<summary>
+pgArchiveFeedback control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Moderation._pnlSpam">
+<summary>
+pnlSpam control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Moderation._dgSpamFeedback">
+<summary>
+dgSpamFeedback control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Moderation._pgSpamFeedback">
+<summary>
+pgSpamFeedback control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Moderation._cmdReturn">
+<summary>
+cmdReturn control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Print._litContents">
+<summary>
+litContents control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Print._btnClose">
+<summary>
+btnClose control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="T:DotNetNuke.Modules.Feedback.SqlDataProvider">
+ -----------------------------------------------------------------------------
+ <summary>
+ The SqlDataProvider Class is an SQL Server implementation of the DataProvider Abstract
+ class that provides the DataLayer for the Feedback Module.
+ </summary>
+ -----------------------------------------------------------------------------
+</member>
+<member name="T:DotNetNuke.Modules.Feedback.Settings">
+ -----------------------------------------------------------------------------
+ <summary>
+ The Settings ModuleSettingsBase is used to manage the settings for the Feedback Module
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[cnurse]	11/11/2004  created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._valSummary">
+<summary>
+valSummary control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plSendTo">
+<summary>
+plSendTo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtSendTo">
+<summary>
+txtSendTo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._valSendTo">
+<summary>
+valSendTo control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plSendToRoles">
+<summary>
+plSendToRoles control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._dgSelectedRoles">
+<summary>
+dgSelectedRoles control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plSendFrom">
+<summary>
+plSendFrom control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtSendFrom">
+<summary>
+txtSendFrom control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._valSendFrom">
+<summary>
+valSendFrom control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plSendCopy">
+<summary>
+plSendCopy control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkSendCopy">
+<summary>
+chkSendCopy control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plOptout">
+<summary>
+plOptout control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkOptout">
+<summary>
+chkOptout control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plAsync">
+<summary>
+plAsync control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkAsync">
+<summary>
+chkAsync control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCategory">
+<summary>
+plCategory control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._cboCategory">
+<summary>
+cboCategory control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCategorySelectable">
+<summary>
+plCategorySelectable control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkCategory">
+<summary>
+chkCategory control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._valCategory">
+<summary>
+valCategory control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCategoryReq">
+<summary>
+plCategoryReq control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkCategoryReq">
+<summary>
+chkCategoryReq control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plUseCategoryAsEmail">
+<summary>
+plUseCategoryAsEmail control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkCategoryMailto">
+<summary>
+chkCategoryMailto control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._valCategoryMailto">
+<summary>
+valCategoryMailto control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plLabelDisplay">
+<summary>
+plLabelDisplay control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._rblLabelDisplay">
+<summary>
+rblLabelDisplay control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plWidth">
+<summary>
+plWidth control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtWidth">
+<summary>
+txtWidth control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._valWidth">
+<summary>
+valWidth control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plSubject">
+<summary>
+plSubject control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._cboSubject">
+<summary>
+cboSubject control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plSubjectEditField">
+<summary>
+plSubjectEditField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._rblSubjectEditField">
+<summary>
+rblSubjectEditField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plEmailField">
+<summary>
+plEmailField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._rblEmailField">
+<summary>
+rblEmailField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plEmailConfirmField">
+<summary>
+plEmailConfirmField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._rblEmailConfirmField">
+<summary>
+rblEmailConfirmField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plNameField">
+<summary>
+plNameField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._rblNameField">
+<summary>
+rblNameField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plStreetField">
+<summary>
+plStreetField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._rblStreetField">
+<summary>
+rblStreetField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCityField">
+<summary>
+plCityField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._rblCityField">
+<summary>
+rblCityField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plRegionField">
+<summary>
+plRegionField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._rblRegionField">
+<summary>
+rblRegionField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCountryField">
+<summary>
+plCountryField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._rblCountryField">
+<summary>
+rblCountryField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plPostalCodeField">
+<summary>
+plPostalCodeField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._rblPostalCodeField">
+<summary>
+rblPostalCodeField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plTelephoneField">
+<summary>
+plTelephoneField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._rblTelephoneField">
+<summary>
+rblTelephoneField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plMessageField">
+<summary>
+plMessageField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._rblMessageField">
+<summary>
+rblMessageField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plEmailRegex">
+<summary>
+plEmailRegex control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtEmailRegex">
+<summary>
+txtEmailRegex control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._btnResetEmailRegex">
+<summary>
+btnResetEmailRegex control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._valEmailRegex">
+<summary>
+valEmailRegex control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plPostalCodeRegex">
+<summary>
+plPostalCodeRegex control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtPostalCodeRegex">
+<summary>
+txtPostalCodeRegex control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._btnResetPostalCodeRegex">
+<summary>
+btnResetPostalCodeRegex control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plTelephoneRegex">
+<summary>
+plTelephoneRegex control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtTelephoneRegex">
+<summary>
+txtTelephoneRegex control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._btnResetTelephoneRegex">
+<summary>
+btnResetTelephoneRegex control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plRows">
+<summary>
+plRows control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtrows">
+<summary>
+txtrows control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._valRows">
+<summary>
+valRows control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plMaxMessage">
+<summary>
+plMaxMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtMaxMessage">
+<summary>
+txtMaxMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._valMaxMessage">
+<summary>
+valMaxMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCaptchaVisibility">
+<summary>
+plCaptchaVisibility control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._rblCaptchaVisibility">
+<summary>
+rblCaptchaVisibility control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCaptchaAudio">
+<summary>
+plCaptchaAudio control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkCaptchaAudio">
+<summary>
+chkCaptchaAudio control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCaptchaCase">
+<summary>
+plCaptchaCase control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkCaptchaCase">
+<summary>
+chkCaptchaCase control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCaptchaLineNoise">
+<summary>
+plCaptchaLineNoise control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._ddlCaptchaLineNoise">
+<summary>
+ddlCaptchaLineNoise control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCaptchaBackgroundNoise">
+<summary>
+plCaptchaBackgroundNoise control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._ddlCaptchaBackgroundNoise">
+<summary>
+ddlCaptchaBackgroundNoise control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plRepeatSubmissionFilter">
+<summary>
+plRepeatSubmissionFilter control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._rblRepeatSubmissionFilter">
+<summary>
+rblRepeatSubmissionFilter control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plMinSubmissionInteval">
+<summary>
+plMinSubmissionInteval control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtMinSubmissionInteval">
+<summary>
+txtMinSubmissionInteval control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._valMinSubmissionInteval">
+<summary>
+valMinSubmissionInteval control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plDuplicateSubmission">
+<summary>
+plDuplicateSubmission control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkDuplicateSubmission">
+<summary>
+chkDuplicateSubmission control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plRedirectTabOnSubmission">
+<summary>
+plRedirectTabOnSubmission control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._ddlRedirectTabOnSubmission">
+<summary>
+ddlRedirectTabOnSubmission control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plAkismetEnable">
+<summary>
+plAkismetEnable control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkAkismetEnable">
+<summary>
+chkAkismetEnable control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plAkismetKey">
+<summary>
+plAkismetKey control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtAkismetKey">
+<summary>
+txtAkismetKey control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._valAkismetKey">
+<summary>
+valAkismetKey control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plAkismetSendModerator">
+<summary>
+plAkismetSendModerator control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkAkismetSendModerator">
+<summary>
+chkAkismetSendModerator control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plScope">
+<summary>
+plScope control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._rblScope">
+<summary>
+rblScope control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._divOrphanedData">
+<summary>
+divOrphanedData control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plOrphanedData">
+<summary>
+plOrphanedData control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._dgOrphanedData">
+<summary>
+dgOrphanedData control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._cmdDeleteOrphanedData">
+<summary>
+cmdDeleteOrphanedData control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plModerated">
+<summary>
+plModerated control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkModerated">
+<summary>
+chkModerated control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plModerationAdminEmails">
+<summary>
+plModerationAdminEmails control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkModerationAdminEmails">
+<summary>
+chkModerationAdminEmails control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._divEmailOnly">
+<summary>
+divEmailOnly control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plEmailOnly">
+<summary>
+plEmailOnly control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkEmailOnly">
+<summary>
+chkEmailOnly control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._divSendWhenPublished">
+<summary>
+divSendWhenPublished control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plSendWhenPublished">
+<summary>
+plSendWhenPublished control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkSendWhenPublished">
+<summary>
+chkSendWhenPublished control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._divModerationCategories">
+<summary>
+divModerationCategories control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plModerationCategory">
+<summary>
+plModerationCategory control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._cblModerationCategories">
+<summary>
+cblModerationCategories control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._divUnmoderatedStatus">
+<summary>
+divUnmoderatedStatus control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plUnmoderatedStatus">
+<summary>
+plUnmoderatedStatus control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._ddlUnmoderatedStatus">
+<summary>
+ddlUnmoderatedStatus control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plPrintTemplate">
+<summary>
+plPrintTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtPrintTemplate">
+<summary>
+txtPrintTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._btnLoadDefaultPrintTemplate">
+<summary>
+btnLoadDefaultPrintTemplate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plPrintAction">
+<summary>
+plPrintAction control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._rblPrintAction">
+<summary>
+rblPrintAction control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plModerationPageSize">
+<summary>
+plModerationPageSize control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._ddlModerationPageSize">
+<summary>
+ddlModerationPageSize control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCleanupPending">
+<summary>
+plCleanupPending control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkCleanupPending">
+<summary>
+chkCleanupPending control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCleanupPrivate">
+<summary>
+plCleanupPrivate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkCleanupPrivate">
+<summary>
+chkCleanupPrivate control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCleanupPublished">
+<summary>
+plCleanupPublished control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkCleanupPublished">
+<summary>
+chkCleanupPublished control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCleanupArchived">
+<summary>
+plCleanupArchived control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkCleanupArchived">
+<summary>
+chkCleanupArchived control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCleanupSpam">
+<summary>
+plCleanupSpam control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkCleanupSpam">
+<summary>
+chkCleanupSpam control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCleanupDaysBefore">
+<summary>
+plCleanupDaysBefore control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtCleanupDaysBefore">
+<summary>
+txtCleanupDaysBefore control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._Regularexpressionvalidator1">
+<summary>
+Regularexpressionvalidator1 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCleanupMaxEntries">
+<summary>
+plCleanupMaxEntries control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtCleanupMaxEntries">
+<summary>
+txtCleanupMaxEntries control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._Regularexpressionvalidator2">
+<summary>
+Regularexpressionvalidator2 control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="M:DotNetNuke.Modules.Feedback.Settings.LoadSettings">
+ -----------------------------------------------------------------------------
+ <summary>
+ LoadSettings loads the settings from the Database and displays them
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[cnurse]	11/11/2004  created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="M:DotNetNuke.Modules.Feedback.Settings.UpdateSettings">
+ -----------------------------------------------------------------------------
+ <summary>
+ UpdateSettings saves the modified settings to the Database
+ </summary>
+ <remarks>
+ </remarks>
+ <history>
+ 	[cnurse]	11/11/2004  created
+ </history>
+ -----------------------------------------------------------------------------
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.ViewComments._litMessage">
+<summary>
+litMessage control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.ViewComments._rptComments">
+<summary>
+rptComments control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.ViewComments._trPager">
+<summary>
+trPager control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.ViewComments._lblPageSize">
+<summary>
+lblPageSize control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.ViewComments._ddlPageSize">
+<summary>
+ddlPageSize control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.ViewComments._ctlPagingControl">
+<summary>
+ctlPagingControl control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="M:Components.Integration.Notifications.SendFeedbackModerationNotification(System.String[],System.Int32,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+ <summary>
+ Informs the core journal that the user that a feedback entry needs moderation
+ </summary>
+ <param name="sendToRoles"></param>
+ <remarks></remarks>
+</member>
+</members>
+</doc>
