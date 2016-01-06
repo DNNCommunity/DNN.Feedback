@@ -8,6 +8,11 @@
 /*****                                                            *****/
 /**********************************************************************/
 
+/** Drop schedule **/
+DELETE FROM {databaseOwner}{objectQualifier}Schedule
+WHERE     (TypeFullName = 'Components.Scheduler.FeedbackSchedule, DotNetNuke.Modules.Feedback')
+
+
 /** Drop Stored Procedures **/
 
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'{databaseOwner}[{objectQualifier}Feedback_CreateFeedback]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
