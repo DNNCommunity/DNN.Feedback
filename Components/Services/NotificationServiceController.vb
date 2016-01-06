@@ -20,16 +20,16 @@
 Option Strict On
 Option Explicit On
 
-Imports DotNetNuke.Web.Services
-Imports System.Web.Mvc
 Imports DotNetNuke.Services.Social.Notifications
 Imports DotNetNuke.Services.Social
 Imports DotNetNuke.Modules.Feedback
+Imports DotNetNuke.Web.Api
+Imports System.Net.Http
 
 Namespace Components.Services
 
     Public Class NotificationServiceController
-        Inherits DnnController
+        Inherits DnnApiController
 
 #Region "Private Members"
         Private _moduleId As Integer = -1
@@ -42,44 +42,44 @@ Namespace Components.Services
 #End Region
 
         <DnnAuthorize()> _
-        Public Function ApproveFeedback(notificationId As Integer) As ActionResult
+        Public Function ApproveFeedback(notificationId As Integer) As HttpResponseMessage
             Return ChangeStatus(notificationId, FeedbackInfo.FeedbackStatusType.StatusPublic)
         End Function
 
         <DnnAuthorize()> _
-        Public Function PrivateFeedback(notificationId As Integer) As ActionResult
+        Public Function PrivateFeedback(notificationId As Integer) As HttpResponseMessage
             Return ChangeStatus(notificationId, FeedbackInfo.FeedbackStatusType.StatusPrivate)
         End Function
 
         <DnnAuthorize()> _
-        Public Function ArchiveFeedback(notificationId As Integer) As ActionResult
+        Public Function ArchiveFeedback(notificationId As Integer) As HttpResponseMessage
             Return ChangeStatus(notificationId, FeedbackInfo.FeedbackStatusType.StatusArchive)
         End Function
 
         <DnnAuthorize()> _
-        Public Function DeleteFeedback(notificationId As Integer) As ActionResult
+        Public Function DeleteFeedback(notificationId As Integer) As HttpResponseMessage
             Return ChangeStatus(notificationId, FeedbackInfo.FeedbackStatusType.StatusDelete)
         End Function
 
 
 #Region "Private Methods"
-        Private Function ChangeStatus(ByVal notificationid As Integer, ByVal feedbackStatus As FeedbackInfo.FeedbackStatusType) As ActionResult
+        Private Function ChangeStatus(ByVal notificationid As Integer, ByVal feedbackStatus As FeedbackInfo.FeedbackStatusType) As HttpResponseMessage
             Dim recipient As Messaging.MessageRecipient = Messaging.Internal.InternalMessagingController.Instance.GetMessageRecipient(notificationid, UserInfo.UserID)
             If recipient Is Nothing Then
-                Return Json(New With {.Result = "error", .Message = String.Format(Localization.GetString("NotificationRecipientError", LocalResourceFile), UserInfo.DisplayName)})
+                Return Request.CreateResponse(System.Net.HttpStatusCode.Accepted, Json(New With {.Result = "error", .Message = String.Format(Localization.GetString("NotificationRecipientError", LocalResourceFile), UserInfo.DisplayName)}))
             End If
 
             Dim notify As Notification = NotificationsController.Instance.GetNotification(notificationid)
             ParseApproveKey(notify.Context)
 
             If Not IsModerator() Then
-                Return Json(New With {.Result = "error", .Message = String.Format(Localization.GetString("NotificationSecurityError", LocalResourceFile), UserInfo.DisplayName)})
+                Return Request.CreateResponse(System.Net.HttpStatusCode.Accepted, Json(New With {.Result = "error", .Message = String.Format(Localization.GetString("NotificationSecurityError", LocalResourceFile), UserInfo.DisplayName)}))
             End If
 
             Dim objFeedbackUpdateController As New FeedbackUpdateController(_moduleId, _moduleConfiguration, PortalSettings, LocalResourceFile, UserInfo.UserID)
-            objFeedbackUpdateController.FeedbackUpdateStatus(_moduleId, _feedbackId, FeedbackStatus, notificationid)
+            objFeedbackUpdateController.FeedbackUpdateStatus(_moduleId, _feedbackId, feedbackStatus, notificationid)
 
-            Return Json(New With {.Result = "success"})
+            Return Request.CreateResponse(System.Net.HttpStatusCode.Accepted, Json(New With {.Result = "success"}))
         End Function
 
         Private Function IsModerator() As Boolean
