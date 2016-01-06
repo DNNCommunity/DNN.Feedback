@@ -7,7 +7,7 @@
     <div id="divFeedbackFormContent" runat="server">
         <asp:ValidationSummary ID="valSummary" runat="server" CssClass="dnnFormMessage dnnFormValidationSummary"
         EnableClientScript="true" DisplayMode="List" />
-        <h2 id="h2ContactInfo" runat="server" class="dnnFormSectionHead"><%: LocalizeString("plContactInfo")%></h2>
+        <h3 id="hContactInfo" runat="server" class="dnnFormSectionHead"><%: LocalizeString("plContactInfo")%></h3>
         <fieldset>
             <div id="divEmail" runat="server" class="Feedback_Field">
 		          <div class="dnnFormItem">
@@ -90,7 +90,7 @@
 		        </div>
 	        </div>
         </fieldset>
-        <h2 id="h2Feedback" runat="server" class="dnnFormSectionHead"><%: LocalizeString("plFeedback")%></h2>
+        <h3 id="hFeedback" runat="server" class="dnnFormSectionHead"><%: LocalizeString("plFeedback")%></h3>
         <fieldset>
             <div id="divCategory" runat="Server" class="Feedback_Field">
 		          <div class="dnnFormItem">
