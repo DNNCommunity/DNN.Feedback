@@ -29,15 +29,15 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("DotNetNuke.Modules.Feedback")> 
-<Assembly: AssemblyDescription("ASP.NET Open Source Portal Application, Feedback Module")> 
-<Assembly: AssemblyCompany("DotNetNuke Corporation")> 
-<Assembly: AssemblyProduct("http://www.dotnetnuke.com")> 
-<Assembly: AssemblyCopyright("DotNetNuke? is copyright 2002-2011 by DotNetNuke Corporation. All Rights Reserved.")> 
+<Assembly: AssemblyDescription("ASP.NET Open Source Portal Application, Feedback Module")>
+<Assembly: AssemblyCompany("DNN Corp.")>
+<Assembly: AssemblyProduct("http://www.dnnsoftware.com")>
+<Assembly: AssemblyCopyright("DotNetNuke is copyright 2002-2016 by DNN Corp. All Rights Reserved.")>
 <Assembly: AssemblyTrademark("DotNetNuke")> 
 <Assembly: CLSCompliant(True)> 
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("BD217F25-1392-4D3A-9875-B489EB235F44")> 
+<Assembly: Guid("BD217F25-1392-4D3A-9875-B489EB235F44")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -49,7 +49,7 @@ Imports System.Runtime.InteropServices
 ' You can specify all the values or you can default the Build and Revision Numbers 
 ' by using the '*' as shown below:
 
-<Assembly: AssemblyVersion("06.05.00.07")> 
+<Assembly: AssemblyVersion("06.05.01.03")>
 
-<Assembly: AssemblyFileVersionAttribute("06.02.01.00")> 
-<Assembly: ComVisibleAttribute(False)> 
+<Assembly: AssemblyFileVersion("06.05.01.00")>
+<Assembly: ComVisibleAttribute(False)>

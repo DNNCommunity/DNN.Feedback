@@ -10,7 +10,7 @@
      </PropertyGroup>
      <ItemGroup>
         <AssemblyInfoFiles Include="$(MSBuildProjectDirectory)\AssemblyInfo.vb" />
-        <ManifestFiles Include="$(MSBuildProjectDirectory)\Installation\$(ProductName).dnn6" />
+        <ManifestFiles Include="$(MSBuildProjectDirectory)\Installation\$(ProductName).dnn" />
      </ItemGroup>
      <Target Name="BeforeBuild">
         <CallTarget Targets="SetAssemblyVersion" />
@@ -61,7 +61,7 @@
 
     <Target Name="SetManifestVersion">
         <!-- Write new version to manifest -->
-        <FileUpdate Files="@(ManifestFiles)" Regex="type=&quot;Module&quot; version=&quot;.*&quot;&gt;" ReplacementText="type=&quot;Module&quot; version=&quot;$(ModuleVersion)&quot;&gt;" />
+        <FileUpdate Files="@(ManifestFiles)" Regex="type=&quot;Module&quot; version=&quot;.*&quot;&gt;" ReplacementText="type=&quot;Module&quot; version=&quot;$(ModuleVersionNoRevision)&quot;&gt;" />
     </Target>
 
     <Target Name="SetReleaseHTMVersion" DependsOnTargets="SetManifestVersion">
@@ -131,7 +131,7 @@
         <Copy SourceFiles="@(JSFiles)" DestinationFolder="$(TempDirectory)\js" />
         <Copy SourceFiles="@(CleanUpFiles)" DestinationFolder="$(TempDirectory)\Installation\CleanUp" />
         <Copy SourceFiles="@(ReleaseNotesFiles)" DestinationFolder="$(TempDirectory)" />
-        <Copy SourceFiles="Installation\$(ProductName).dnn6" DestinationFiles="$(TempDirectory)\$(ProductName).dnn6"></Copy>
+        <Copy SourceFiles="Installation\$(ProductName).dnn" DestinationFiles="$(TempDirectory)\$(ProductName).dnn"></Copy>
         <CreateItem Include="$(TempDirectory)\**\*.*" >
             <Output TaskParameter="Include" ItemName="InstallZipContent" />
         </CreateItem>
@@ -224,9 +224,9 @@
         <Copy SourceFiles="@(JSFiles)" DestinationFolder="$(TempDirectory)\js" />
         <Copy SourceFiles="@(CleanUpFiles)" DestinationFolder="$(TempDirectory)\Installation\CleanUp" />
         <Copy SourceFiles="@(ReleaseNotesFiles)" DestinationFolder="$(TempDirectory)" />
-        <Copy SourceFiles="Installation\$(ProductName).dnn6" DestinationFiles="$(TempDirectory)\$(ProductName).dnn6"></Copy>
+        <Copy SourceFiles="Installation\$(ProductName).dnn" DestinationFiles="$(TempDirectory)\$(ProductName).dnn"></Copy>
 
-        <FileUpdate Files="$(TempDirectory)\$(ProductName).dnn6" Regex="resources.zip" ReplacementText="sources.zip" />
+        <FileUpdate Files="$(TempDirectory)\$(ProductName).dnn" Regex="resources.zip" ReplacementText="sources.zip" />
 
         <CreateItem Include="$(TempDirectory)\**\*.*">
             <Output TaskParameter="Include" ItemName="SourceZipContent" />

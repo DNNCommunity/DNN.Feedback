@@ -1,4 +1,4 @@
-﻿Test Cases for DotNetNuke Feedback 06.05.00
+﻿Test Cases for DotNetNuke Feedback 06.05.01
 
 1. New Install (Install Package)
    a. Install as any module - no errors should be shown in installer during or the Event Viewer after install.

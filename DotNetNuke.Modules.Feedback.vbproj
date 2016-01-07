@@ -307,11 +307,11 @@
     <Content Include="Installation\CleanUp\Cleanup.06.03.00.txt" />
     <Content Include="Installation\CleanUp\Cleanup.06.04.01.txt" />
     <Content Include="Installation\CleanUp\Cleanup.06.04.02.txt" />
-    <Content Include="Installation\CleanUp\Cleanup.06.05.00.txt" />
+    <Content Include="Installation\CleanUp\Cleanup.06.05.01.txt" />
     <Content Include="Installation\CleanUp\Cleanup.06.04.03.txt" />
     <Content Include="Installation\DNN_Feedback.png" />
     <Content Include="Installation\license.txt" />
-    <Content Include="Installation\ReleaseNotes\Release.06.05.00.htm" />
+    <Content Include="Installation\ReleaseNotes\Release.06.05.01.htm" />
     <Content Include="Installation\ReleaseNotes\Release.06.04.03.htm" />
     <Content Include="Installation\ReleaseNotes\Release.06.04.01.htm" />
     <Content Include="Installation\ReleaseNotes\Release.06.04.00.htm" />
@@ -321,7 +321,7 @@
     <Content Include="Installation\ReleaseNotes\Release.06.01.00.htm" />
     <Content Include="Installation\ReleaseNotes\Release.06.00.00.htm" />
     <Content Include="Installation\ReleaseNotes\Release.05.01.00.txt" />
-    <Content Include="Installation\ReleaseNotes\DotNetNuke.Modules.Feedback_05.00.02_ReleaseNotes.txt" />
+    <Content Include="Installation\ReleaseNotes\Release.05.00.02.txt" />
     <Content Include="CommentSettings.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
@@ -332,7 +332,7 @@
       <DependentUpon>FeedbackLists.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Content Include="Installation\TestCases\TestCases.06.05.00.txt" />
+    <Content Include="Installation\TestCases\TestCases.06.05.01.txt" />
     <Content Include="Installation\TestCases\TestCases.06.04.03.txt" />
     <Content Include="Installation\TestCases\TestCases.06.04.01.txt" />
     <Content Include="Installation\TestCases\TestCases.06.04.00.txt" />
@@ -413,7 +413,7 @@
     <None Include="Installation\06.02.00.SqlDataProvider" />
     <None Include="Installation\06.03.00.SqlDataProvider" />
     <None Include="Installation\06.04.00.SqlDataProvider" />
-    <None Include="Installation\DotNetNuke.Modules.Feedback.dnn6">
+    <None Include="Installation\DotNetNuke.Modules.Feedback.dnn">
       <SubType>Designer</SubType>
     </None>
     <None Include="Installation\03.02.01.SqlDataProvider" />

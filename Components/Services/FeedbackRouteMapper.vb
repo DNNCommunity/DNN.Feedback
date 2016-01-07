@@ -21,7 +21,6 @@ Option Strict On
 Option Explicit On
 
 Imports DotNetNuke.Web.Api
-Imports DotNetNuke.Web.Services
 
 Namespace Components.Services
 

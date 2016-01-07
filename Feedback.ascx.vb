@@ -261,19 +261,19 @@ Namespace DotNetNuke.Modules.Feedback
                 'Show / Hide fields and enable required field validators, set localized AlternateText and Title for required image
 
                 If MyConfiguration.SendCopy And Not MyConfiguration.OptOut Then
-                    SetRequiredVisibility(divEmail, txtEmail, plEmail, valEmail1, Configuration.FieldVisibility.Required)
+                    SetRequiredVisibility(divEmail, txtEmail, CType(plEmail, UserControls.LabelControl), valEmail1, Configuration.FieldVisibility.Required)
                 Else
-                    SetRequiredVisibility(divEmail, txtEmail, plEmail, valEmail1, MyConfiguration.EmailFieldVisibility)
+                    SetRequiredVisibility(divEmail, txtEmail, CType(plEmail, UserControls.LabelControl), valEmail1, MyConfiguration.EmailFieldVisibility)
                 End If
-                SetRequiredVisibility2(divEmailConfirm, txtEmailConfirm, plEmailConfirm, valEmailConfirm, MyConfiguration.EmailConfirmFieldVisibility)
-                SetRequiredVisibility(divName, txtName, plName, valName, MyConfiguration.NameFieldVisibility)
-                SetRequiredVisibility(divStreet, txtStreet, plStreet, valStreet, MyConfiguration.StreetFieldVisibility)
-                SetRequiredVisibility(divCity, txtCity, plCity, valCity, MyConfiguration.CityFieldVisibility)
-                SetRequiredVisibility(divRegion, txtRegion, plRegion, valRegion, MyConfiguration.RegionFieldVisibility)
-                SetRequiredVisibility(divCountry, txtCountry, plCountry, valCountry, MyConfiguration.CountryFieldVisibility)
-                SetRequiredVisibility(divPostalCode, txtPostalCode, plPostalCode, valPostalCode, MyConfiguration.PostalCodeFieldVisibility)
-                SetRequiredVisibility(divTelephone, txtTelephone, plTelephone, valTelephone, MyConfiguration.TelephoneFieldVisibility)
-                SetRequiredVisibility(divMessage, txtBody, plMessage, valMessage, MyConfiguration.MessageFieldVisibility)
+                SetRequiredVisibility2(divEmailConfirm, txtEmailConfirm, CType(plEmailConfirm, UserControls.LabelControl), valEmailConfirm, MyConfiguration.EmailConfirmFieldVisibility)
+                SetRequiredVisibility(divName, txtName, CType(plName, UserControls.LabelControl), valName, MyConfiguration.NameFieldVisibility)
+                SetRequiredVisibility(divStreet, txtStreet, CType(plStreet, UserControls.LabelControl), valStreet, MyConfiguration.StreetFieldVisibility)
+                SetRequiredVisibility(divCity, txtCity, CType(plCity, UserControls.LabelControl), valCity, MyConfiguration.CityFieldVisibility)
+                SetRequiredVisibility(divRegion, txtRegion, CType(plRegion, UserControls.LabelControl), valRegion, MyConfiguration.RegionFieldVisibility)
+                SetRequiredVisibility(divCountry, txtCountry, CType(plCountry, UserControls.LabelControl), valCountry, MyConfiguration.CountryFieldVisibility)
+                SetRequiredVisibility(divPostalCode, txtPostalCode, CType(plPostalCode, UserControls.LabelControl), valPostalCode, MyConfiguration.PostalCodeFieldVisibility)
+                SetRequiredVisibility(divTelephone, txtTelephone, CType(plTelephone, UserControls.LabelControl), valTelephone, MyConfiguration.TelephoneFieldVisibility)
+                SetRequiredVisibility(divMessage, txtBody, CType(plMessage, UserControls.LabelControl), valMessage, MyConfiguration.MessageFieldVisibility)
 
                 If MyConfiguration.CaptchaVisibility = Configuration.CaptchaVisibilities.AllUsers _
                        OrElse (MyConfiguration.CaptchaVisibility = Configuration.CaptchaVisibilities.AnonymousUsers AndAlso UserId = -1) Then
@@ -338,7 +338,7 @@ Namespace DotNetNuke.Modules.Feedback
                     divCategory.Visible = MyConfiguration.CategorySelect AndAlso (aList.Count > 0)
 
                     If divCategory.Visible And MyConfiguration.CategoryRequired Then
-                        SetRequiredVisibility(divCategory, cboCategory, plCategory, valCategory, Configuration.FieldVisibility.Required)
+                        SetRequiredVisibility(divCategory, cboCategory, CType(plCategory, UserControls.LabelControl), valCategory, Configuration.FieldVisibility.Required)
                     End If
 
                     Dim subject As String = MyConfiguration.Subject
@@ -363,13 +363,13 @@ Namespace DotNetNuke.Modules.Feedback
                                     Dim selectedSubject As System.Web.UI.WebControls.ListItem = cboSubject.Items.FindByValue(subject)
                                     If selectedSubject IsNot Nothing Then cboSubject.SelectedValue = subject
                                 End If
-                                SetRequiredVisibility(divSubject, cboSubject, plSubject, valSubject, Configuration.FieldVisibility.Required)
+                                SetRequiredVisibility(divSubject, cboSubject, CType(plSubject, UserControls.LabelControl), valSubject, Configuration.FieldVisibility.Required)
                             Else
-                                SetRequiredVisibility(divSubject2, txtSubject2, plSubject2, valSubject2, Configuration.FieldVisibility.Required)
+                                SetRequiredVisibility(divSubject2, txtSubject2, CType(plSubject2, UserControls.LabelControl), valSubject2, Configuration.FieldVisibility.Required)
                             End If
 
                         Case Configuration.SubjectFieldTypes.Textbox
-                            SetRequiredVisibility(divSubject2, txtSubject2, plSubject2, valSubject2, Configuration.FieldVisibility.Required)
+                            SetRequiredVisibility(divSubject2, txtSubject2, CType(plSubject2, UserControls.LabelControl), valSubject2, Configuration.FieldVisibility.Required)
 
                         Case Configuration.SubjectFieldTypes.Hidden
                             'Hide the subject rows - already set to Visibility=False above
