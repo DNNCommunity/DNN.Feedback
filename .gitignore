@@ -12,6 +12,10 @@
 *.local.sln
 *.sln.GhostDoc.xml
 
+## Ignore the generated module install packages
+_packages/
+bin/
+
 ## Ignore VS2015/Roslyn artifacts
 *.sln.ide/
 .vs/

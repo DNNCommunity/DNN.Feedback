@@ -5,8 +5,8 @@
       <description>Feedback allows visitors to send messages to the Administrator of the portal and in an associated module, display published certain feedback or comment items after they have been approved for publication.</description>
       <iconFile>DesktopModules\Feedback\DNN_Feedback.png</iconFile>
       <owner>
-        <name>DotNetNuke Corporation</name>
-        <organization>DotNetNuke Corporation</organization>
+        <name>DNN Corp.</name>
+        <organization>DNN Corp.</organization>
         <url>http://www.dnnsoftware.com</url>
         <email>support@dnnsoftware.com</email>
       </owner>

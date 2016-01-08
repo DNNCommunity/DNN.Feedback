@@ -404,7 +404,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Installation\TestCases\DotNetNuke.Modules.Feedback_05.00.02_TestCases.txt" />
+    <Content Include="Installation\TestCases\TestCases.05.00.02.txt" />
     <Content Include="Print.ascx" />
   </ItemGroup>
   <ItemGroup>
