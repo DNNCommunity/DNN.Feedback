@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="plSendTo.Text" xml:space="preserve">
     <value>Send To</value>
@@ -627,5 +627,29 @@ Send Copy &lt;/strong&gt;&amp;ndash; Enabling this option allows a copy of the f
   </data>
   <data name="plModerationPageSize.Text" xml:space="preserve">
     <value>Page Size</value>
+  </data>
+  <data name="plNoCaptcha.Help" xml:space="preserve">
+    <value>If ticked, the DotNetNuke captcha control will be replaced with Google NoCaptcha control, you will need to enter your api key.</value>
+  </data>
+  <data name="plNoCaptcha.Text" xml:space="preserve">
+    <value>Use Google NoCaptcha</value>
+  </data>
+  <data name="plNoCaptchaSecretKey.Help" xml:space="preserve">
+    <value>Enter your google NoCaptcha Secret Key here. You can obtain it at &lt;a href="https://www.google.com/recaptcha" target="_new"&gt;https://www.google.com/recaptcha&lt;/a&gt;</value>
+  </data>
+  <data name="plNoCaptchaSecretKey.Text" xml:space="preserve">
+    <value>NoCaptcha Secret Key</value>
+  </data>
+  <data name="plNoCaptchaSiteKey.Help" xml:space="preserve">
+    <value>Enter your google NoCaptcha Site Key here. You can obtain it at &lt;a href="https://www.google.com/recaptcha" target="_new"&gt;https://www.google.com/recaptcha&lt;/a&gt;</value>
+  </data>
+  <data name="plNoCaptchaSiteKey.Text" xml:space="preserve">
+    <value>NoCaptcha Site Key</value>
+  </data>
+  <data name="valNoCaptchaSecretKey.ErrorMessage" xml:space="preserve">
+    <value>&lt;br /&gt;If you enable google NoCaptcha, you need to provide the Secret Key</value>
+  </data>
+  <data name="valNoCaptchaSiteKey.ErrorMessage" xml:space="preserve">
+    <value>&lt;br /&gt;If you enable google NoCaptcha, you need to provide the Site Key</value>
   </data>
 </root>

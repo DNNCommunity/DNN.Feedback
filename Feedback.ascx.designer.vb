@@ -663,6 +663,15 @@ Namespace DotNetNuke.Modules.Feedback
         Protected WithEvents ctlCaptcha As Global.DotNetNuke.Web.UI.WebControls.DnnCaptcha
         
         '''<summary>
+        '''NoCaptchaDiv control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents NoCaptchaDiv As Global.System.Web.UI.WebControls.Panel
+        
+        '''<summary>
         '''cmdSend control.
         '''</summary>
         '''<remarks>

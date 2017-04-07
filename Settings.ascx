@@ -183,6 +183,20 @@
             <asp:DropDownList ID="ddlCaptchaBackgroundNoise" runat="server"></asp:DropDownList>
         </div>
         <div class="dnnFormItem">
+            <dnn:label id="plNoCaptcha" runat="server" controlName="chkNoCaptcha" suffix=":"></dnn:label>
+            <asp:CheckBox ID="chkNoCaptcha" runat="server" CssClass="normal" AutoPostBack="true" CausesValidation="false" OnCheckedChanged="chkNoCaptcha_CheckedChanged" />
+        </div>
+        <div class="dnnFormItem">
+            <dnn:label id="plNoCaptchaSiteKey" runat="server" controlName="txtNoCaptchaSiteKey" suffix=":"></dnn:label>
+            <asp:TextBox ID="txtNoCaptchaSiteKey" runat="server" CssClass="normal" ></asp:TextBox>
+            <asp:RequiredFieldValidator id="valNoCaptchaSiteKey" resourcekey="valNoCaptchaSiteKey.ErrorMessage" ControlToValidate="txtNoCaptchaSiteKey" Display="Dynamic" CssClass="dnnFormMessage dnnFormError" ErrorMessage="<br />If you enable google NoCaptcha, you need to provide the Site Key" runat="server"></asp:RequiredFieldValidator>
+        </div>
+        <div class="dnnFormItem">
+            <dnn:label id="plNoCaptchaSecretKey" runat="server" controlName="txtNoCaptchaSecretKey" suffix=":"></dnn:label>
+            <asp:TextBox ID="txtNoCaptchaSecretKey" runat="server" CssClass="normal"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="valNoCaptchaSecretKey" resoucekey="valNoCaptchaSecretKey.ErrorMessage" ControlToValidate="txtNoCaptchaSecretKey" Display="Dynamic" CssClass="dnnFormMessage dnnFormError" ErrorMessage="<br />If you enable google NoCaptcha, you need to provide the Secret Key" runat="server"></asp:RequiredFieldValidator>
+        </div>
+        <div class="dnnFormItem">
             <dnn:label id="plRepeatSubmissionFilter" runat="server" controlname="rblRepeatSubmissionFilter" suffix=":"></dnn:label>
             <asp:RadioButtonList ID="rblRepeatSubmissionFilter" runat="server" CssClass="dnnFormRadioButtons" RepeatDirection="Horizontal" RepeatColumns="2">
                 <asp:ListItem Text="No Filtering" resourcekey="NoFiltering" Value="1"></asp:ListItem>

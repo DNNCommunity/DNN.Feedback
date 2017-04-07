@@ -18,6 +18,7 @@
 ' DEALINGS IN THE SOFTWARE.
 '
 Imports System.Web
+Imports System.Web.UI
 Imports DotNetNuke.Security
 
 Namespace DotNetNuke.Modules.Feedback
@@ -275,19 +276,30 @@ Namespace DotNetNuke.Modules.Feedback
                 SetRequiredVisibility(divTelephone, txtTelephone, CType(plTelephone, UserControls.LabelControl), valTelephone, MyConfiguration.TelephoneFieldVisibility)
                 SetRequiredVisibility(divMessage, txtBody, CType(plMessage, UserControls.LabelControl), valMessage, MyConfiguration.MessageFieldVisibility)
 
+                ' Issue #22 NoCaptcha support
                 If MyConfiguration.CaptchaVisibility = Configuration.CaptchaVisibilities.AllUsers _
                        OrElse (MyConfiguration.CaptchaVisibility = Configuration.CaptchaVisibilities.AnonymousUsers AndAlso UserId = -1) Then
-                    divCaptcha.Visible = True
-                    ctlCaptcha.ErrorMessage = Localization.GetString("InvalidCaptcha", LocalResourceFile)
-                    ctlCaptcha.CaptchaTextBoxLabel = Localization.GetString("CaptchaText", LocalResourceFile)
-                    ctlCaptcha.CaptchaLinkButtonText = Localization.GetString("RefreshCaptcha", LocalResourceFile)
-                    ctlCaptcha.CaptchaAudioLinkButtonText = Localization.GetString("CaptchaAudioText", LocalResourceFile)
-                    ctlCaptcha.CaptchaImage.EnableCaptchaAudio = MyConfiguration.CaptchaAudio
-                    ctlCaptcha.IgnoreCase = MyConfiguration.CaptchaCase
-                    ctlCaptcha.CaptchaImage.LineNoise = MyConfiguration.CaptchaLineNoise
-                    ctlCaptcha.CaptchaImage.BackgroundNoise = MyConfiguration.CaptchaBackgroundNoise
-                    _validationGroup = "FeedbackForm_" & ModuleId.ToString
-                    ctlCaptcha.ValidationGroup = _validationGroup
+                    If MyConfiguration.UseNoCaptcha AndAlso Not String.IsNullOrEmpty(MyConfiguration.NoCaptchaSiteKey) AndAlso Not String.IsNullOrEmpty(MyConfiguration.NoCaptchaSecretKey) Then
+                        divCaptcha.Visible = False                        
+
+                        Dim _noCaptcha As New NoCaptcha()
+                        _noCaptcha.SiteKey = MyConfiguration.NoCaptchaSiteKey
+                        _noCaptcha.SecretKey = MyConfiguration.NoCaptchaSecretKey
+                        NoCaptchaDiv.Controls.Add(_noCaptcha)
+                        NoCaptchaDiv.Visible = True
+                    Else
+                        divCaptcha.Visible = True
+                        ctlCaptcha.ErrorMessage = Localization.GetString("InvalidCaptcha", LocalResourceFile)
+                        ctlCaptcha.CaptchaTextBoxLabel = Localization.GetString("CaptchaText", LocalResourceFile)
+                        ctlCaptcha.CaptchaLinkButtonText = Localization.GetString("RefreshCaptcha", LocalResourceFile)
+                        ctlCaptcha.CaptchaAudioLinkButtonText = Localization.GetString("CaptchaAudioText", LocalResourceFile)
+                        ctlCaptcha.CaptchaImage.EnableCaptchaAudio = MyConfiguration.CaptchaAudio
+                        ctlCaptcha.IgnoreCase = MyConfiguration.CaptchaCase
+                        ctlCaptcha.CaptchaImage.LineNoise = MyConfiguration.CaptchaLineNoise
+                        ctlCaptcha.CaptchaImage.BackgroundNoise = MyConfiguration.CaptchaBackgroundNoise
+                        _validationGroup = "FeedbackForm_" & ModuleId.ToString
+                        ctlCaptcha.ValidationGroup = _validationGroup
+                    End If
                 Else
                     divCaptcha.Visible = False
                 End If
@@ -430,6 +442,10 @@ Namespace DotNetNuke.Modules.Feedback
         Private Sub cmdSend_Click(ByVal sender As Object, ByVal e As EventArgs) Handles cmdSend.Click
 
             If Not Page.IsValid Then Exit Sub
+
+            'Issue #22 support for NoCaptcha
+            Dim theCaptcha = DirectCast(NoCaptchaDiv.Controls.Item(0), NoCaptcha)
+            If NoCaptchaDiv.Visible AndAlso Not theCaptcha.Validate() Then Exit Sub
 
             If Not divCaptcha.Visible OrElse ctlCaptcha.IsValid Then
                 Try
