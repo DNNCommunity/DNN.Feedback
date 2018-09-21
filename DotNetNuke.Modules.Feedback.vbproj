@@ -436,7 +436,6 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
-  <Import Project="$(MSBuildProjectDirectory)\packages\MSBuildTasks.1.5.0.235\build\MSBuildTasks.targets" />
   <Import Project="$(MSBuildProjectDirectory)\_buildfiles\PackageModule.targets" />
   <PropertyGroup>
     <PreBuildEvent>
