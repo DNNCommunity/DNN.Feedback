@@ -26,9 +26,10 @@ Namespace DotNetNuke.Modules.Feedback
         Public Sub New(ByVal moduleId As Integer, ByVal tabModuleID As Integer)
             _moduleID = moduleId
             _tabModuleID = TabModuleID
+            Dim mi As ModuleInfo = ModuleController.Instance.GetModule(moduleId, Null.NullInteger, True)
             Dim mc As New ModuleController
-            _allsettings = mc.GetModuleSettings(_moduleID)
-            _allTabsettings = mc.GetTabModuleSettings(_tabModuleID)
+            _allsettings = mi.ModuleSettings
+            _allTabsettings = ModuleController.Instance.GetTabModule(tabModuleID).ModuleSettings
 
             ReadValue(_allsettings, "Feedback_EnablePager", EnablePager)
             ReadValue(_allsettings, "Feedback_DefaultPageSize", DefaultPageSize)

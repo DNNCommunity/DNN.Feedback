@@ -19,6 +19,8 @@
 '
 
 
+Imports DotNetNuke.Entities.Portals
+
 Namespace DotNetNuke.Modules.Feedback
 
     Public Class Configuration
@@ -460,7 +462,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _duplicateSubmission
             End Get
             Set(ByVal value As Boolean)
-                _DuplicateSubmission = value
+                _duplicateSubmission = value
             End Set
         End Property
 
@@ -760,10 +762,10 @@ Namespace DotNetNuke.Modules.Feedback
 
         Public Sub New(ByVal moduleId As Integer)
             _moduleId = moduleId
-            _portalSettings = Entities.Portals.PortalController.GetCurrentPortalSettings()
+            _portalSettings = Entities.Portals.PortalController.Instance.GetCurrentPortalSettings()
             _portalID = _portalSettings.PortalId
             Dim mc As New Entities.Modules.ModuleController
-            Dim moduleSettings As Hashtable = mc.GetModuleSettings(_moduleId)
+            Dim moduleSettings As Hashtable = Entities.Modules.ModuleController.Instance.GetModule(moduleId, Null.NullInteger, False).ModuleSettings
 
             'Merge the TabModuleSettings and ModuleSettings
             _settings = New Hashtable
@@ -779,7 +781,7 @@ Namespace DotNetNuke.Modules.Feedback
             _moduleId = moduleid
             _portalID = portalid
             Dim mc As New Entities.Modules.ModuleController
-            Dim moduleSettings As Hashtable = mc.GetModuleSettings(_moduleId)
+            Dim moduleSettings As Hashtable = Entities.Modules.ModuleController.Instance.GetModule(moduleid, Null.NullInteger, False).ModuleSettings
             'Merge the TabModuleSettings and ModuleSettings
             _settings = New Hashtable
 
@@ -792,7 +794,7 @@ Namespace DotNetNuke.Modules.Feedback
 
         Public Sub New(ByVal moduleId As Integer, ByVal settings As Hashtable)
             _moduleId = moduleId
-            _portalSettings = Entities.Portals.PortalController.GetCurrentPortalSettings()
+            _portalSettings = PortalController.Instance.GetCurrentPortalSettings()
             _portalID = _portalSettings.PortalId
             _settings = settings
 

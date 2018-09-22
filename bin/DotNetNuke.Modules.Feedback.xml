@@ -1039,6 +1039,15 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:DotNetNuke.Modules.Feedback.Feedback._NoCaptchaDiv">
+<summary>
+NoCaptchaDiv control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:DotNetNuke.Modules.Feedback.Feedback._cmdSend">
 <summary>
 cmdSend control.
@@ -2198,6 +2207,78 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:DotNetNuke.Modules.Feedback.Settings._ddlCaptchaBackgroundNoise">
 <summary>
 ddlCaptchaBackgroundNoise control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plNoCaptcha">
+<summary>
+plNoCaptcha control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._chkNoCaptcha">
+<summary>
+chkNoCaptcha control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plNoCaptchaSiteKey">
+<summary>
+plNoCaptchaSiteKey control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtNoCaptchaSiteKey">
+<summary>
+txtNoCaptchaSiteKey control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._valNoCaptchaSiteKey">
+<summary>
+valNoCaptchaSiteKey control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plNoCaptchaSecretKey">
+<summary>
+plNoCaptchaSecretKey control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtNoCaptchaSecretKey">
+<summary>
+txtNoCaptchaSecretKey control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._valNoCaptchaSecretKey">
+<summary>
+valNoCaptchaSecretKey control.
 </summary>
 <remarks>
 Auto-generated field.
