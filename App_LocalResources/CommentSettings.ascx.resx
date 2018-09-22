@@ -112,10 +112,10 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="plCategories.Text" xml:space="preserve">
     <value>Categories</value>
@@ -157,7 +157,7 @@
     <value>The separator template specifies what displays between each comment.</value>
   </data>
   <data name="lblAvailableTokens.Text" xml:space="preserve">
-    <value>[Feedback:CategoryID], [Feedback:Category], [Feedback:CategoryName], [Feedback:Subject], [Feedback:Message], [Feedback:CreatedOnDate], [Feedback:PublishedOnDate], [Feedback:FeedbackID], [Feedback:SenderName], [Feedback:SenderStreet], [Feedback:SenderCity], [Feedback:SenderRegion], [Feedback:SenderCountry], [Feedback:SenderPostalCode], [Feedback:SenderEmail], [Feedback:SenderTelephone], [Feedback:SenderRemoteAddr], [Feedback:TotalRecords]</value>
+    <value>[Feedback:CategoryID], [Feedback:Category], [Feedback:CategoryName], [Feedback:Subject], [Feedback:Message], [Feedback:DateCreated], [Feedback:PublishedOnDate], [Feedback:FeedbackID], [Feedback:SenderName], [Feedback:SenderStreet], [Feedback:SenderCity], [Feedback:SenderRegion], [Feedback:SenderCountry], [Feedback:SenderPostalCode], [Feedback:SenderEmail], [Feedback:SenderTelephone], [Feedback:SenderRemoteAddr], [Feedback:TotalRecords]</value>
   </data>
   <data name="Feedback_AltItemTemplate.Text" xml:space="preserve">
     <value />
