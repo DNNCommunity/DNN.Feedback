@@ -25,7 +25,7 @@ Imports System.Text.RegularExpressions
 Imports DotNetNuke.Common.Utilities
 Imports DotNetNuke.Security
 Imports DotNetNuke.UI.Skins
-
+Imports DotNetNuke.Framework.JavaScriptLibraries
 
 Namespace DotNetNuke.Modules.Feedback
 
@@ -221,7 +221,7 @@ Namespace DotNetNuke.Modules.Feedback
             Localization.LocalizeDataGrid(dgPendingFeedback, Configuration.SharedResources)
             Localization.LocalizeDataGrid(dgSpamFeedback, Configuration.SharedResources)
 
-            jQuery.RequestDnnPluginsRegistration()
+            JavaScript.RequestRegistration(CommonJs.DnnPlugins)
 
         End Sub
 

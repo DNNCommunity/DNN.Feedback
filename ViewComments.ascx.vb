@@ -195,7 +195,7 @@ Namespace DotNetNuke.Modules.Feedback
                         If .Controls(0).HasControls Then
                             Dim litControl As System.Web.UI.LiteralControl = CType(e.Item.Controls(0).Controls(0), System.Web.UI.LiteralControl)
                             Dim tr As New FeedbackTokenReplace(CType(e.Item.DataItem, FeedbackInfo), Configuration.SharedResources)
-                            tr.AccessingUser = UserController.GetCurrentUserInfo
+                            tr.AccessingUser = UserController.Instance.GetCurrentUserInfo()
                             tr.DebugMessages = Not (PortalSettings.UserMode = Entities.Portals.PortalSettings.Mode.View)
                             tr.ModuleId = ModuleId
                             litControl.Text = tr.ReplaceFeedbackTokens(litControl.Text)

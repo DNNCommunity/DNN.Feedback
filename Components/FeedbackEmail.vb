@@ -174,7 +174,7 @@ Namespace DotNetNuke.Modules.Feedback
         End Property
 
         Public Sub New()
-            _portalSettings = Entities.Portals.PortalController.GetCurrentPortalSettings()
+            _portalSettings = Entities.Portals.PortalController.Instance.GetCurrentPortalSettings()
             _recipients = New Generic.List(Of String)
         End Sub
 
@@ -219,7 +219,7 @@ Namespace DotNetNuke.Modules.Feedback
                         AddUserToRecipients(uid)
                     Else
                         Dim rc As New DotNetNuke.Security.Roles.RoleController
-                        For Each user As UserInfo In rc.GetUsersByRoleName(_portalSettings.PortalId, roleName)
+                        For Each user As UserInfo In DotNetNuke.Security.Roles.RoleController.Instance.GetUsersByRole(_portalSettings.PortalId, roleName)
                             AddUserToRecipients(user.UserID)
                         Next
                     End If
