@@ -74,7 +74,7 @@ Namespace DotNetNuke.Modules.Feedback
                                                                                          Return True
                                                                                      End Function
                 Dim client As New System.Net.WebClient()
-                Dim GoogleReply = client.DownloadString(String.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", SecretKey, EncodedResponse))
+                Dim GoogleReply As String = client.DownloadString(String.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", SecretKey, EncodedResponse))
 
                 Dim serializer As New JavaScriptSerializer()
                 Dim gOutput As GoogleVerificationResult = serializer.Deserialize(Of GoogleVerificationResult)(GoogleReply)
