@@ -3,7 +3,7 @@
 <%@ Register TagPrefix="dnn" Assembly="DotNetNuke.Web.Deprecated" Namespace="DotNetNuke.Web.UI.WebControls" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 
-<div id="divFeedbackForm" runat="server"> 
+<div id="divFeedbackForm" runat="server">
     <div id="divFeedbackFormContent" runat="server">
         <asp:ValidationSummary ID="valSummary" runat="server" CssClass="dnnFormMessage dnnFormValidationSummary"
         EnableClientScript="true" DisplayMode="List" />
@@ -147,6 +147,7 @@
                         </div>
                     </div>
 	            </div>
+                <asp:Panel ID="NoCaptchaDiv" runat="server" Visible="false"></asp:Panel>
             </div>
         </fieldset>
         <div class="dnnClear">

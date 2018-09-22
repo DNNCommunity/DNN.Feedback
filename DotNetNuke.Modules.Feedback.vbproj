@@ -203,6 +203,7 @@
     </Compile>
     <Compile Include="Components\Integration\Notifications.vb" />
     <Compile Include="Components\ConfigurationView.vb" />
+    <Compile Include="Components\NoCaptcha.vb" />
     <Compile Include="Components\Scheduler\FeedbackSchedule.vb" />
     <Compile Include="Components\Services\FeedbackRouteMapper.vb" />
     <Compile Include="Components\Services\NotificationServiceController.vb" />
@@ -426,6 +427,8 @@
     <None Include="Installation\05.00.02.SqlDataProvider" />
     <None Include="Installation\Uninstall.SqlDataProvider" />
     <Content Include="packages.config" />
+    <Content Include="LICENSE" />
+    <Content Include="README.md" />
     <None Include="_buildfiles\PackageModule.targets">
       <SubType>Designer</SubType>
     </None>

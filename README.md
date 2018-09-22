@@ -20,6 +20,7 @@ The module enables extensive consiguration in five main areas
 
 ### Submission and Security
 * Enabling Captcha, including an audio code and the 'noise' in the code graphic
+* Option to replace normal captcha with Google reCaptcha
 * Prevention against re-submission
 * Re-direction on submission
 

@@ -201,6 +201,19 @@ Namespace DotNetNuke.Modules.Feedback
                     ddlCaptchaLineNoise.Items.FindByValue(CType(MyConfiguration.CaptchaLineNoise, String)).Selected = True
                     BindToEnum(GetType(Telerik.Web.UI.CaptchaBackgroundNoiseLevel), ddlCaptchaBackgroundNoise)
                     ddlCaptchaBackgroundNoise.Items.FindByValue(CType(MyConfiguration.CaptchaBackgroundNoise, String)).Selected = True
+
+                    ' Issue 22, NoCaptcha support
+                    chkNoCaptcha.Checked = MyConfiguration.UseNoCaptcha
+                    txtNoCaptchaSiteKey.Text = MyConfiguration.NoCaptchaSiteKey
+                    txtNoCaptchaSecretKey.Text = MyConfiguration.NoCaptchaSecretKey
+                    If MyConfiguration.UseNoCaptcha Then
+                        valNoCaptchaSiteKey.Enabled = True
+                        valNoCaptchaSecretKey.Enabled = True
+                    Else
+                        valNoCaptchaSiteKey.Enabled = False
+                        valNoCaptchaSecretKey.Enabled = False
+                    End If
+
                     rblRepeatSubmissionFilter.SelectedValue = CInt(MyConfiguration.RepeatSubmissionFilter).ToString
                     txtMinSubmissionInteval.Text = MyConfiguration.RepeatSubmissionInteval.ToString
                     chkDuplicateSubmission.Checked = MyConfiguration.DuplicateSubmission
@@ -329,6 +342,12 @@ Namespace DotNetNuke.Modules.Feedback
                         .CaptchaCase = chkCaptchaCase.Checked
                         .CaptchaLineNoise = CType(ddlCaptchaLineNoise.SelectedValue, Telerik.Web.UI.CaptchaLineNoiseLevel)
                         .CaptchaBackgroundNoise = CType(ddlCaptchaLineNoise.SelectedValue, Telerik.Web.UI.CaptchaBackgroundNoiseLevel)
+
+                        'Issue #22 NoCaptcha support
+                        .UseNoCaptcha = chkNoCaptcha.Checked
+                        .NoCaptchaSiteKey = txtNoCaptchaSiteKey.Text
+                        .NoCaptchaSecretKey = txtNoCaptchaSecretKey.Text
+
                         .RepeatSubmissionFilter = CType(rblRepeatSubmissionFilter.SelectedValue, Configuration.RepeatSubmissionFilters)
                         .RepeatSubmissionInteval = Integer.Parse(txtMinSubmissionInteval.Text)
                         .DuplicateSubmission = chkDuplicateSubmission.Checked
@@ -510,6 +529,17 @@ Namespace DotNetNuke.Modules.Feedback
             If chkAkismetEnable.Checked Then
                 Dim akismetApi As New Akismet(txtAkismetKey.Text, NavigateURL())
                 args.IsValid = akismetApi.VerifyKey()
+            End If
+        End Sub
+
+        ' Issue #22 NoCaptcha support
+        Protected Sub chkNoCaptcha_CheckedChanged(sender As Object, e As EventArgs)
+            If chkNoCaptcha.Checked Then
+                valNoCaptchaSiteKey.Enabled = True
+                valNoCaptchaSecretKey.Enabled = True
+            Else
+                valNoCaptchaSiteKey.Enabled = False
+                valNoCaptchaSecretKey.Enabled = False
             End If
         End Sub
 
