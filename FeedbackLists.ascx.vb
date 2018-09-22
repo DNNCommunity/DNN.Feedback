@@ -17,6 +17,7 @@
 ' CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
 ' DEALINGS IN THE SOFTWARE.
 '
+Imports System.Text.RegularExpressions
 Imports System.Web.UI.WebControls
 
 Namespace DotNetNuke.Modules.Feedback
@@ -284,17 +285,17 @@ Namespace DotNetNuke.Modules.Feedback
                         'so first create the format string with a dummy value and then
                         'replace the dummy value with the FormatString place holder
                         Dim formatString As String = EditUrl("", "", "EditLists", "ListType=" & CType(_currentListType, String), "ListID=" & "KEYFIELD")
-                        formatString = formatString.Replace("KEYFIELD", "{0}")
+                        formatString = Regex.Replace(formatString, "KEYFIELD", "{0}", RegexOptions.IgnoreCase)
                         imageColumn.NavigateURLFormatString = formatString
                     End If
                     If imageColumn.CommandName = "MoveUp" Then
                         Dim formatString As String = EditUrl("", "", "EditLists", "ListType=" & CType(_currentListType, String), "ListID=" & "KEYFIELD", "MoveDirection=Up")
-                        formatString = formatString.Replace("KEYFIELD", "{0}")
+                        formatString = Regex.Replace(formatString, "KEYFIELD", "{0}", RegexOptions.IgnoreCase)
                         imageColumn.NavigateURLFormatString = formatString
                     End If
                     If imageColumn.CommandName = "MoveDown" Then
                         Dim formatString As String = EditUrl("", "", "EditLists", "ListType=" & CType(_currentListType, String), "ListID=" & "KEYFIELD", "MoveDirection=Down")
-                        formatString = formatString.Replace("KEYFIELD", "{0}")
+                        formatString = Regex.Replace(formatString, "KEYFIELD", "{0}", RegexOptions.IgnoreCase)
                         imageColumn.NavigateURLFormatString = formatString
                     End If
                     'Localize Image Column Text
