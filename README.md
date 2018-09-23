@@ -42,3 +42,6 @@ The installation package comes with an anciliary module that enables the display
 
 ## Display
 ![viewcomments](https://cloud.githubusercontent.com/assets/5859855/8637518/cf442410-2894-11e5-823a-edf334b92935.png)
+
+# HOW TO CONTRIBUTE
+If you would like to contribute to this project, please read the [CONTRIBUTING.md](https://github.com/DNNCommunity/DNN.Feedback/blob/master/.github/CONTRIBUTING.md)
