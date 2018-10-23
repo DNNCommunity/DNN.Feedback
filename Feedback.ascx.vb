@@ -444,8 +444,10 @@ Namespace DotNetNuke.Modules.Feedback
             If Not Page.IsValid Then Exit Sub
 
             'Issue #22 support for NoCaptcha
-            Dim theCaptcha As NoCaptcha = DirectCast(NoCaptchaDiv.Controls.Item(0), NoCaptcha)
-            If NoCaptchaDiv.Visible AndAlso Not theCaptcha.Validate() Then Exit Sub
+            If NoCaptchaDiv.Controls.Count > 0 Then
+                Dim theCaptcha As NoCaptcha = DirectCast(NoCaptchaDiv.Controls.Item(0), NoCaptcha)
+                If NoCaptchaDiv.Visible AndAlso Not theCaptcha.Validate() Then Exit Sub
+            End If
 
             If Not divCaptcha.Visible OrElse ctlCaptcha.IsValid Then
                 Try
