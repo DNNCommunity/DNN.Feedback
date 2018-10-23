@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports System.Globalization
+Imports System.Net
 Imports System.Web.Script.Serialization
 Imports System.Web.UI
 Imports System.Web.UI.WebControls
@@ -73,6 +74,7 @@ Namespace DotNetNuke.Modules.Feedback
                 System.Net.ServicePointManager.ServerCertificateValidationCallback = Function()
                                                                                          Return True
                                                                                      End Function
+                System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
                 Dim client As New System.Net.WebClient()
                 Dim GoogleReply As String = client.DownloadString(String.Format("https://www.google.com/recaptcha/api/siteverify?secret={0}&response={1}", SecretKey, EncodedResponse))
 
