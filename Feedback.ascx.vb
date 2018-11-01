@@ -743,10 +743,13 @@ Namespace DotNetNuke.Modules.Feedback
                                 End If
 
                                 Try
-                                    Dim contextkey As String
-                                    Dim objNotification As New Components.Integration.Notifications
-                                    contextkey = objNotification.SendFeedbackModerationNotification(sendToRoles.Split(";"c), PortalSettings.AdministratorId, emailSubject, moderationMessage, PortalId, TabId, ModuleId, oFeedback.FeedbackID)
-                                    objFeedbackController.UpdateContextKey(ModuleId, oFeedback.FeedbackID, contextkey, UserId)
+                                    ' Dont try to send if there are nobody in moderation roles
+                                    If Not String.IsNullOrEmpty(sendToRoles) Then
+                                        Dim contextkey As String
+                                        Dim objNotification As New Components.Integration.Notifications
+                                        contextkey = objNotification.SendFeedbackModerationNotification(sendToRoles.Split(";"c), PortalSettings.AdministratorId, emailSubject, moderationMessage, PortalId, TabId, ModuleId, oFeedback.FeedbackID)
+                                        objFeedbackController.UpdateContextKey(ModuleId, oFeedback.FeedbackID, contextkey, UserId)
+                                    End If
                                 Catch ex As Exception
                                     errorMsg &= ex.Message
                                 End Try
