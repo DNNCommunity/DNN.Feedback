@@ -1,0 +1,17 @@
+﻿/**********************************************************************/
+/*****                    06.06.02.SqlDataProvider                *****/
+/*****                                                            *****/
+/*****                                                            *****/
+/*****    Note: To manually execute this script you must          *****/
+/*****          perform a search and replace operation            *****/
+/*****          for {databaseOwner} and {objectQualifier}         *****/
+/*****                                                            *****/
+/**********************************************************************/
+
+/************************************************/
+/***     Swap Referrer and UserAgent          ***/
+/************************************************/
+UPDATE {databaseOwner}[{objectQualifier}Feedback]
+   SET Referrer = UserAgent
+      ,UserAgent = Referrer      
+GO

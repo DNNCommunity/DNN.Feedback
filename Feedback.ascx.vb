@@ -595,8 +595,8 @@ Namespace DotNetNuke.Modules.Feedback
                         Next
                     End If
 
-                    oFeedback.Referrer = Request.UserAgent
-                    oFeedback.UserAgent = Request.UrlReferrer.ToString
+                    oFeedback.UserAgent = Request.UserAgent
+                    oFeedback.Referrer = Request.UrlReferrer.ToString
                     oFeedback.Status = status
 
                     'Akisemet spam check if required
