@@ -119,7 +119,7 @@
             <div id="divMessage" runat="server" class="Feedback_Field">
                 <div class="dnnFormItem">
 			        <dnn:label id="plMessage" runat="server" associatedcontrolid="txtBody" resourcekey="plMessage" ></dnn:label>
-			        <asp:textbox id="txtBody" runat="server"  textmode="Multiline" rows="10" MaxLength="10" ></asp:textbox>
+			        <asp:textbox id="txtBody" runat="server"  textmode="Multiline" rows="10" MaxLength="1000" ></asp:textbox>
 			        <asp:requiredfieldvalidator id="valMessage" runat="server" cssclass="dnnFormMessage dnnFormError" display="Dynamic" errormessage="Message is required"
 				        controltovalidate="txtBody" InitialValue="" Enabled="false" resourcekey="valBody.Error"></asp:requiredfieldvalidator>
                     <asp:RegularExpressionValidator ID="valMessageLength" runat="server" cssclass="dnnFormMessage dnnFormError" display="Dynamic" ControlToValidate="txtBody" ValidationExpression="^[\s\S]{0,50}$"
