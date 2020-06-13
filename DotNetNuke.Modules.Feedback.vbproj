@@ -339,6 +339,7 @@
       <DependentUpon>FeedbackLists.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Content Include="Installation\ReleaseNotes\Release.06.06.03.htm" />
     <Content Include="Installation\TestCases\TestCases.06.06.02.txt" />
     <Content Include="Installation\TestCases\TestCases.06.06.01.txt" />
     <Content Include="Installation\TestCases\TestCases.06.06.00.txt" />
@@ -352,6 +353,7 @@
     <Content Include="Installation\TestCases\TestCases.06.01.00.txt" />
     <Content Include="Installation\TestCases\TestCases.06.00.00.txt" />
     <Content Include="Installation\TestCases\TestCases.05.01.00.txt" />
+    <Content Include="Installation\TestCases\TestCases.06.06.03.txt" />
     <Content Include="Moderation.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
