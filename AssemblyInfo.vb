@@ -49,7 +49,7 @@ Imports System.Runtime.InteropServices
 ' You can specify all the values or you can default the Build and Revision Numbers 
 ' by using the '*' as shown below:
 
-<Assembly: AssemblyVersion("06.06.02.05")>
+<Assembly: AssemblyVersion("06.06.03.01")>
 
 <Assembly: AssemblyFileVersion("06.06.01.00")>
 <Assembly: ComVisibleAttribute(False)>
