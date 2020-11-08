@@ -11,9 +11,9 @@ Option Strict On
 Option Explicit On
 
 Namespace DotNetNuke.Modules.Feedback
-    
+
     Partial Public Class Settings
-        
+
         '''<summary>
         '''valSummary control.
         '''</summary>
@@ -22,7 +22,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents valSummary As Global.System.Web.UI.WebControls.ValidationSummary
-        
+
         '''<summary>
         '''plSendTo control.
         '''</summary>
@@ -31,7 +31,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plSendTo As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''txtSendTo control.
         '''</summary>
@@ -40,7 +40,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtSendTo As Global.System.Web.UI.WebControls.TextBox
-        
+
         '''<summary>
         '''valSendTo control.
         '''</summary>
@@ -49,7 +49,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents valSendTo As Global.System.Web.UI.WebControls.RegularExpressionValidator
-        
+
         '''<summary>
         '''plSendToRoles control.
         '''</summary>
@@ -58,7 +58,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plSendToRoles As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''dgSelectedRoles control.
         '''</summary>
@@ -67,7 +67,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents dgSelectedRoles As Global.DotNetNuke.UI.WebControls.RolesSelectionGrid
-        
+
         '''<summary>
         '''plSendFrom control.
         '''</summary>
@@ -76,7 +76,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plSendFrom As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''txtSendFrom control.
         '''</summary>
@@ -85,7 +85,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtSendFrom As Global.System.Web.UI.WebControls.TextBox
-        
+
         '''<summary>
         '''valSendFrom control.
         '''</summary>
@@ -94,7 +94,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents valSendFrom As Global.System.Web.UI.WebControls.RegularExpressionValidator
-        
+
         '''<summary>
         '''plSendCopy control.
         '''</summary>
@@ -103,7 +103,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plSendCopy As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkSendCopy control.
         '''</summary>
@@ -112,7 +112,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkSendCopy As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''plOptout control.
         '''</summary>
@@ -121,7 +121,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plOptout As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkOptout control.
         '''</summary>
@@ -130,7 +130,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkOptout As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''plAsync control.
         '''</summary>
@@ -139,7 +139,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plAsync As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkAsync control.
         '''</summary>
@@ -148,7 +148,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkAsync As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''plCategory control.
         '''</summary>
@@ -157,7 +157,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plCategory As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''cboCategory control.
         '''</summary>
@@ -166,7 +166,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents cboCategory As Global.System.Web.UI.WebControls.DropDownList
-        
+
         '''<summary>
         '''plCategorySelectable control.
         '''</summary>
@@ -175,7 +175,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plCategorySelectable As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkCategory control.
         '''</summary>
@@ -184,7 +184,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkCategory As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''valCategory control.
         '''</summary>
@@ -193,7 +193,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents valCategory As Global.System.Web.UI.WebControls.CustomValidator
-        
+
         '''<summary>
         '''plCategoryReq control.
         '''</summary>
@@ -202,7 +202,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plCategoryReq As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkCategoryReq control.
         '''</summary>
@@ -211,7 +211,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkCategoryReq As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''plUseCategoryAsEmail control.
         '''</summary>
@@ -220,7 +220,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plUseCategoryAsEmail As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkCategoryMailto control.
         '''</summary>
@@ -229,7 +229,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkCategoryMailto As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''valCategoryMailto control.
         '''</summary>
@@ -238,7 +238,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents valCategoryMailto As Global.System.Web.UI.WebControls.CustomValidator
-        
+
         '''<summary>
         '''plLabelDisplay control.
         '''</summary>
@@ -247,7 +247,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plLabelDisplay As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''rblLabelDisplay control.
         '''</summary>
@@ -256,7 +256,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblLabelDisplay As Global.System.Web.UI.WebControls.RadioButtonList
-        
+
         '''<summary>
         '''plWidth control.
         '''</summary>
@@ -265,7 +265,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plWidth As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''txtWidth control.
         '''</summary>
@@ -274,7 +274,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtWidth As Global.System.Web.UI.WebControls.TextBox
-        
+
         '''<summary>
         '''valWidth control.
         '''</summary>
@@ -283,7 +283,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents valWidth As Global.System.Web.UI.WebControls.RegularExpressionValidator
-        
+
         '''<summary>
         '''plSubject control.
         '''</summary>
@@ -292,7 +292,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plSubject As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''cboSubject control.
         '''</summary>
@@ -301,7 +301,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents cboSubject As Global.System.Web.UI.WebControls.DropDownList
-        
+
         '''<summary>
         '''plSubjectEditField control.
         '''</summary>
@@ -310,7 +310,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plSubjectEditField As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''rblSubjectEditField control.
         '''</summary>
@@ -319,7 +319,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblSubjectEditField As Global.System.Web.UI.WebControls.RadioButtonList
-        
+
         '''<summary>
         '''plEmailField control.
         '''</summary>
@@ -328,7 +328,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plEmailField As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''rblEmailField control.
         '''</summary>
@@ -337,7 +337,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblEmailField As Global.System.Web.UI.WebControls.RadioButtonList
-        
+
         '''<summary>
         '''plEmailConfirmField control.
         '''</summary>
@@ -346,7 +346,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plEmailConfirmField As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''rblEmailConfirmField control.
         '''</summary>
@@ -355,7 +355,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblEmailConfirmField As Global.System.Web.UI.WebControls.RadioButtonList
-        
+
         '''<summary>
         '''plNameField control.
         '''</summary>
@@ -364,7 +364,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plNameField As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''rblNameField control.
         '''</summary>
@@ -373,7 +373,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblNameField As Global.System.Web.UI.WebControls.RadioButtonList
-        
+
         '''<summary>
         '''plStreetField control.
         '''</summary>
@@ -382,7 +382,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plStreetField As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''rblStreetField control.
         '''</summary>
@@ -391,7 +391,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblStreetField As Global.System.Web.UI.WebControls.RadioButtonList
-        
+
         '''<summary>
         '''plCityField control.
         '''</summary>
@@ -400,7 +400,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plCityField As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''rblCityField control.
         '''</summary>
@@ -409,7 +409,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblCityField As Global.System.Web.UI.WebControls.RadioButtonList
-        
+
         '''<summary>
         '''plRegionField control.
         '''</summary>
@@ -418,7 +418,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plRegionField As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''rblRegionField control.
         '''</summary>
@@ -427,7 +427,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblRegionField As Global.System.Web.UI.WebControls.RadioButtonList
-        
+
         '''<summary>
         '''plCountryField control.
         '''</summary>
@@ -436,7 +436,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plCountryField As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''rblCountryField control.
         '''</summary>
@@ -445,7 +445,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblCountryField As Global.System.Web.UI.WebControls.RadioButtonList
-        
+
         '''<summary>
         '''plPostalCodeField control.
         '''</summary>
@@ -454,7 +454,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plPostalCodeField As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''rblPostalCodeField control.
         '''</summary>
@@ -463,7 +463,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblPostalCodeField As Global.System.Web.UI.WebControls.RadioButtonList
-        
+
         '''<summary>
         '''plTelephoneField control.
         '''</summary>
@@ -472,7 +472,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plTelephoneField As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''rblTelephoneField control.
         '''</summary>
@@ -481,7 +481,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblTelephoneField As Global.System.Web.UI.WebControls.RadioButtonList
-        
+
         '''<summary>
         '''plMessageField control.
         '''</summary>
@@ -490,7 +490,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plMessageField As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''rblMessageField control.
         '''</summary>
@@ -499,7 +499,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblMessageField As Global.System.Web.UI.WebControls.RadioButtonList
-        
+
         '''<summary>
         '''plEmailRegex control.
         '''</summary>
@@ -508,7 +508,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plEmailRegex As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''txtEmailRegex control.
         '''</summary>
@@ -517,7 +517,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtEmailRegex As Global.System.Web.UI.WebControls.TextBox
-        
+
         '''<summary>
         '''btnResetEmailRegex control.
         '''</summary>
@@ -526,7 +526,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents btnResetEmailRegex As Global.System.Web.UI.WebControls.Button
-        
+
         '''<summary>
         '''valEmailRegex control.
         '''</summary>
@@ -535,7 +535,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents valEmailRegex As Global.System.Web.UI.WebControls.RequiredFieldValidator
-        
+
         '''<summary>
         '''plPostalCodeRegex control.
         '''</summary>
@@ -544,7 +544,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plPostalCodeRegex As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''txtPostalCodeRegex control.
         '''</summary>
@@ -553,7 +553,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtPostalCodeRegex As Global.System.Web.UI.WebControls.TextBox
-        
+
         '''<summary>
         '''btnResetPostalCodeRegex control.
         '''</summary>
@@ -562,7 +562,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents btnResetPostalCodeRegex As Global.System.Web.UI.WebControls.Button
-        
+
         '''<summary>
         '''plTelephoneRegex control.
         '''</summary>
@@ -571,7 +571,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plTelephoneRegex As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''txtTelephoneRegex control.
         '''</summary>
@@ -580,7 +580,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtTelephoneRegex As Global.System.Web.UI.WebControls.TextBox
-        
+
         '''<summary>
         '''btnResetTelephoneRegex control.
         '''</summary>
@@ -589,7 +589,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents btnResetTelephoneRegex As Global.System.Web.UI.WebControls.Button
-        
+
         '''<summary>
         '''plRows control.
         '''</summary>
@@ -598,7 +598,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plRows As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''txtrows control.
         '''</summary>
@@ -607,7 +607,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtrows As Global.System.Web.UI.WebControls.TextBox
-        
+
         '''<summary>
         '''valRows control.
         '''</summary>
@@ -616,7 +616,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents valRows As Global.System.Web.UI.WebControls.RegularExpressionValidator
-        
+
         '''<summary>
         '''plMaxMessage control.
         '''</summary>
@@ -625,7 +625,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plMaxMessage As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''txtMaxMessage control.
         '''</summary>
@@ -634,7 +634,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtMaxMessage As Global.System.Web.UI.WebControls.TextBox
-        
+
         '''<summary>
         '''valMaxMessage control.
         '''</summary>
@@ -643,7 +643,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents valMaxMessage As Global.System.Web.UI.WebControls.RegularExpressionValidator
-        
+
         '''<summary>
         '''plCaptchaVisibility control.
         '''</summary>
@@ -652,7 +652,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plCaptchaVisibility As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''rblCaptchaVisibility control.
         '''</summary>
@@ -661,25 +661,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblCaptchaVisibility As Global.System.Web.UI.WebControls.RadioButtonList
-        
-        '''<summary>
-        '''plCaptchaAudio control.
-        '''</summary>
-        '''<remarks>
-        '''Auto-generated field.
-        '''To modify move field declaration from designer file to code-behind file.
-        '''</remarks>
-        Protected WithEvents plCaptchaAudio As Global.System.Web.UI.UserControl
-        
-        '''<summary>
-        '''chkCaptchaAudio control.
-        '''</summary>
-        '''<remarks>
-        '''Auto-generated field.
-        '''To modify move field declaration from designer file to code-behind file.
-        '''</remarks>
-        Protected WithEvents chkCaptchaAudio As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''plCaptchaCase control.
         '''</summary>
@@ -688,7 +670,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plCaptchaCase As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkCaptchaCase control.
         '''</summary>
@@ -697,7 +679,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkCaptchaCase As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''plCaptchaLineNoise control.
         '''</summary>
@@ -706,7 +688,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plCaptchaLineNoise As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''ddlCaptchaLineNoise control.
         '''</summary>
@@ -715,7 +697,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents ddlCaptchaLineNoise As Global.System.Web.UI.WebControls.DropDownList
-        
+
         '''<summary>
         '''plCaptchaBackgroundNoise control.
         '''</summary>
@@ -724,7 +706,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plCaptchaBackgroundNoise As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''ddlCaptchaBackgroundNoise control.
         '''</summary>
@@ -733,7 +715,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents ddlCaptchaBackgroundNoise As Global.System.Web.UI.WebControls.DropDownList
-        
+
         '''<summary>
         '''plNoCaptcha control.
         '''</summary>
@@ -742,7 +724,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plNoCaptcha As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkNoCaptcha control.
         '''</summary>
@@ -751,7 +733,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkNoCaptcha As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''plNoCaptchaSiteKey control.
         '''</summary>
@@ -760,7 +742,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plNoCaptchaSiteKey As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''txtNoCaptchaSiteKey control.
         '''</summary>
@@ -769,7 +751,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtNoCaptchaSiteKey As Global.System.Web.UI.WebControls.TextBox
-        
+
         '''<summary>
         '''valNoCaptchaSiteKey control.
         '''</summary>
@@ -778,7 +760,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents valNoCaptchaSiteKey As Global.System.Web.UI.WebControls.RequiredFieldValidator
-        
+
         '''<summary>
         '''plNoCaptchaSecretKey control.
         '''</summary>
@@ -787,7 +769,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plNoCaptchaSecretKey As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''txtNoCaptchaSecretKey control.
         '''</summary>
@@ -796,7 +778,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtNoCaptchaSecretKey As Global.System.Web.UI.WebControls.TextBox
-        
+
         '''<summary>
         '''valNoCaptchaSecretKey control.
         '''</summary>
@@ -805,7 +787,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents valNoCaptchaSecretKey As Global.System.Web.UI.WebControls.RequiredFieldValidator
-        
+
         '''<summary>
         '''plRepeatSubmissionFilter control.
         '''</summary>
@@ -814,7 +796,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plRepeatSubmissionFilter As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''rblRepeatSubmissionFilter control.
         '''</summary>
@@ -823,7 +805,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblRepeatSubmissionFilter As Global.System.Web.UI.WebControls.RadioButtonList
-        
+
         '''<summary>
         '''plMinSubmissionInteval control.
         '''</summary>
@@ -832,7 +814,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plMinSubmissionInteval As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''txtMinSubmissionInteval control.
         '''</summary>
@@ -841,7 +823,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtMinSubmissionInteval As Global.System.Web.UI.WebControls.TextBox
-        
+
         '''<summary>
         '''valMinSubmissionInteval control.
         '''</summary>
@@ -850,7 +832,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents valMinSubmissionInteval As Global.System.Web.UI.WebControls.RegularExpressionValidator
-        
+
         '''<summary>
         '''plDuplicateSubmission control.
         '''</summary>
@@ -859,7 +841,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plDuplicateSubmission As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkDuplicateSubmission control.
         '''</summary>
@@ -868,7 +850,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkDuplicateSubmission As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''plRedirectTabOnSubmission control.
         '''</summary>
@@ -877,7 +859,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plRedirectTabOnSubmission As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''ddlRedirectTabOnSubmission control.
         '''</summary>
@@ -886,7 +868,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents ddlRedirectTabOnSubmission As Global.System.Web.UI.WebControls.DropDownList
-        
+
         '''<summary>
         '''plAkismetEnable control.
         '''</summary>
@@ -895,7 +877,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plAkismetEnable As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkAkismetEnable control.
         '''</summary>
@@ -904,7 +886,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkAkismetEnable As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''plAkismetKey control.
         '''</summary>
@@ -913,7 +895,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plAkismetKey As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''txtAkismetKey control.
         '''</summary>
@@ -922,7 +904,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtAkismetKey As Global.System.Web.UI.WebControls.TextBox
-        
+
         '''<summary>
         '''valAkismetKey control.
         '''</summary>
@@ -931,7 +913,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents valAkismetKey As Global.System.Web.UI.WebControls.CustomValidator
-        
+
         '''<summary>
         '''plAkismetSendModerator control.
         '''</summary>
@@ -940,7 +922,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plAkismetSendModerator As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkAkismetSendModerator control.
         '''</summary>
@@ -949,7 +931,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkAkismetSendModerator As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''plScope control.
         '''</summary>
@@ -958,7 +940,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plScope As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''rblScope control.
         '''</summary>
@@ -967,7 +949,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblScope As Global.System.Web.UI.WebControls.RadioButtonList
-        
+
         '''<summary>
         '''divOrphanedData control.
         '''</summary>
@@ -976,7 +958,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents divOrphanedData As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-        
+
         '''<summary>
         '''plOrphanedData control.
         '''</summary>
@@ -985,7 +967,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plOrphanedData As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''dgOrphanedData control.
         '''</summary>
@@ -994,7 +976,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents dgOrphanedData As Global.System.Web.UI.WebControls.DataGrid
-        
+
         '''<summary>
         '''cmdDeleteOrphanedData control.
         '''</summary>
@@ -1003,7 +985,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents cmdDeleteOrphanedData As Global.System.Web.UI.WebControls.Button
-        
+
         '''<summary>
         '''plModerated control.
         '''</summary>
@@ -1012,7 +994,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plModerated As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkModerated control.
         '''</summary>
@@ -1021,7 +1003,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkModerated As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''plModerationAdminEmails control.
         '''</summary>
@@ -1030,7 +1012,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plModerationAdminEmails As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkModerationAdminEmails control.
         '''</summary>
@@ -1039,7 +1021,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkModerationAdminEmails As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''divEmailOnly control.
         '''</summary>
@@ -1048,7 +1030,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents divEmailOnly As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-        
+
         '''<summary>
         '''plEmailOnly control.
         '''</summary>
@@ -1057,7 +1039,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plEmailOnly As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkEmailOnly control.
         '''</summary>
@@ -1066,7 +1048,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkEmailOnly As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''divSendWhenPublished control.
         '''</summary>
@@ -1075,7 +1057,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents divSendWhenPublished As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-        
+
         '''<summary>
         '''plSendWhenPublished control.
         '''</summary>
@@ -1084,7 +1066,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plSendWhenPublished As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkSendWhenPublished control.
         '''</summary>
@@ -1093,7 +1075,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkSendWhenPublished As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''divModerationCategories control.
         '''</summary>
@@ -1102,7 +1084,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents divModerationCategories As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-        
+
         '''<summary>
         '''plModerationCategory control.
         '''</summary>
@@ -1111,7 +1093,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plModerationCategory As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''cblModerationCategories control.
         '''</summary>
@@ -1120,7 +1102,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents cblModerationCategories As Global.System.Web.UI.WebControls.CheckBoxList
-        
+
         '''<summary>
         '''divUnmoderatedStatus control.
         '''</summary>
@@ -1129,7 +1111,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents divUnmoderatedStatus As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-        
+
         '''<summary>
         '''plUnmoderatedStatus control.
         '''</summary>
@@ -1138,7 +1120,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plUnmoderatedStatus As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''ddlUnmoderatedStatus control.
         '''</summary>
@@ -1147,7 +1129,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents ddlUnmoderatedStatus As Global.System.Web.UI.WebControls.DropDownList
-        
+
         '''<summary>
         '''plPrintTemplate control.
         '''</summary>
@@ -1156,7 +1138,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plPrintTemplate As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''txtPrintTemplate control.
         '''</summary>
@@ -1165,7 +1147,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtPrintTemplate As Global.System.Web.UI.WebControls.TextBox
-        
+
         '''<summary>
         '''btnLoadDefaultPrintTemplate control.
         '''</summary>
@@ -1174,7 +1156,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents btnLoadDefaultPrintTemplate As Global.System.Web.UI.WebControls.Button
-        
+
         '''<summary>
         '''plPrintAction control.
         '''</summary>
@@ -1183,7 +1165,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plPrintAction As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''rblPrintAction control.
         '''</summary>
@@ -1192,7 +1174,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblPrintAction As Global.System.Web.UI.WebControls.RadioButtonList
-        
+
         '''<summary>
         '''plModerationPageSize control.
         '''</summary>
@@ -1201,7 +1183,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plModerationPageSize As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''ddlModerationPageSize control.
         '''</summary>
@@ -1210,7 +1192,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents ddlModerationPageSize As Global.System.Web.UI.WebControls.DropDownList
-        
+
         '''<summary>
         '''plCleanupPending control.
         '''</summary>
@@ -1219,7 +1201,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plCleanupPending As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkCleanupPending control.
         '''</summary>
@@ -1228,7 +1210,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkCleanupPending As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''plCleanupPrivate control.
         '''</summary>
@@ -1237,7 +1219,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plCleanupPrivate As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkCleanupPrivate control.
         '''</summary>
@@ -1246,7 +1228,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkCleanupPrivate As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''plCleanupPublished control.
         '''</summary>
@@ -1255,7 +1237,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plCleanupPublished As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkCleanupPublished control.
         '''</summary>
@@ -1264,7 +1246,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkCleanupPublished As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''plCleanupArchived control.
         '''</summary>
@@ -1273,7 +1255,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plCleanupArchived As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkCleanupArchived control.
         '''</summary>
@@ -1282,7 +1264,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkCleanupArchived As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''plCleanupSpam control.
         '''</summary>
@@ -1291,7 +1273,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plCleanupSpam As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''chkCleanupSpam control.
         '''</summary>
@@ -1300,7 +1282,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents chkCleanupSpam As Global.System.Web.UI.WebControls.CheckBox
-        
+
         '''<summary>
         '''plCleanupDaysBefore control.
         '''</summary>
@@ -1309,7 +1291,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plCleanupDaysBefore As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''txtCleanupDaysBefore control.
         '''</summary>
@@ -1318,7 +1300,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtCleanupDaysBefore As Global.System.Web.UI.WebControls.TextBox
-        
+
         '''<summary>
         '''Regularexpressionvalidator1 control.
         '''</summary>
@@ -1327,7 +1309,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents Regularexpressionvalidator1 As Global.System.Web.UI.WebControls.RegularExpressionValidator
-        
+
         '''<summary>
         '''plCleanupMaxEntries control.
         '''</summary>
@@ -1336,7 +1318,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents plCleanupMaxEntries As Global.System.Web.UI.UserControl
-        
+
         '''<summary>
         '''txtCleanupMaxEntries control.
         '''</summary>
@@ -1345,7 +1327,7 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents txtCleanupMaxEntries As Global.System.Web.UI.WebControls.TextBox
-        
+
         '''<summary>
         '''Regularexpressionvalidator2 control.
         '''</summary>

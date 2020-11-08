@@ -167,10 +167,6 @@
             </asp:RadioButtonList>
         </div>
         <div class="dnnFormItem">
-            <dnn:label id="plCaptchaAudio" runat="server" controlname="chkCaptchaAudio" suffix=":"></dnn:label>
-	        <asp:CheckBox id="chkCaptchaAudio" runat="server" cssclass="normal"></asp:CheckBox>
-        </div>
-        <div class="dnnFormItem">
             <dnn:label id="plCaptchaCase" runat="server" controlname="chkCaptchaCase" suffix=":"></dnn:label>
 	        <asp:CheckBox id="chkCaptchaCase" runat="server" cssclass="normal"></asp:CheckBox>
         </div>
