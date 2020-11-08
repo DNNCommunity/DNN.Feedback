@@ -290,15 +290,6 @@ Namespace DotNetNuke.Modules.Feedback
                     Else
                         divCaptcha.Visible = True
                         ctlCaptcha.ErrorMessage = Localization.GetString("InvalidCaptcha", LocalResourceFile)
-                        ctlCaptcha.CaptchaTextBoxLabel = Localization.GetString("CaptchaText", LocalResourceFile)
-                        ctlCaptcha.CaptchaLinkButtonText = Localization.GetString("RefreshCaptcha", LocalResourceFile)
-                        ctlCaptcha.CaptchaAudioLinkButtonText = Localization.GetString("CaptchaAudioText", LocalResourceFile)
-                        ctlCaptcha.CaptchaImage.EnableCaptchaAudio = MyConfiguration.CaptchaAudio
-                        ctlCaptcha.IgnoreCase = MyConfiguration.CaptchaCase
-                        ctlCaptcha.CaptchaImage.LineNoise = MyConfiguration.CaptchaLineNoise
-                        ctlCaptcha.CaptchaImage.BackgroundNoise = MyConfiguration.CaptchaBackgroundNoise
-                        _validationGroup = "FeedbackForm_" & ModuleId.ToString
-                        ctlCaptcha.ValidationGroup = _validationGroup
                     End If
                 Else
                     divCaptcha.Visible = False

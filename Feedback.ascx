@@ -1,5 +1,6 @@
 <%@ Control Language="vb" AutoEventWireup="false" Explicit="True" Codebehind="Feedback.ascx.vb" Inherits="DotNetNuke.Modules.Feedback.Feedback" %>
 <%@ Register TagPrefix="dnn" Assembly="DotNetNuke.Web" Namespace="DotNetNuke.Web.UI.WebControls" %>
+<%@ Register TagPrefix="dnn" Assembly="DotNetNuke" Namespace="DotNetNuke.UI.WebControls"%>
 <%@ Register TagPrefix="dnn" Assembly="DotNetNuke.Web.Deprecated" Namespace="DotNetNuke.Web.UI.WebControls" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
 
@@ -143,8 +144,8 @@
                     <div class="dnnFormItem">
                         <dnn:label id="plCaptcha" runat="server" associatedcontrolid="ctlCaptcha" resourcekey="plCaptcha" CssClass="dnnFormRequired"></dnn:label>
                         <div class="divCaptcha">
-                        <dnn:dnnCaptcha ID="ctlCaptcha" runat="server" EnableRefreshImage="True" CaptchaImage-AudioFilesPath="~/DesktopModules/Feedback/App_Data/RadCaptcha" CaptchaTextBoxCssClass="CaptchaTextBox" />
-                        </div>
+							<dnn:captchacontrol id="ctlCaptcha" captchawidth="130" captchaheight="40" runat="server" errorstyle-cssclass="dnnFormMessage dnnFormError" />
+						</div>
                     </div>
 	            </div>
                 <asp:Panel ID="NoCaptchaDiv" runat="server" Visible="false"></asp:Panel>

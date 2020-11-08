@@ -392,7 +392,6 @@ Namespace DotNetNuke.Modules.Feedback
             End Set
         End Property
 
-        ' Issue #22 NoCaptcha support
         Public Property UseNoCaptcha() As Boolean
             Get
                 Return _useNoCaptcha
@@ -417,43 +416,6 @@ Namespace DotNetNuke.Modules.Feedback
             End Get
             Set(value As String)
                 _noCaptchaSecretKey = value
-            End Set
-        End Property
-        ' End of Issue #22
-
-        Public Property CaptchaAudio() As Boolean
-            Get
-                Return _captchaAudio
-            End Get
-            Set(ByVal value As Boolean)
-                _captchaAudio = value
-            End Set
-        End Property
-
-        Public Property CaptchaCase() As Boolean
-            Get
-                Return _captchaCase
-            End Get
-            Set(ByVal value As Boolean)
-                _captchaCase = value
-            End Set
-        End Property
-
-        Public Property CaptchaLineNoise() As Telerik.Web.UI.CaptchaLineNoiseLevel
-            Get
-                Return _captchaLineNoise
-            End Get
-            Set(ByVal value As Telerik.Web.UI.CaptchaLineNoiseLevel)
-                _captchaLineNoise = value
-            End Set
-        End Property
-
-        Public Property CaptchaBackgroundNoise() As Telerik.Web.UI.CaptchaBackgroundNoiseLevel
-            Get
-                Return _captchaBackgroundNoise
-            End Get
-            Set(ByVal value As Telerik.Web.UI.CaptchaBackgroundNoiseLevel)
-                _captchaBackgroundNoise = value
             End Set
         End Property
 

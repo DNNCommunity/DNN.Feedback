@@ -195,12 +195,8 @@ Namespace DotNetNuke.Modules.Feedback
                     rblScope.SelectedValue = CInt(MyConfiguration.Scope).ToString
                     chkAsync.Checked = MyConfiguration.SendAsync
                     rblCaptchaVisibility.SelectedValue = CInt(MyConfiguration.CaptchaVisibility).ToString
-                    chkCaptchaAudio.Checked = MyConfiguration.CaptchaAudio
-                    chkCaptchaCase.Checked = MyConfiguration.CaptchaCase
                     BindToEnum(GetType(Telerik.Web.UI.CaptchaLineNoiseLevel), ddlCaptchaLineNoise)
-                    ddlCaptchaLineNoise.Items.FindByValue(CType(MyConfiguration.CaptchaLineNoise, String)).Selected = True
                     BindToEnum(GetType(Telerik.Web.UI.CaptchaBackgroundNoiseLevel), ddlCaptchaBackgroundNoise)
-                    ddlCaptchaBackgroundNoise.Items.FindByValue(CType(MyConfiguration.CaptchaBackgroundNoise, String)).Selected = True
 
                     ' Issue 22, NoCaptcha support
                     chkNoCaptcha.Checked = MyConfiguration.UseNoCaptcha
@@ -338,12 +334,7 @@ Namespace DotNetNuke.Modules.Feedback
                         .ModerationPageSize = CInt(ddlModerationPageSize.SelectedItem.Value)
                         .SendWhenPublished = chkSendWhenPublished.Checked
                         .CaptchaVisibility = CType(rblCaptchaVisibility.SelectedValue, Configuration.CaptchaVisibilities)
-                        .CaptchaAudio = chkCaptchaAudio.Checked
-                        .CaptchaCase = chkCaptchaCase.Checked
-                        .CaptchaLineNoise = CType(ddlCaptchaLineNoise.SelectedValue, Telerik.Web.UI.CaptchaLineNoiseLevel)
-                        .CaptchaBackgroundNoise = CType(ddlCaptchaLineNoise.SelectedValue, Telerik.Web.UI.CaptchaBackgroundNoiseLevel)
 
-                        'Issue #22 NoCaptcha support
                         .UseNoCaptcha = chkNoCaptcha.Checked
                         .NoCaptchaSiteKey = txtNoCaptchaSiteKey.Text
                         .NoCaptchaSecretKey = txtNoCaptchaSecretKey.Text
