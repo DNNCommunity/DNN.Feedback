@@ -18,7 +18,6 @@
     <Target Name="AfterBuild" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
         <CallTarget Targets="DeployWebsiteAssemblies" />
         <CallTarget Targets="SetManifestVersion" />
-        <CallTarget Targets="SetReleaseHTMVersion" />
         <CallTarget Targets="CreateInstallResourcesPackage" />
         <CallTarget Targets="CreateInstallPackage" />
         <CallTarget Targets="CreateSourceSourcesPackage" />
@@ -64,12 +63,7 @@
         <FileUpdate Files="@(ManifestFiles)" Regex="type=&quot;Module&quot; version=&quot;.*&quot;&gt;" ReplacementText="type=&quot;Module&quot; version=&quot;$(ModuleVersionNoRevision)&quot;&gt;" />
     </Target>
 
-    <Target Name="SetReleaseHTMVersion" DependsOnTargets="SetManifestVersion">
-        <!-- Write new version to manifest -->
-        <FileUpdate Files="@(ManifestFiles)" Regex="&lt;releaseNotes src=&quot;.*&quot;&gt;" ReplacementText="&lt;releaseNotes src=&quot;Release.$(ModuleVersionNoRevision).htm&quot;&gt;" />
-    </Target>
-
-    <Target Name="CreateInstallResourcesPackage" DependsOnTargets="SetReleaseHTMVersion">
+    <Target Name="CreateInstallResourcesPackage">
         <RemoveDir Directories="$(TempDirectory)" ></RemoveDir>
         <PropertyGroup>
             <PackageName>$(TempDirectory)\Resources</PackageName>
@@ -119,9 +113,6 @@
         </CreateItem>
         <CreateItem Include="Installation\CleanUp\*.txt">
             <Output TaskParameter="Include" ItemName="CleanUpFiles" />
-        </CreateItem>
-        <CreateItem Include="Installation\ReleaseNotes\Release.$(ModuleVersionNoRevision).htm">
-            <Output TaskParameter="Include" ItemName="ReleaseNotesFiles" />
         </CreateItem>
 
         <Copy SourceFiles="@(PackageAssemblies)" DestinationFolder="$(TempDirectory)\bin" />
@@ -213,9 +204,6 @@
         <CreateItem Include="Installation\CleanUp\*.txt">
             <Output TaskParameter="Include" ItemName="CleanUpFiles" />
         </CreateItem>
-        <CreateItem Include="Installation\ReleaseNotes\Release.$(ModuleVersionNoRevision).htm">
-            <Output TaskParameter="Include" ItemName="ReleaseNotesFiles" />
-        </CreateItem>
 
         <Copy SourceFiles="@(PackageAssemblies)" DestinationFolder="$(TempDirectory)\bin" />
         <Copy SourceFiles="@(SqlDataProviderFiles)" DestinationFolder="$(TempDirectory)\Installation" />
@@ -244,16 +232,8 @@
                              $(PackageDirectory)\$(ProductName)_$(ModuleVersionNoRevision)_Source.zip">
             <Output TaskParameter="Include" ItemName="ZipFiles"/>
         </CreateItem>
-        <CreateItem Include="Installation\ReleaseNotes\Release.$(ModuleVersionNoRevision).htm">
-            <Output TaskParameter="Include" ItemName="ReleaseNotes" />
-        </CreateItem>
-        <CreateItem Include="Installation\TestCases\TestCases.$(ModuleVersionNoRevision).txt">
-            <Output TaskParameter="Include" ItemName="TestCases" />
-        </CreateItem>
 
         <Copy SourceFiles="@(ZipFiles)" DestinationFolder="$(TempDirectory)" />
-        <Copy SourceFiles="@(ReleaseNotes)" DestinationFiles="$(TempDirectory)\$(ProductName)_$(ModuleVersionNoRevision)_ReleaseNotes.htm"></Copy>
-        <Copy SourceFiles="@(TestCases)" DestinationFiles="$(TempDirectory)\$(ProductName)_$(ModuleVersionNoRevision)_TestCases.txt"></Copy>
 
         <CreateItem Include="$(TempDirectory)\**\*.*">
             <Output TaskParameter="Include" ItemName="PackageZipFiles" />
