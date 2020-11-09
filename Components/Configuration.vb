@@ -104,8 +104,6 @@ Namespace DotNetNuke.Modules.Feedback
         Private _captchaVisibility As CaptchaVisibilities
         Private _captchaAudio As Boolean
         Private _captchaCase As Boolean
-        Private _captchaLineNoise As Telerik.Web.UI.CaptchaLineNoiseLevel
-        Private _captchaBackgroundNoise As Telerik.Web.UI.CaptchaBackgroundNoiseLevel
         Private _repeatSubmissionFilter As RepeatSubmissionFilters
         Private _repeatSubmissionInteval As Integer
         Private _duplicateSubmission As Boolean
@@ -787,8 +785,6 @@ Namespace DotNetNuke.Modules.Feedback
                 _captchaVisibility = GetCaptchaVisibility() 'Handles legacy UseCaptcha setting
                 _captchaAudio = GetSetting("Feedback_CaptchaAudio", False)
                 _captchaCase = GetSetting("Feedback_CaptchaCase", True)
-                _captchaLineNoise = GetCaptchaLineNoise()
-                _captchaBackgroundNoise = GetCaptchaBackgroundNoise()
 
                 'Issue #22 NoCaptcha support
                 _useNoCaptcha = GetSetting("Feedback_UseNoCaptcha", False)
@@ -913,22 +909,6 @@ Namespace DotNetNuke.Modules.Feedback
             End If
         End Function
 
-        Private Function GetCaptchaLineNoise() As Telerik.Web.UI.CaptchaLineNoiseLevel
-            If _settings("Feedback_CaptchaLineNoise") IsNot Nothing Then
-                Return CType(_settings("Feedback_CaptchaLineNoise"), Telerik.Web.UI.CaptchaLineNoiseLevel)
-            Else
-                Return Telerik.Web.UI.CaptchaLineNoiseLevel.Low
-            End If
-        End Function
-
-        Private Function GetCaptchaBackgroundNoise() As Telerik.Web.UI.CaptchaBackgroundNoiseLevel
-            If _settings("Feedback_CaptchaBackgroundNoise") IsNot Nothing Then
-                Return CType(_settings("Feedback_CaptchaBackgroundNoise"), Telerik.Web.UI.CaptchaBackgroundNoiseLevel)
-            Else
-                Return Telerik.Web.UI.CaptchaBackgroundNoiseLevel.Low
-            End If
-        End Function
-
         Public Sub SaveSettings()
             SaveSettings(_moduleId)
         End Sub
@@ -955,8 +935,6 @@ Namespace DotNetNuke.Modules.Feedback
                 .UpdateModuleSetting(_moduleId, "Feedback_CaptchaVisibility", _captchaVisibility.ToString)
                 .UpdateModuleSetting(_moduleId, "Feedback_CaptchaAudio", _captchaAudio.ToString)
                 .UpdateModuleSetting(_moduleId, "Feedback_CaptchaCase", _captchaCase.ToString)
-                .UpdateModuleSetting(_moduleId, "Feedback_CaptchaLineNoise", CInt(_captchaLineNoise).ToString)
-                .UpdateModuleSetting(_moduleId, "Feedback_CaptchaBackgroundNoise", CInt(_captchaBackgroundNoise).ToString)
                 .UpdateModuleSetting(_moduleId, "Feedback_DuplicateSubmission", _duplicateSubmission.ToString)
                 .UpdateModuleSetting(_moduleId, "Feedback_RepeatSubmissionFilter", _repeatSubmissionFilter.ToString)
                 .UpdateModuleSetting(_moduleId, "Feedback_RepeatSubmissionInteval", _repeatSubmissionInteval.ToString)

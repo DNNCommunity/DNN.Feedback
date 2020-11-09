@@ -195,8 +195,6 @@ Namespace DotNetNuke.Modules.Feedback
                     rblScope.SelectedValue = CInt(MyConfiguration.Scope).ToString
                     chkAsync.Checked = MyConfiguration.SendAsync
                     rblCaptchaVisibility.SelectedValue = CInt(MyConfiguration.CaptchaVisibility).ToString
-                    BindToEnum(GetType(Telerik.Web.UI.CaptchaLineNoiseLevel), ddlCaptchaLineNoise)
-                    BindToEnum(GetType(Telerik.Web.UI.CaptchaBackgroundNoiseLevel), ddlCaptchaBackgroundNoise)
 
                     ' Issue 22, NoCaptcha support
                     chkNoCaptcha.Checked = MyConfiguration.UseNoCaptcha
