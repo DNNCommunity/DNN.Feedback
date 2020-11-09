@@ -663,60 +663,6 @@ Namespace DotNetNuke.Modules.Feedback
         Protected WithEvents rblCaptchaVisibility As Global.System.Web.UI.WebControls.RadioButtonList
 
         '''<summary>
-        '''plCaptchaCase control.
-        '''</summary>
-        '''<remarks>
-        '''Auto-generated field.
-        '''To modify move field declaration from designer file to code-behind file.
-        '''</remarks>
-        Protected WithEvents plCaptchaCase As Global.System.Web.UI.UserControl
-
-        '''<summary>
-        '''chkCaptchaCase control.
-        '''</summary>
-        '''<remarks>
-        '''Auto-generated field.
-        '''To modify move field declaration from designer file to code-behind file.
-        '''</remarks>
-        Protected WithEvents chkCaptchaCase As Global.System.Web.UI.WebControls.CheckBox
-
-        '''<summary>
-        '''plCaptchaLineNoise control.
-        '''</summary>
-        '''<remarks>
-        '''Auto-generated field.
-        '''To modify move field declaration from designer file to code-behind file.
-        '''</remarks>
-        Protected WithEvents plCaptchaLineNoise As Global.System.Web.UI.UserControl
-
-        '''<summary>
-        '''ddlCaptchaLineNoise control.
-        '''</summary>
-        '''<remarks>
-        '''Auto-generated field.
-        '''To modify move field declaration from designer file to code-behind file.
-        '''</remarks>
-        Protected WithEvents ddlCaptchaLineNoise As Global.System.Web.UI.WebControls.DropDownList
-
-        '''<summary>
-        '''plCaptchaBackgroundNoise control.
-        '''</summary>
-        '''<remarks>
-        '''Auto-generated field.
-        '''To modify move field declaration from designer file to code-behind file.
-        '''</remarks>
-        Protected WithEvents plCaptchaBackgroundNoise As Global.System.Web.UI.UserControl
-
-        '''<summary>
-        '''ddlCaptchaBackgroundNoise control.
-        '''</summary>
-        '''<remarks>
-        '''Auto-generated field.
-        '''To modify move field declaration from designer file to code-behind file.
-        '''</remarks>
-        Protected WithEvents ddlCaptchaBackgroundNoise As Global.System.Web.UI.WebControls.DropDownList
-
-        '''<summary>
         '''plNoCaptcha control.
         '''</summary>
         '''<remarks>

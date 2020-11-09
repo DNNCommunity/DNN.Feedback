@@ -167,18 +167,6 @@
             </asp:RadioButtonList>
         </div>
         <div class="dnnFormItem">
-            <dnn:label id="plCaptchaCase" runat="server" controlname="chkCaptchaCase" suffix=":"></dnn:label>
-	        <asp:CheckBox id="chkCaptchaCase" runat="server" cssclass="normal"></asp:CheckBox>
-        </div>
-        <div class="dnnFormItem">
-            <dnn:label ID="plCaptchaLineNoise" runat="server" ControlName="ddlCaptchaLineNoise" Suffix=":" />
-            <asp:DropDownList ID="ddlCaptchaLineNoise" runat="server"></asp:DropDownList>
-        </div>
-        <div class="dnnFormItem">
-            <dnn:label ID="plCaptchaBackgroundNoise" runat="server" ControlName="ddlCaptchaBackgroundNoise" Suffix=":" />
-            <asp:DropDownList ID="ddlCaptchaBackgroundNoise" runat="server"></asp:DropDownList>
-        </div>
-        <div class="dnnFormItem">
             <dnn:label id="plNoCaptcha" runat="server" controlName="chkNoCaptcha" suffix=":"></dnn:label>
             <asp:CheckBox ID="chkNoCaptcha" runat="server" CssClass="normal" AutoPostBack="true" CausesValidation="false" OnCheckedChanged="chkNoCaptcha_CheckedChanged" />
         </div>
