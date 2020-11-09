@@ -315,20 +315,6 @@
     <Content Include="Installation\CleanUp\Cleanup.06.04.03.txt" />
     <Content Include="Installation\DNN_Feedback.png" />
     <Content Include="Installation\license.txt" />
-    <Content Include="Installation\ReleaseNotes\Release.06.06.02.htm" />
-    <Content Include="Installation\ReleaseNotes\Release.06.06.01.htm" />
-    <Content Include="Installation\ReleaseNotes\Release.06.06.00.htm" />
-    <Content Include="Installation\ReleaseNotes\Release.06.05.01.htm" />
-    <Content Include="Installation\ReleaseNotes\Release.06.04.03.htm" />
-    <Content Include="Installation\ReleaseNotes\Release.06.04.01.htm" />
-    <Content Include="Installation\ReleaseNotes\Release.06.04.00.htm" />
-    <Content Include="Installation\ReleaseNotes\Release.06.03.00.htm" />
-    <Content Include="Installation\ReleaseNotes\Release.06.02.01.htm" />
-    <Content Include="Installation\ReleaseNotes\Release.06.02.00.htm" />
-    <Content Include="Installation\ReleaseNotes\Release.06.01.00.htm" />
-    <Content Include="Installation\ReleaseNotes\Release.06.00.00.htm" />
-    <Content Include="Installation\ReleaseNotes\Release.05.01.00.txt" />
-    <Content Include="Installation\ReleaseNotes\Release.05.00.02.txt" />
     <Content Include="CommentSettings.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
@@ -339,21 +325,6 @@
       <DependentUpon>FeedbackLists.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Content Include="Installation\ReleaseNotes\Release.06.06.03.htm" />
-    <Content Include="Installation\TestCases\TestCases.06.06.02.txt" />
-    <Content Include="Installation\TestCases\TestCases.06.06.01.txt" />
-    <Content Include="Installation\TestCases\TestCases.06.06.00.txt" />
-    <Content Include="Installation\TestCases\TestCases.06.05.01.txt" />
-    <Content Include="Installation\TestCases\TestCases.06.04.03.txt" />
-    <Content Include="Installation\TestCases\TestCases.06.04.01.txt" />
-    <Content Include="Installation\TestCases\TestCases.06.04.00.txt" />
-    <Content Include="Installation\TestCases\TestCases.06.03.00.txt" />
-    <Content Include="Installation\TestCases\TestCases.06.02.01.txt" />
-    <Content Include="Installation\TestCases\TestCases.06.02.00.txt" />
-    <Content Include="Installation\TestCases\TestCases.06.01.00.txt" />
-    <Content Include="Installation\TestCases\TestCases.06.00.00.txt" />
-    <Content Include="Installation\TestCases\TestCases.05.01.00.txt" />
-    <Content Include="Installation\TestCases\TestCases.06.06.03.txt" />
     <Content Include="Moderation.ascx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
@@ -412,7 +383,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Installation\TestCases\TestCases.05.00.02.txt" />
     <Content Include="Print.ascx" />
   </ItemGroup>
   <ItemGroup>

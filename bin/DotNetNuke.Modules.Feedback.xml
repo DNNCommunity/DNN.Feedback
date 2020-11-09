@@ -2141,24 +2141,6 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
-<member name="F:DotNetNuke.Modules.Feedback.Settings._plCaptchaAudio">
-<summary>
-plCaptchaAudio control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:DotNetNuke.Modules.Feedback.Settings._chkCaptchaAudio">
-<summary>
-chkCaptchaAudio control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
 <member name="F:DotNetNuke.Modules.Feedback.Settings._plCaptchaCase">
 <summary>
 plCaptchaCase control.
