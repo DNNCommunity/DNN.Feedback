@@ -101,6 +101,7 @@ Namespace DotNetNuke.Modules.Feedback
         Private _labelDisplayPosition As LabelDisplayPositions
         Private _width As System.Web.UI.WebControls.Unit
         Private _rows As Integer
+
         Private _captchaVisibility As CaptchaVisibilities
         Private _captchaAudio As Boolean
         Private _captchaCase As Boolean
@@ -110,6 +111,19 @@ Namespace DotNetNuke.Modules.Feedback
 
         Private _subjectFieldType As SubjectFieldTypes
         Private _subject As String
+
+
+        Private _subjectplaceholder As String
+        Private _emailplaceholder As String
+        Private _confirmemailplaceholder As String
+        Private _nameplaceholder As String
+        Private _streetplaceholder As String
+        Private _cityplaceholder As String
+        Private _regionplaceholder As String
+        Private _countryplaceholder As String
+        Private _postalcodeplaceholder As String
+        Private _telephoneplaceholder As String
+        Private _messageplaceholder As String
 
         Private _sendTo As String
         Private _sendToRoles As String
@@ -380,6 +394,7 @@ Namespace DotNetNuke.Modules.Feedback
                 _rows = value
             End Set
         End Property
+
 
         Public Property CaptchaVisibility() As CaptchaVisibilities
             Get
@@ -711,6 +726,96 @@ Namespace DotNetNuke.Modules.Feedback
                 _akismetSendModerator = value
             End Set
         End Property
+        Public Property SubjectPlaceholder() As String
+            Get
+                Return _subjectplaceholder
+            End Get
+            Set(ByVal value As String)
+                _subjectplaceholder = value
+            End Set
+        End Property
+
+        Public Property EmailPlaceholder() As String
+            Get
+                Return _emailplaceholder
+            End Get
+            Set(ByVal value As String)
+                _emailplaceholder = value
+            End Set
+        End Property
+        Public Property ConfirmEmailPlaceholder() As String
+            Get
+                Return _confirmemailplaceholder
+            End Get
+            Set(ByVal value As String)
+                _confirmemailplaceholder = value
+            End Set
+        End Property
+        Public Property NamePlaceholder() As String
+            Get
+                Return _nameplaceholder
+            End Get
+            Set(ByVal value As String)
+                _nameplaceholder = value
+            End Set
+        End Property
+        Public Property StreetPlaceholder() As String
+            Get
+                Return _streetplaceholder
+            End Get
+            Set(ByVal value As String)
+                _streetplaceholder = value
+            End Set
+        End Property
+        Public Property CityPlaceholder() As String
+            Get
+                Return _cityplaceholder
+            End Get
+            Set(ByVal value As String)
+                _cityplaceholder = value
+            End Set
+        End Property
+        Public Property RegionPlaceholder() As String
+            Get
+                Return _regionplaceholder
+            End Get
+            Set(ByVal value As String)
+                _regionplaceholder = value
+            End Set
+        End Property
+        Public Property CountryPlaceholder() As String
+            Get
+                Return _countryplaceholder
+            End Get
+            Set(ByVal value As String)
+                _countryplaceholder = value
+            End Set
+        End Property
+        Public Property PostalCodePlaceholder() As String
+            Get
+                Return _postalcodeplaceholder
+            End Get
+            Set(ByVal value As String)
+                _postalcodeplaceholder = value
+            End Set
+        End Property
+        Public Property TelephonePlaceholder() As String
+            Get
+                Return _telephoneplaceholder
+            End Get
+            Set(ByVal value As String)
+                _telephoneplaceholder = value
+            End Set
+        End Property
+        Public Property MessagePlaceholder() As String
+            Get
+                Return _messageplaceholder
+            End Get
+            Set(ByVal value As String)
+                _messageplaceholder = value
+            End Set
+        End Property
+
 
 #End Region
 
@@ -829,6 +934,17 @@ Namespace DotNetNuke.Modules.Feedback
                 _akismetEnable = GetSetting("Feedback_AkismetEnable", False)
                 _akismetKey = GetSetting("Feedback_AkismetKey", String.Empty)
                 _akismetSendModerator = GetSetting("Feedback_AkismetSendModerator", False)
+                _subjectplaceholder = GetSetting("Feedback_SubjectPlaceholder", String.Empty).ToString
+                _emailplaceholder = GetSetting("Feedback_EmailPlaceholder", String.Empty).ToString
+                _confirmemailplaceholder = GetSetting("Feedback_ConfirmEmailPlaceholder", String.Empty).ToString
+                _nameplaceholder = GetSetting("Feedback_NamePlaceholder", String.Empty).ToString
+                _streetplaceholder = GetSetting("Feedback_StreetPlaceholder", String.Empty).ToString
+                _cityplaceholder = GetSetting("Feedback_CityPlaceholder", String.Empty).ToString
+                _regionplaceholder = GetSetting("Feedback_RegionPlaceholder", String.Empty).ToString
+                _countryplaceholder = GetSetting("Feedback_CountryPlaceholder", String.Empty).ToString
+                _postalcodeplaceholder = GetSetting("Feedback_PostalCodePlaceholder", String.Empty).ToString
+                _telephoneplaceholder = GetSetting("Feedback_TelephonePlaceholder", String.Empty).ToString
+                _messageplaceholder = GetSetting("Feedback_MessagePlaceholder", String.Empty).ToString
             End If
         End Sub
 
@@ -979,6 +1095,17 @@ Namespace DotNetNuke.Modules.Feedback
                 .UpdateModuleSetting(_moduleId, "Feedback_NoCaptchaSiteKey", _noCaptchaSiteKey)
                 .UpdateModuleSetting(_moduleId, "Feedback_NoCaptchaSecretKey", _noCaptchaSecretKey)
 
+                .UpdateModuleSetting(_moduleId, "Feedback_SubjectPlaceholder", _subjectplaceholder)
+                .UpdateModuleSetting(_moduleId, "Feedback_EmailPlaceholder", _emailplaceholder)
+                .UpdateModuleSetting(_moduleId, "Feedback_ConfirmEmailPlaceholder", _confirmemailplaceholder)
+                .UpdateModuleSetting(_moduleId, "Feedback_NamePlaceholder", _nameplaceholder)
+                .UpdateModuleSetting(_moduleId, "Feedback_StreetPlaceholder", _streetplaceholder)
+                .UpdateModuleSetting(_moduleId, "Feedback_CityPlaceholder", _cityplaceholder)
+                .UpdateModuleSetting(_moduleId, "Feedback_RegionPlaceholder", _regionplaceholder)
+                .UpdateModuleSetting(_moduleId, "Feedback_CountryPlaceholder", _countryplaceholder)
+                .UpdateModuleSetting(_moduleId, "Feedback_PostalCodePlaceholder", _postalcodeplaceholder)
+                .UpdateModuleSetting(_moduleId, "Feedback_TelephonePlaceholder", _telephoneplaceholder)
+                .UpdateModuleSetting(_moduleId, "Feedback_MessagePlaceholder", _messageplaceholder)
 
             End With
             Entities.Modules.ModuleController.SynchronizeModule(_moduleId)

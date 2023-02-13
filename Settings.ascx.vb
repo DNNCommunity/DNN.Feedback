@@ -164,6 +164,19 @@ Namespace DotNetNuke.Modules.Feedback
                     rblLabelDisplay.SelectedValue = CInt(MyConfiguration.LabelDisplayPosition).ToString
                     txtWidth.Text = MyConfiguration.Width.ToString.Replace("px", "")
                     txtrows.Text = MyConfiguration.Rows.ToString
+
+                    txtSubjectEditFieldPlaceholder.Text = MyConfiguration.SubjectPlaceholder.ToString
+                    txtEmailFieldPlaceholder.Text = MyConfiguration.EmailPlaceholder.ToString
+                    txtEmailConfirmFieldPlaceholder.Text = MyConfiguration.ConfirmEmailPlaceholder.ToString
+                    txtNameFieldPlaceholder.Text = MyConfiguration.NamePlaceholder.ToString
+                    txtStreetFieldPlaceholder.Text = MyConfiguration.StreetPlaceholder.ToString
+                    txtCityFieldPlaceholder.Text = MyConfiguration.CityPlaceholder.ToString
+                    txtRegionFieldPlaceholder.Text = MyConfiguration.RegionPlaceholder.ToString
+                    txtCountryFieldPlaceholder.Text = MyConfiguration.CountryPlaceholder.ToString
+                    txtPostalCodeFieldPlaceholder.Text = MyConfiguration.PostalCodePlaceholder.ToString
+                    txtTelephoneFieldPlaceholder.Text = MyConfiguration.TelephonePlaceholder.ToString
+                    txtMessageFieldPlaceholder.Text = MyConfiguration.MessagePlaceholder.ToString
+
                     txtMaxMessage.Text = MyConfiguration.MaxMessage.ToString
 
                     rblSubjectEditField.SelectedValue = CInt(MyConfiguration.SubjectFieldType).ToString
@@ -303,8 +316,22 @@ Namespace DotNetNuke.Modules.Feedback
                         .LabelDisplayPosition = CType(rblLabelDisplay.SelectedValue, Configuration.LabelDisplayPositions)
                         .Width = Unit.Parse(txtWidth.Text)
                         .Rows = Integer.Parse(txtrows.Text)
+
+
                         .MaxMessage = Integer.Parse(txtMaxMessage.Text)
                         .Subject = cboSubject.SelectedItem.Value
+                        .SubjectPlaceholder = (txtSubjectEditFieldPlaceholder.Text).ToString
+                        .EmailPlaceholder = (txtEmailFieldPlaceholder.Text).ToString
+                        .ConfirmEmailPlaceholder = (txtEmailConfirmFieldPlaceholder.Text).ToString
+                        .NamePlaceholder = (txtNameFieldPlaceholder.Text).ToString
+                        .StreetPlaceholder = (txtStreetFieldPlaceholder.Text).ToString
+                        .CityPlaceholder = (txtCityFieldPlaceholder.Text).ToString
+                        .RegionPlaceholder = (txtRegionFieldPlaceholder.Text).ToString
+                        .CountryPlaceholder = (txtCountryFieldPlaceholder.Text).ToString
+                        .PostalCodePlaceholder = (txtPostalCodeFieldPlaceholder.Text).ToString
+                        .TelephonePlaceholder = (txtTelephoneFieldPlaceholder.Text).ToString
+                        .MessagePlaceholder = (txtMessageFieldPlaceholder.Text).ToString
+
                         .SubjectFieldType = CType(rblSubjectEditField.SelectedValue, Configuration.SubjectFieldTypes)
                         .SendCopy = chkSendCopy.Checked
                         .OptOut = chkOptout.Checked

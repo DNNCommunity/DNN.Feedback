@@ -321,6 +321,24 @@ Namespace DotNetNuke.Modules.Feedback
         Protected WithEvents rblSubjectEditField As Global.System.Web.UI.WebControls.RadioButtonList
 
         '''<summary>
+        '''plSubjectEditFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents plSubjectEditFieldPlaceholder As Global.System.Web.UI.UserControl
+
+        '''<summary>
+        '''txtSubjectEditFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtSubjectEditFieldPlaceholder As Global.System.Web.UI.WebControls.TextBox
+
+        '''<summary>
         '''plEmailField control.
         '''</summary>
         '''<remarks>
@@ -337,6 +355,24 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblEmailField As Global.System.Web.UI.WebControls.RadioButtonList
+
+        '''<summary>
+        '''plEmailFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents plEmailFieldPlaceholder As Global.System.Web.UI.UserControl
+
+        '''<summary>
+        '''txtEmailFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtEmailFieldPlaceholder As Global.System.Web.UI.WebControls.TextBox
 
         '''<summary>
         '''plEmailConfirmField control.
@@ -357,6 +393,24 @@ Namespace DotNetNuke.Modules.Feedback
         Protected WithEvents rblEmailConfirmField As Global.System.Web.UI.WebControls.RadioButtonList
 
         '''<summary>
+        '''plEmailConfirmFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents plEmailConfirmFieldPlaceholder As Global.System.Web.UI.UserControl
+
+        '''<summary>
+        '''txtEmailConfirmFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtEmailConfirmFieldPlaceholder As Global.System.Web.UI.WebControls.TextBox
+
+        '''<summary>
         '''plNameField control.
         '''</summary>
         '''<remarks>
@@ -373,6 +427,24 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblNameField As Global.System.Web.UI.WebControls.RadioButtonList
+
+        '''<summary>
+        '''plNameFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents plNameFieldPlaceholder As Global.System.Web.UI.UserControl
+
+        '''<summary>
+        '''txtNameFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtNameFieldPlaceholder As Global.System.Web.UI.WebControls.TextBox
 
         '''<summary>
         '''plStreetField control.
@@ -393,6 +465,24 @@ Namespace DotNetNuke.Modules.Feedback
         Protected WithEvents rblStreetField As Global.System.Web.UI.WebControls.RadioButtonList
 
         '''<summary>
+        '''plStreetFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents plStreetFieldPlaceholder As Global.System.Web.UI.UserControl
+
+        '''<summary>
+        '''txtStreetFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtStreetFieldPlaceholder As Global.System.Web.UI.WebControls.TextBox
+
+        '''<summary>
         '''plCityField control.
         '''</summary>
         '''<remarks>
@@ -409,6 +499,24 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblCityField As Global.System.Web.UI.WebControls.RadioButtonList
+
+        '''<summary>
+        '''plCityFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents plCityFieldPlaceholder As Global.System.Web.UI.UserControl
+
+        '''<summary>
+        '''txtCityFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtCityFieldPlaceholder As Global.System.Web.UI.WebControls.TextBox
 
         '''<summary>
         '''plRegionField control.
@@ -429,6 +537,24 @@ Namespace DotNetNuke.Modules.Feedback
         Protected WithEvents rblRegionField As Global.System.Web.UI.WebControls.RadioButtonList
 
         '''<summary>
+        '''plRegionFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents plRegionFieldPlaceholder As Global.System.Web.UI.UserControl
+
+        '''<summary>
+        '''txtRegionFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtRegionFieldPlaceholder As Global.System.Web.UI.WebControls.TextBox
+
+        '''<summary>
         '''plCountryField control.
         '''</summary>
         '''<remarks>
@@ -445,6 +571,24 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblCountryField As Global.System.Web.UI.WebControls.RadioButtonList
+
+        '''<summary>
+        '''plCountryFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents plCountryFieldPlaceholder As Global.System.Web.UI.UserControl
+
+        '''<summary>
+        '''txtCountryFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtCountryFieldPlaceholder As Global.System.Web.UI.WebControls.TextBox
 
         '''<summary>
         '''plPostalCodeField control.
@@ -465,6 +609,24 @@ Namespace DotNetNuke.Modules.Feedback
         Protected WithEvents rblPostalCodeField As Global.System.Web.UI.WebControls.RadioButtonList
 
         '''<summary>
+        '''plPostalCodeFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents plPostalCodeFieldPlaceholder As Global.System.Web.UI.UserControl
+
+        '''<summary>
+        '''txtPostalCodeFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtPostalCodeFieldPlaceholder As Global.System.Web.UI.WebControls.TextBox
+
+        '''<summary>
         '''plTelephoneField control.
         '''</summary>
         '''<remarks>
@@ -483,6 +645,24 @@ Namespace DotNetNuke.Modules.Feedback
         Protected WithEvents rblTelephoneField As Global.System.Web.UI.WebControls.RadioButtonList
 
         '''<summary>
+        '''plTelephoneFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents plTelephoneFieldPlaceholder As Global.System.Web.UI.UserControl
+
+        '''<summary>
+        '''txtTelephoneFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtTelephoneFieldPlaceholder As Global.System.Web.UI.WebControls.TextBox
+
+        '''<summary>
         '''plMessageField control.
         '''</summary>
         '''<remarks>
@@ -499,6 +679,24 @@ Namespace DotNetNuke.Modules.Feedback
         '''To modify move field declaration from designer file to code-behind file.
         '''</remarks>
         Protected WithEvents rblMessageField As Global.System.Web.UI.WebControls.RadioButtonList
+
+        '''<summary>
+        '''plMessageFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents plMessageFieldPlaceholder As Global.System.Web.UI.UserControl
+
+        '''<summary>
+        '''txtMessageFieldPlaceholder control.
+        '''</summary>
+        '''<remarks>
+        '''Auto-generated field.
+        '''To modify move field declaration from designer file to code-behind file.
+        '''</remarks>
+        Protected WithEvents txtMessageFieldPlaceholder As Global.System.Web.UI.WebControls.TextBox
 
         '''<summary>
         '''plEmailRegex control.
