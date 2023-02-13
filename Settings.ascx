@@ -86,45 +86,89 @@
 	            <asp:ListItem Text="Hidden" Value="3" ResourceKey="liSubjectHidden"></asp:ListItem>
 	        </asp:RadioButtonList>
         </div>
+         <div class="dnnFormItem">
+	        <dnn:label id="plSubjectEditFieldPlaceholder" runat="server" controlname="rblSubjectEditPlacehoholder" suffix=":"></dnn:label>
+	        <asp:textbox id="txtSubjectEditFieldPlaceholder" runat="server" width="400px" cssclass="NormalTextBox" columns="200" maxlength="1000"></asp:textbox>
+        </div>
         <div class="dnnFormItem">
 	        <dnn:label id="plEmailField" runat="server" controlname="rblEmailField" suffix=":"></dnn:label>
 	        <asp:RadioButtonList id="rblEmailField" runat="server" cssclass="dnnFormRadioButtons" RepeatDirection="Horizontal"></asp:RadioButtonList>
         </div>
         <div class="dnnFormItem">
+	        <dnn:label id="plEmailFieldPlaceholder" runat="server" controlname="rblEmailFieldPlaceholder" suffix=":"></dnn:label>
+	        <asp:textbox id="txtEmailFieldPlaceholder" runat="server" width="400px" cssclass="NormalTextBox" columns="200" maxlength="1000"></asp:textbox>
+        </div>
+        <div class="dnnFormItem">
 	        <dnn:label id="plEmailConfirmField" runat="server" controlname="rblEmailConfirmField" suffix=":"></dnn:label>
 	        <asp:RadioButtonList id="rblEmailConfirmField" runat="server" cssclass="dnnFormRadioButtons" RepeatDirection="Horizontal"></asp:RadioButtonList>
+        </div>
+         <div class="dnnFormItem">
+	        <dnn:label id="plEmailConfirmFieldPlaceholder" runat="server" controlname="rblEmailConfirmFieldPlaceholder" suffix=":"></dnn:label>
+	        <asp:textbox id="txtEmailConfirmFieldPlaceholder" runat="server" width="400px" cssclass="NormalTextBox" columns="200" maxlength="1000"></asp:textbox>
         </div>
         <div class="dnnFormItem">
 	        <dnn:label id="plNameField" runat="server" controlname="rblNameField" suffix=":"></dnn:label>
 	        <asp:RadioButtonList id="rblNameField" runat="server" cssclass="dnnFormRadioButtons" RepeatDirection="Horizontal"></asp:RadioButtonList>
         </div>
+         <div class="dnnFormItem">
+	        <dnn:label id="plNameFieldPlaceholder" runat="server" controlname="rblNameFieldPlaceholder" suffix=":"></dnn:label>
+	        <asp:textbox id="txtNameFieldPlaceholder" runat="server" width="400px" cssclass="NormalTextBox" columns="200" maxlength="1000"></asp:textbox>
+        </div>
         <div class="dnnFormItem">
 	        <dnn:label id="plStreetField" runat="server" controlname="rblStreetField" suffix=":"></dnn:label>
 	        <asp:RadioButtonList id="rblStreetField" runat="server" cssclass="dnnFormRadioButtons" RepeatDirection="Horizontal"></asp:RadioButtonList>
         </div>
+         <div class="dnnFormItem">
+	        <dnn:label id="plStreetFieldPlaceholder" runat="server" controlname="rblStreetFieldPlaceholder" suffix=":"></dnn:label>
+	        <asp:textbox id="txtStreetFieldPlaceholder" runat="server" width="400px" cssclass="NormalTextBox" columns="200" maxlength="1000"></asp:textbox>
+        </div>
         <div class="dnnFormItem">
 	        <dnn:label id="plCityField" runat="server" controlname="rblCityField" suffix=":"></dnn:label>
             <asp:RadioButtonList id="rblCityField" runat="server" cssclass="dnnFormRadioButtons" RepeatDirection="Horizontal"></asp:RadioButtonList>
+        </div>
+         <div class="dnnFormItem">
+	        <dnn:label id="plCityFieldPlaceholder" runat="server" controlname="rblCityFieldPlaceholder" suffix=":"></dnn:label>
+	        <asp:textbox id="txtCityFieldPlaceholder" runat="server" width="400px" cssclass="NormalTextBox" columns="200" maxlength="1000"></asp:textbox>
         </div>
         <div class="dnnFormItem">
 	        <dnn:label id="plRegionField" runat="server" controlname="rblRegionField" suffix=":"></dnn:label>
 	        <asp:RadioButtonList id="rblRegionField" runat="server" cssclass="dnnFormRadioButtons" RepeatDirection="Horizontal"></asp:RadioButtonList>
         </div>
         <div class="dnnFormItem">
+	        <dnn:label id="plRegionFieldPlaceholder" runat="server" controlname="rblRegionFieldPlaceholder" suffix=":"></dnn:label>
+	        <asp:textbox id="txtRegionFieldPlaceholder" runat="server" width="400px" cssclass="NormalTextBox" columns="200" maxlength="1000"></asp:textbox>
+        </div>
+        <div class="dnnFormItem">
 	        <dnn:label id="plCountryField" runat="server" controlname="rblCountryField" suffix=":"></dnn:label>
 	        <asp:RadioButtonList id="rblCountryField" runat="server" cssclass="dnnFormRadioButtons" RepeatDirection="Horizontal"></asp:RadioButtonList>
+        </div>
+         <div class="dnnFormItem">
+	        <dnn:label id="plCountryFieldPlaceholder" runat="server" controlname="rblCountryFieldPlaceholder" suffix=":"></dnn:label>
+	        <asp:textbox id="txtCountryFieldPlaceholder" runat="server" width="400px" cssclass="NormalTextBox" columns="200" maxlength="1000"></asp:textbox>
         </div>
         <div class="dnnFormItem">
 	        <dnn:label id="plPostalCodeField" runat="server" controlname="rblPostalCodeField" suffix=":"></dnn:label>
 	        <asp:RadioButtonList id="rblPostalCodeField" runat="server" cssclass="dnnFormRadioButtons" RepeatDirection="Horizontal"></asp:RadioButtonList>
         </div>
         <div class="dnnFormItem">
+	        <dnn:label id="plPostalCodeFieldPlaceholder" runat="server" controlname="rblPostalCodeFieldPlaceholder" suffix=":"></dnn:label>
+	        <asp:textbox id="txtPostalCodeFieldPlaceholder" runat="server" width="400px" cssclass="NormalTextBox" columns="200" maxlength="1000"></asp:textbox>
+        </div>
+        <div class="dnnFormItem">
 	        <dnn:label id="plTelephoneField" runat="server" controlname="rblTelephoneField" suffix=":"></dnn:label>
 	        <asp:RadioButtonList id="rblTelephoneField" runat="server" cssclass="dnnFormRadioButtons" RepeatDirection="Horizontal"></asp:RadioButtonList>
         </div>
         <div class="dnnFormItem">
+	        <dnn:label id="plTelephoneFieldPlaceholder" runat="server" controlname="rblTelephoneFieldPlaceholder" suffix=":"></dnn:label>
+	        <asp:textbox id="txtTelephoneFieldPlaceholder" runat="server" width="400px" cssclass="NormalTextBox" columns="200" maxlength="1000"></asp:textbox>
+        </div>
+        <div class="dnnFormItem">
 	        <dnn:label id="plMessageField" runat="server" controlname="rblMessageField" suffix=":"></dnn:label>
 	        <asp:RadioButtonList id="rblMessageField" runat="server" cssclass="dnnFormRadioButtons" RepeatDirection="Horizontal"></asp:RadioButtonList>
+        </div>
+        <div class="dnnFormItem">
+	        <dnn:label id="plMessageFieldPlaceholder" runat="server" controlname="rblMessageFieldPlaceholder" suffix=":"></dnn:label>
+	        <asp:textbox id="txtMessageFieldPlaceholder" runat="server" width="400px" cssclass="NormalTextBox" columns="200" maxlength="1000"></asp:textbox>
         </div>
         <div class="dnnFormItem">
 	        <dnn:label id="plEmailRegex" runat="server" controlname="txtEmailRegex" suffix=":"></dnn:label>

@@ -652,4 +652,70 @@ Send Copy &lt;/strong&gt;&amp;ndash; Enabling this option allows a copy of the f
   <data name="valNoCaptchaSiteKey.ErrorMessage" xml:space="preserve">
     <value>&lt;br /&gt;If you enable google NoCaptcha, you need to provide the Site Key</value>
   </data>
+  <data name="plSubjectEditFieldPlaceholder.Text" xml:space="preserve">
+    <value>Subject Field Placeholder</value>
+  </data>
+  <data name="plSubjectEditFieldPlaceholder.Help" xml:space="preserve">
+    <value>Add Subject PlaceHoder Here</value>
+  </data>
+  <data name="plEmailFieldPlaceholder.Text" xml:space="preserve">
+    <value>Email Field Placeholder</value>
+  </data>
+  <data name="plEmailFieldPlaceholder.Help" xml:space="preserve">
+    <value>Add Email PlaceHoder Here</value>
+  </data>
+  <data name="plEmailConfirmFieldPlaceholder.Text" xml:space="preserve">
+    <value>Email Confirm Field Placeholder</value>
+  </data>
+  <data name="plEmailConfirmFieldPlaceholder.Help" xml:space="preserve">
+    <value>Add Email Confirm PlaceHoder Here</value>
+  </data>
+  <data name="plNameFieldPlaceholder.Text" xml:space="preserve">
+    <value>Name Field Placeholder</value>
+  </data>
+  <data name="plNameFieldPlaceholder.Help" xml:space="preserve">
+    <value>Add Name PlaceHoder Here</value>
+  </data>
+  <data name="plStreetFieldPlaceholder.Text" xml:space="preserve">
+    <value>Street Field Placeholder</value>
+  </data>
+  <data name="plStreetFieldPlaceholder.Help" xml:space="preserve">
+    <value>Add Street PlaceHoder Here</value>
+  </data>
+  <data name="plCityFieldPlaceholder.Text" xml:space="preserve">
+    <value>City Field Placeholder</value>
+  </data>
+  <data name="plCityFieldPlaceholder.Help" xml:space="preserve">
+    <value>Add City PlaceHoder Here</value>
+  </data>
+  <data name="plRegionFieldPlaceholder.Text" xml:space="preserve">
+    <value>Region Field Placeholder</value>
+  </data>
+  <data name="plRegionFieldPlaceholder.Help" xml:space="preserve">
+    <value>Add Region PlaceHoder Here</value>
+  </data>
+  <data name="plCountryFieldPlaceholder.Text" xml:space="preserve">
+    <value>Country Field Placeholder</value>
+  </data>
+  <data name="plCountryFieldPlaceholder.Help" xml:space="preserve">
+    <value>Add Country PlaceHoder Here</value>
+  </data>
+  <data name="plPostalCodeFieldPlaceholder.Text" xml:space="preserve">
+    <value>Postal Code Field Placeholder</value>
+  </data>
+  <data name="plPostalCodeFieldPlaceholder.Help" xml:space="preserve">
+    <value>Add Postal Code PlaceHoder Here</value>
+  </data>
+  <data name="plTelephoneFieldPlaceholder.Text" xml:space="preserve">
+    <value>Telephone Code Field Placeholder</value>
+  </data>
+  <data name="plTelephoneFieldPlaceholder.Help" xml:space="preserve">
+    <value>Add Telephone Code PlaceHoder Here</value>
+  </data>
+  <data name="plMessageFieldPlaceholder.Text" xml:space="preserve">
+    <value>Message Code Field Placeholder</value>
+  </data>
+  <data name="plMessageFieldPlaceholder.Help" xml:space="preserve">
+    <value>Add Message Code PlaceHoder Here</value>
+  </data>
 </root>

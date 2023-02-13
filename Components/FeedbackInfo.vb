@@ -62,6 +62,17 @@ Namespace DotNetNuke.Modules.Feedback
         Private _userAgent As String
         Private _contextKey As String
         Private _displayCreatedOnDate As DateTime
+        Private _subjectplaceholder As String
+        Private _emailplaceholder As String
+        Private _confirmemailplaceholder As String
+        Private _nameplaceholder As String
+        Private _streetplaceholder As String
+        Private _cityplaceholder As String
+        Private _regionplaceholder As String
+        Private _countryplaceholder As String
+        Private _postalcodeplaceholder As String
+        Private _telephoneplaceholder As String
+        Private _messageplaceholder As String
 
 #End Region
 
@@ -138,6 +149,7 @@ Namespace DotNetNuke.Modules.Feedback
                 _subject = Value
             End Set
         End Property
+
 
         Public Property Message() As String
             Get
@@ -292,6 +304,106 @@ Namespace DotNetNuke.Modules.Feedback
             End Set
         End Property
 
+        Public Property SubjectPlaceholder() As String
+            Get
+                Return _subjectplaceholder
+            End Get
+            Set(ByVal value As String)
+                _subjectplaceholder = value
+            End Set
+        End Property
+
+        Public Property EmailPlaceholder() As String
+            Get
+                Return _emailplaceholder
+            End Get
+            Set(ByVal value As String)
+                _emailplaceholder = value
+            End Set
+        End Property
+        Public Property ConfirmEmailPlaceholder() As String
+            Get
+                Return _confirmemailplaceholder
+            End Get
+            Set(ByVal value As String)
+                _confirmemailplaceholder = value
+            End Set
+        End Property
+        Public Property NamePlaceholder() As String
+            Get
+                Return _nameplaceholder
+            End Get
+            Set(ByVal value As String)
+                _nameplaceholder = value
+            End Set
+        End Property
+        Public Property StreetPlaceholder() As String
+            Get
+                Return _streetplaceholder
+            End Get
+            Set(ByVal value As String)
+                _streetplaceholder = value
+            End Set
+        End Property
+        Public Property CityPlaceholder() As String
+            Get
+                Return _cityplaceholder
+            End Get
+            Set(ByVal value As String)
+                _cityplaceholder = value
+            End Set
+        End Property
+        Public Property RegionPlaceholder() As String
+            Get
+                Return _regionplaceholder
+            End Get
+            Set(ByVal value As String)
+                _regionplaceholder = value
+            End Set
+        End Property
+        Public Property CountryPlaceholder() As String
+            Get
+                Return _countryplaceholder
+            End Get
+            Set(ByVal value As String)
+                _countryplaceholder = value
+            End Set
+        End Property
+        Public Property PostalCodePlaceholder() As String
+            Get
+                Return _postalcodeplaceholder
+            End Get
+            Set(ByVal value As String)
+                _postalcodeplaceholder = value
+            End Set
+        End Property
+        Public Property TelephonePlaceholder() As String
+            Get
+                Return _telephoneplaceholder
+            End Get
+            Set(ByVal value As String)
+                _telephoneplaceholder = value
+            End Set
+        End Property
+        Public Property MessagePlaceholder() As String
+            Get
+                Return _messageplaceholder
+            End Get
+            Set(ByVal value As String)
+                _messageplaceholder = value
+            End Set
+        End Property
+
+
+
+
+
+
+
+
+
+
+
 
 #End Region
 
@@ -324,6 +436,18 @@ Namespace DotNetNuke.Modules.Feedback
                 Referrer = Null.SetNullString(dr("Referrer"))
                 UserAgent = Null.SetNullString(dr("UserAgent"))
                 ContextKey = Null.SetNullString(dr("ContextKey"))
+                SubjectPlaceholder = Null.SetNullString(dr("SubjectPlaceholder"))
+                EmailPlaceholder = Null.SetNullString(dr("EmailPlaceholder"))
+                ConfirmEmailPlaceholder = Null.SetNullString(dr("ConfirmEmailPlaceholder"))
+                NamePlaceholder = Null.SetNullString(dr("NamePlaceholder"))
+                StreetPlaceholder = Null.SetNullString(dr("StreetPlaceholder"))
+                CityPlaceholder = Null.SetNullString(dr("CityPlaceholder"))
+                RegionPlaceholder = Null.SetNullString(dr("RegionPlaceholder"))
+                CountryPlaceholder = Null.SetNullString(dr("CountryPlaceholder"))
+                PostalCodePlaceholder = Null.SetNullString(dr("PostalCodePlaceholder"))
+                TelephonePlaceholder = Null.SetNullString(dr("TelephonePlaceholder"))
+                MessagePlaceholder = Null.SetNullString(dr("MessagePlaceholder"))
+
             End With
         End Sub
 
@@ -373,7 +497,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Case "status"
                     publicProperty = True : PropertyNotFound = False : result = Localization.GetString(Status.ToString, Configuration.SharedResources)
                 Case "subject"
-                    publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(Subject, strFormat)
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(Subject, strFormat)
                 Case "message"
                     publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(Message, strFormat)
                 Case "sendername"
@@ -419,10 +543,33 @@ Namespace DotNetNuke.Modules.Feedback
                 Case "referrer"
                     publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(Referrer, strFormat)
                 Case "useragent"
-                    publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(UserAgent, strFormat)
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(UserAgent, strFormat)
+                Case "SubjectPlaceholder"
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(SubjectPlaceholder, strFormat)
+                Case "EmailPlaceholder"
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(EmailPlaceholder, strFormat)
+                Case "ConfirmEmailPlaceholder"
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(ConfirmEmailPlaceholder, strFormat)
+                Case "NamePlaceholder"
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(NamePlaceholder, strFormat)
+                Case "StreetPlaceholder"
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(StreetPlaceholder, strFormat)
+                Case "CityPlaceholder"
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(CityPlaceholder, strFormat)
+                Case "RegionPlaceholder"
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(RegionPlaceholder, strFormat)
+                Case "CountryPlaceholder"
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(CountryPlaceholder, strFormat)
+                Case "PostalCodePlaceholder"
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(PostalCodePlaceholder, strFormat)
+                Case "TelephonePlaceholder"
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(TelephonePlaceholder, strFormat)
+                Case "MessagePlaceholder"
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(MessagePlaceholder, strFormat)
                 Case Else
                     PropertyNotFound = True
             End Select
+
 
             If Not publicProperty And accessLevel <> Scope.Debug Then
                 PropertyNotFound = True

@@ -125,6 +125,17 @@ Namespace DotNetNuke.Modules.Feedback
             Try
                 GetUser()
                 txtSubject2.Text = ""
+                txtSubject2.Attributes.Add("placeholder", MyConfiguration.SubjectPlaceholder)
+                txtBody.Attributes.Add("placeholder", MyConfiguration.MessagePlaceholder)
+                txtEmail.Attributes.Add("placeholder", MyConfiguration.EmailPlaceholder)
+                txtEmailConfirm.Attributes.Add("placeholder", MyConfiguration.ConfirmEmailPlaceholder)
+                txtName.Attributes.Add("placeholder", MyConfiguration.NamePlaceholder)
+                txtStreet.Attributes.Add("placeholder", MyConfiguration.StreetPlaceholder)
+                txtCity.Attributes.Add("placeholder", MyConfiguration.CityPlaceholder)
+                txtRegion.Attributes.Add("placeholder", MyConfiguration.RegionPlaceholder)
+                txtCountry.Attributes.Add("placeholder", MyConfiguration.CountryPlaceholder)
+                txtPostalCode.Attributes.Add("placeholder", MyConfiguration.PostalCodePlaceholder)
+                txtTelephone.Attributes.Add("placeholder", MyConfiguration.TelephonePlaceholder)
                 txtBody.Text = ""
                 chkCopy.Checked = True
                 divFeedbackFormContent.Visible = True
@@ -345,6 +356,18 @@ Namespace DotNetNuke.Modules.Feedback
                     End If
 
                     Dim subject As String = MyConfiguration.Subject
+                    Dim SubjectPlaceholder As String = MyConfiguration.SubjectPlaceholder
+
+                    Dim EmailPlaceholder As String = MyConfiguration.EmailPlaceholder
+                    Dim ConfirmEmailPlaceholder As String = MyConfiguration.ConfirmEmailPlaceholder
+                    Dim NamePlaceholder As String = MyConfiguration.NamePlaceholder
+                    Dim StreetPlaceholder As String = MyConfiguration.StreetPlaceholder
+                    Dim CityPlaceholder As String = MyConfiguration.CityPlaceholder
+                    Dim RegionPlaceholder As String = MyConfiguration.RegionPlaceholder
+                    Dim CountryPlaceholder As String = MyConfiguration.CountryPlaceholder
+                    Dim PostalCodePlaceholder As String = MyConfiguration.PostalCodePlaceholder
+                    Dim TelephonePlaceholder As String = MyConfiguration.TelephonePlaceholder
+                    Dim MessagePlaceholder As String = MyConfiguration.MessagePlaceholder
 
                     'Set both rows to false and then show one based on whether the values from the settings are correct.
                     divSubject.Visible = False
@@ -548,8 +571,8 @@ Namespace DotNetNuke.Modules.Feedback
                         End If
                     ElseIf divSubject2.Visible Then
                         'grab it from the text box.
-                        oFeedback.Subject = objPortalSecurity.InputFilter(txtSubject2.Text, _
-                                            PortalSecurity.FilterFlag.NoScripting Or _
+                        oFeedback.Subject = objPortalSecurity.InputFilter(txtSubject2.Text,
+                                            PortalSecurity.FilterFlag.NoScripting Or
                                             PortalSecurity.FilterFlag.NoMarkup)
                     Else
                         'The admin might have chosen a subject but not made it visible.
