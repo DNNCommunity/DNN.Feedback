@@ -1799,6 +1799,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plSubjectEditFieldPlaceholder">
+<summary>
+plSubjectEditFieldPlaceholder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtSubjectEditFieldPlaceholder">
+<summary>
+txtSubjectEditFieldPlaceholder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:DotNetNuke.Modules.Feedback.Settings._plEmailField">
 <summary>
 plEmailField control.
@@ -1811,6 +1829,24 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:DotNetNuke.Modules.Feedback.Settings._rblEmailField">
 <summary>
 rblEmailField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plEmailFieldPlaceholder">
+<summary>
+plEmailFieldPlaceholder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtEmailFieldPlaceholder">
+<summary>
+txtEmailFieldPlaceholder control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1835,6 +1871,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plEmailConfirmFieldPlaceholder">
+<summary>
+plEmailConfirmFieldPlaceholder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtEmailConfirmFieldPlaceholder">
+<summary>
+txtEmailConfirmFieldPlaceholder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:DotNetNuke.Modules.Feedback.Settings._plNameField">
 <summary>
 plNameField control.
@@ -1847,6 +1901,24 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:DotNetNuke.Modules.Feedback.Settings._rblNameField">
 <summary>
 rblNameField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plNameFieldPlaceholder">
+<summary>
+plNameFieldPlaceholder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtNameFieldPlaceholder">
+<summary>
+txtNameFieldPlaceholder control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1871,6 +1943,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plStreetFieldPlaceholder">
+<summary>
+plStreetFieldPlaceholder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtStreetFieldPlaceholder">
+<summary>
+txtStreetFieldPlaceholder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:DotNetNuke.Modules.Feedback.Settings._plCityField">
 <summary>
 plCityField control.
@@ -1883,6 +1973,24 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:DotNetNuke.Modules.Feedback.Settings._rblCityField">
 <summary>
 rblCityField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCityFieldPlaceholder">
+<summary>
+plCityFieldPlaceholder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtCityFieldPlaceholder">
+<summary>
+txtCityFieldPlaceholder control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1907,6 +2015,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plRegionFieldPlaceholder">
+<summary>
+plRegionFieldPlaceholder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtRegionFieldPlaceholder">
+<summary>
+txtRegionFieldPlaceholder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:DotNetNuke.Modules.Feedback.Settings._plCountryField">
 <summary>
 plCountryField control.
@@ -1919,6 +2045,24 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:DotNetNuke.Modules.Feedback.Settings._rblCountryField">
 <summary>
 rblCountryField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plCountryFieldPlaceholder">
+<summary>
+plCountryFieldPlaceholder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtCountryFieldPlaceholder">
+<summary>
+txtCountryFieldPlaceholder control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -1943,6 +2087,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plPostalCodeFieldPlaceholder">
+<summary>
+plPostalCodeFieldPlaceholder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtPostalCodeFieldPlaceholder">
+<summary>
+txtPostalCodeFieldPlaceholder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:DotNetNuke.Modules.Feedback.Settings._plTelephoneField">
 <summary>
 plTelephoneField control.
@@ -1961,6 +2123,24 @@ Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
 </member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plTelephoneFieldPlaceholder">
+<summary>
+plTelephoneFieldPlaceholder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtTelephoneFieldPlaceholder">
+<summary>
+txtTelephoneFieldPlaceholder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
 <member name="F:DotNetNuke.Modules.Feedback.Settings._plMessageField">
 <summary>
 plMessageField control.
@@ -1973,6 +2153,24 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:DotNetNuke.Modules.Feedback.Settings._rblMessageField">
 <summary>
 rblMessageField control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._plMessageFieldPlaceholder">
+<summary>
+plMessageFieldPlaceholder control.
+</summary>
+<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member>
+<member name="F:DotNetNuke.Modules.Feedback.Settings._txtMessageFieldPlaceholder">
+<summary>
+txtMessageFieldPlaceholder control.
 </summary>
 <remarks>
 Auto-generated field.
@@ -2135,60 +2333,6 @@ To modify move field declaration from designer file to code-behind file.
 <member name="F:DotNetNuke.Modules.Feedback.Settings._rblCaptchaVisibility">
 <summary>
 rblCaptchaVisibility control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:DotNetNuke.Modules.Feedback.Settings._plCaptchaCase">
-<summary>
-plCaptchaCase control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:DotNetNuke.Modules.Feedback.Settings._chkCaptchaCase">
-<summary>
-chkCaptchaCase control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:DotNetNuke.Modules.Feedback.Settings._plCaptchaLineNoise">
-<summary>
-plCaptchaLineNoise control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:DotNetNuke.Modules.Feedback.Settings._ddlCaptchaLineNoise">
-<summary>
-ddlCaptchaLineNoise control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:DotNetNuke.Modules.Feedback.Settings._plCaptchaBackgroundNoise">
-<summary>
-plCaptchaBackgroundNoise control.
-</summary>
-<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member>
-<member name="F:DotNetNuke.Modules.Feedback.Settings._ddlCaptchaBackgroundNoise">
-<summary>
-ddlCaptchaBackgroundNoise control.
 </summary>
 <remarks>
 Auto-generated field.
