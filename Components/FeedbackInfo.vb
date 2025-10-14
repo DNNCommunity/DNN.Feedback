@@ -83,7 +83,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _feedbackID
             End Get
             Set(ByVal value As Integer)
-                _feedbackID = Value
+                _feedbackID = value
             End Set
         End Property
 
@@ -92,7 +92,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _moduleID
             End Get
             Set(ByVal value As Integer)
-                _moduleID = Value
+                _moduleID = value
             End Set
         End Property
 
@@ -110,7 +110,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _categoryID
             End Get
             Set(ByVal value As String)
-                _categoryID = Value
+                _categoryID = value
             End Set
         End Property
 
@@ -119,7 +119,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _categoryValue
             End Get
             Set(ByVal value As String)
-                _categoryValue = Value
+                _categoryValue = value
             End Set
         End Property
 
@@ -137,7 +137,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _status
             End Get
             Set(ByVal value As FeedbackStatusType)
-                _status = Value
+                _status = value
             End Set
         End Property
 
@@ -146,7 +146,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _subject
             End Get
             Set(ByVal value As String)
-                _subject = Value
+                _subject = value
             End Set
         End Property
 
@@ -156,7 +156,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _message
             End Get
             Set(ByVal value As String)
-                _message = Value
+                _message = value
             End Set
         End Property
 
@@ -165,7 +165,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _publishedOnDate
             End Get
             Set(ByVal value As Date)
-                _publishedOnDate = Value
+                _publishedOnDate = value
             End Set
         End Property
 
@@ -183,7 +183,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _senderStreet
             End Get
             Set(ByVal value As String)
-                _senderStreet = Value
+                _senderStreet = value
             End Set
         End Property
 
@@ -192,7 +192,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _senderCity
             End Get
             Set(ByVal value As String)
-                _senderCity = Value
+                _senderCity = value
             End Set
         End Property
 
@@ -201,7 +201,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _senderRegion
             End Get
             Set(ByVal value As String)
-                _senderRegion = Value
+                _senderRegion = value
             End Set
         End Property
 
@@ -210,7 +210,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _senderCountry
             End Get
             Set(ByVal value As String)
-                _senderCountry = Value
+                _senderCountry = value
             End Set
         End Property
 
@@ -219,7 +219,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _senderPostalCode
             End Get
             Set(ByVal value As String)
-                _senderPostalCode = Value
+                _senderPostalCode = value
             End Set
         End Property
 
@@ -228,7 +228,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _senderEmail
             End Get
             Set(ByVal value As String)
-                _senderEmail = Value
+                _senderEmail = value
             End Set
         End Property
 
@@ -237,7 +237,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _senderTelephone
             End Get
             Set(ByVal value As String)
-                _senderTelephone = Value
+                _senderTelephone = value
             End Set
         End Property
 
@@ -255,7 +255,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _approvedBy
             End Get
             Set(ByVal value As Integer)
-                _approvedBy = Value
+                _approvedBy = value
             End Set
         End Property
 
@@ -264,7 +264,7 @@ Namespace DotNetNuke.Modules.Feedback
                 Return _totalRecords
             End Get
             Set(ByVal value As Integer)
-                _totalRecords = Value
+                _totalRecords = value
             End Set
         End Property
 
@@ -303,108 +303,6 @@ Namespace DotNetNuke.Modules.Feedback
                 _displayCreatedOnDate = value
             End Set
         End Property
-
-        Public Property SubjectPlaceholder() As String
-            Get
-                Return _subjectplaceholder
-            End Get
-            Set(ByVal value As String)
-                _subjectplaceholder = value
-            End Set
-        End Property
-
-        Public Property EmailPlaceholder() As String
-            Get
-                Return _emailplaceholder
-            End Get
-            Set(ByVal value As String)
-                _emailplaceholder = value
-            End Set
-        End Property
-        Public Property ConfirmEmailPlaceholder() As String
-            Get
-                Return _confirmemailplaceholder
-            End Get
-            Set(ByVal value As String)
-                _confirmemailplaceholder = value
-            End Set
-        End Property
-        Public Property NamePlaceholder() As String
-            Get
-                Return _nameplaceholder
-            End Get
-            Set(ByVal value As String)
-                _nameplaceholder = value
-            End Set
-        End Property
-        Public Property StreetPlaceholder() As String
-            Get
-                Return _streetplaceholder
-            End Get
-            Set(ByVal value As String)
-                _streetplaceholder = value
-            End Set
-        End Property
-        Public Property CityPlaceholder() As String
-            Get
-                Return _cityplaceholder
-            End Get
-            Set(ByVal value As String)
-                _cityplaceholder = value
-            End Set
-        End Property
-        Public Property RegionPlaceholder() As String
-            Get
-                Return _regionplaceholder
-            End Get
-            Set(ByVal value As String)
-                _regionplaceholder = value
-            End Set
-        End Property
-        Public Property CountryPlaceholder() As String
-            Get
-                Return _countryplaceholder
-            End Get
-            Set(ByVal value As String)
-                _countryplaceholder = value
-            End Set
-        End Property
-        Public Property PostalCodePlaceholder() As String
-            Get
-                Return _postalcodeplaceholder
-            End Get
-            Set(ByVal value As String)
-                _postalcodeplaceholder = value
-            End Set
-        End Property
-        Public Property TelephonePlaceholder() As String
-            Get
-                Return _telephoneplaceholder
-            End Get
-            Set(ByVal value As String)
-                _telephoneplaceholder = value
-            End Set
-        End Property
-        Public Property MessagePlaceholder() As String
-            Get
-                Return _messageplaceholder
-            End Get
-            Set(ByVal value As String)
-                _messageplaceholder = value
-            End Set
-        End Property
-
-
-
-
-
-
-
-
-
-
-
-
 #End Region
 
 #Region "IHydratable Implementation"
@@ -436,18 +334,6 @@ Namespace DotNetNuke.Modules.Feedback
                 Referrer = Null.SetNullString(dr("Referrer"))
                 UserAgent = Null.SetNullString(dr("UserAgent"))
                 ContextKey = Null.SetNullString(dr("ContextKey"))
-                SubjectPlaceholder = Null.SetNullString(dr("SubjectPlaceholder"))
-                EmailPlaceholder = Null.SetNullString(dr("EmailPlaceholder"))
-                ConfirmEmailPlaceholder = Null.SetNullString(dr("ConfirmEmailPlaceholder"))
-                NamePlaceholder = Null.SetNullString(dr("NamePlaceholder"))
-                StreetPlaceholder = Null.SetNullString(dr("StreetPlaceholder"))
-                CityPlaceholder = Null.SetNullString(dr("CityPlaceholder"))
-                RegionPlaceholder = Null.SetNullString(dr("RegionPlaceholder"))
-                CountryPlaceholder = Null.SetNullString(dr("CountryPlaceholder"))
-                PostalCodePlaceholder = Null.SetNullString(dr("PostalCodePlaceholder"))
-                TelephonePlaceholder = Null.SetNullString(dr("TelephonePlaceholder"))
-                MessagePlaceholder = Null.SetNullString(dr("MessagePlaceholder"))
-
             End With
         End Sub
 
@@ -480,51 +366,51 @@ Namespace DotNetNuke.Modules.Feedback
             End If
 
             'Content locked for NoSettings
-            If accessLevel = Scope.NoSettings Then PropertyNotFound = True : Return PropertyAccess.ContentLocked
+            If accessLevel = Scope.NoSettings Then propertyNotFound = True : Return PropertyAccess.ContentLocked
 
             Dim result As String = String.Empty
             Dim publicProperty As Boolean = True
 
             Select Case strPropertyName.ToLowerInvariant
                 Case "feedbackid"
-                    publicProperty = True : PropertyNotFound = False : result = FeedbackID.ToString(outputFormat, formatProvider)
+                    publicProperty = True : propertyNotFound = False : result = FeedbackID.ToString(outputFormat, formatProvider)
                 Case "category", "categoryvalue"
-                    publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(CategoryValue, strFormat)
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(CategoryValue, strFormat)
                 Case "categoryname"
-                    publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(CategoryName, strFormat)
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(CategoryName, strFormat)
                 Case "categoryid"
-                    publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(CategoryID, strFormat) 'note that CategoryID is System.Type.String
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(CategoryID, strFormat) 'note that CategoryID is System.Type.String
                 Case "status"
-                    publicProperty = True : PropertyNotFound = False : result = Localization.GetString(Status.ToString, Configuration.SharedResources)
+                    publicProperty = True : propertyNotFound = False : result = Localization.GetString(Status.ToString, Configuration.SharedResources)
                 Case "subject"
                     publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(Subject, strFormat)
                 Case "message"
-                    publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(Message, strFormat)
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(Message, strFormat)
                 Case "sendername"
                     If String.IsNullOrEmpty(SenderName) Then
-                        publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(Localization.GetString("Anonymous", Configuration.SharedResources), strFormat)
+                        publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(Localization.GetString("Anonymous", Configuration.SharedResources), strFormat)
                     Else
-                        publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(SenderName, strFormat)
+                        publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(SenderName, strFormat)
                     End If
                 Case "senderstreet"
-                    publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(SenderStreet, strFormat)
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(SenderStreet, strFormat)
                 Case "sendercity"
-                    publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(SenderCity, strFormat)
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(SenderCity, strFormat)
                 Case "senderregion"
-                    publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(SenderRegion, strFormat)
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(SenderRegion, strFormat)
                 Case "sendercountry"
-                    publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(SenderCountry, strFormat)
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(SenderCountry, strFormat)
                 Case "senderpostalcode"
-                    publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(SenderPostalCode, strFormat)
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(SenderPostalCode, strFormat)
                 Case "sendertelephone"
-                    publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(SenderTelephone, strFormat)
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(SenderTelephone, strFormat)
                 Case "senderremoteaddr"
-                    publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(SenderRemoteAddr, strFormat)
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(SenderRemoteAddr, strFormat)
                 Case "senderemail"
-                    publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(SenderEmail, strFormat)
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(SenderEmail, strFormat)
                 Case "createdondateutc", "datecreated"
                     publicProperty = True
-                    PropertyNotFound = False
+                    propertyNotFound = False
                     If CreatedOnDate <> DateTime.MinValue Then
                         result = Utilities.ConvertServerTimeToUserTime(CreatedOnDate).ToString(outputFormat, formatProvider)
                     End If
@@ -541,38 +427,16 @@ Namespace DotNetNuke.Modules.Feedback
                         result = Utilities.ConvertServerTimeToUserTime(LastModifiedOnDate).ToString(outputFormat, formatProvider)
                     End If
                 Case "referrer"
-                    publicProperty = True : PropertyNotFound = False : result = PropertyAccess.FormatString(Referrer, strFormat)
+                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(Referrer, strFormat)
                 Case "useragent"
                     publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(UserAgent, strFormat)
-                Case "SubjectPlaceholder"
-                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(SubjectPlaceholder, strFormat)
-                Case "EmailPlaceholder"
-                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(EmailPlaceholder, strFormat)
-                Case "ConfirmEmailPlaceholder"
-                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(ConfirmEmailPlaceholder, strFormat)
-                Case "NamePlaceholder"
-                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(NamePlaceholder, strFormat)
-                Case "StreetPlaceholder"
-                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(StreetPlaceholder, strFormat)
-                Case "CityPlaceholder"
-                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(CityPlaceholder, strFormat)
-                Case "RegionPlaceholder"
-                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(RegionPlaceholder, strFormat)
-                Case "CountryPlaceholder"
-                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(CountryPlaceholder, strFormat)
-                Case "PostalCodePlaceholder"
-                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(PostalCodePlaceholder, strFormat)
-                Case "TelephonePlaceholder"
-                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(TelephonePlaceholder, strFormat)
-                Case "MessagePlaceholder"
-                    publicProperty = True : propertyNotFound = False : result = PropertyAccess.FormatString(MessagePlaceholder, strFormat)
                 Case Else
-                    PropertyNotFound = True
+                    propertyNotFound = True
             End Select
 
 
             If Not publicProperty And accessLevel <> Scope.Debug Then
-                PropertyNotFound = True
+                propertyNotFound = True
                 result = PropertyAccess.ContentLocked
             End If
             Return result
